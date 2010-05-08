@@ -3,11 +3,12 @@
 == Preparation
 
 * [ ] Research and get a handle on Flex development (I need to know where to start)
-* [ ] Research and get a handle on FlexUnit testing (so I can write tests from the beginning)
-* [ ] Reseacrh and get a handle on FunFX testing (determine if I can add functional tests)
-* [ ] Reseacrh ConnectFour sample code on the web
-* [ ] Reseacrh ConnectFour win checking algorithms on the web and potentially pick one
-* [ ] Reseacrh ConnectFour AI algorithms on the web and potentially pick one
+* [X] Research and get a handle on FlexUnit testing (so I can write tests from the beginning)
+* [X] Research and get a handle on FunFX testing (determine if I can add functional tests)
+* [ ] Reseacrh Flex application frameworks and decide if one is right for this application
+* [ ] Research ConnectFour sample code on the web
+* [ ] Research ConnectFour win checking algorithms on the web and potentially pick one
+* [ ] Research ConnectFour AI algorithms on the web and potentially pick one
 
 == Getting Started
 

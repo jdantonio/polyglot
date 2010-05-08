@@ -3,14 +3,28 @@
 
 
 
+
+== Resources
+
+=== Connect Four Algorithms
+
+=== General Information about Flex Development
+
+* "Flash Builder 4 and Flex 4 Bible" (Safari Books Online)
+* "Flex 3 Cookbook" (Safari Books Online)
+* "Programming ActionScript 3.0" (http://livedocs.adobe.com/flash/9.0/main/flash_as3_programming.pdf)
+
+=== Testing Flex Applications
+
+* FunFX at GitHub (http://wiki.github.com/peternic/funfx/)
+* FlexUnit at Adobe Open Source (http://opensource.adobe.com/wiki/display/flexunit/FlexUnit)
+
 == Cucumber Testing:
 
-* config.gem "rspec", :lib => false, :version => ">= 1.2.7"
-* config.gem "rspec-rails", :lib => false, :version => ">= 1.2.7"
-* config.gem "webrat", :lib => false, :version => ">= 0.4.4"
-* config.gem "cucumber", :lib => false
-* config.gem "funfx"
-* config.gem "safariwatir"
+* sudo gem install cucumber
+* sudo gem install funfx
+* sudo gem install safariwatir
+* sudo gem install firewatir
 
 == COPYRIGHT
 
