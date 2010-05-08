@@ -22,7 +22,7 @@
 
 == COPYRIGHT
 
-Copyright (c) Jerry D'Antonio <stumpjumper@gmail.com>.
+Copyright (c) 2010 Jerry D'Antonio <stumpjumper@gmail.com>.
 
 Licensed under MIT License  http://www.opensource.org/licenses/mit-license.php
 
