@@ -12,11 +12,12 @@
 
 == Getting Started
 
-* [ ] Create a mind map of the problem
-* [ ] Document the basic flow of actions
-* [ ] Create a small class diagram of the core components
-* [ ] Create the Flex project
-* [ ] Setup the environment for testing
+* [X] Create a mind map of the problem
+* [X] Document the basic flow of actions
+* [X] Create a small class diagram of the core components
+* [X] Create the Flex project
+* [X] Setup the environment for FlexUnit testing
+* [ ] Setup the environment for Cucumber/FunFX testing
 * [ ] Write a couple of Cucumber tests with no step definitions
 
 == Implementation
