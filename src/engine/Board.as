@@ -1,5 +1,28 @@
 package engine
 {
+	import flash.utils.Dictionary;
+	
+	/**
+	 * A virtual representation of a the game board. Virtual pieces can be placed
+	 * into the game board by "dropping" them into columns. Like a real game
+	 * board the virtual board only applies physical rules, not game rules. There
+	 * is nothing preventing a player from taking multiple turns in a row (the
+	 * board knows nothing about turns or play order), for example, but it will
+	 * prevent additional pieces from being dropped into a full column. It is up
+	 * to the Game class to manage game rules.
+	 * 
+	 * Unlike a physical game board the virtual board can be set to any size
+	 * size so long as there are a positive number of rows and columns. The
+	 * number of game pieces in a row needed to win is also configurable. Once
+	 * the board is created, however, these settings cannot be changed.
+	 * 
+	 * One seemingly odd facet of the board is it is responsible for keeping
+	 * score. On the surface it seems that score would be an attribute of the
+	 * player but in reality a player's score is calculated based on the current
+	 * state of the board, changes every time a piece is dropped into the board,
+	 * and is algorithmically tied to the size of the board and the number of
+	 * possible win conditions. 
+	 */
 	public class Board
 	{
 		///////////////////////////////////////////////////////////////////////
@@ -7,15 +30,12 @@ package engine
 		
 		public static const DEFAULT_WIDTH:int = 7;
 		public static const DEFAULT_HEIGHT:int = 6;
-		public static const DEFAULT_NUM_TO_CONNECT:int = 4;
+		public static const DEFAULT_WIN_CONDITION:int = 4;
 		
 		public static const INVALID_MOVE:int = -1;
 		
 		///////////////////////////////////////////////////////////////////////
 		// Data Members
-		
-		/** The number of pieces in a row needed to win. */
-		private var _num_to_connect:int;
 		
 		/**
 		 * A multi-dimensional array representing the board grid. The width
@@ -26,8 +46,17 @@ package engine
 		 */
 		private var _board:Array;
 		
+		/** The number of pieces in a row needed to win. */
+		private var _win_condition:int;
+		
 		/** The total number of possible winning sequences. */
 		private var _num_of_win_places:int;
+		
+		/** Hash for storing the current scored for all players. */
+		private var _scores:Dictionary;
+		
+		/** Object for storing all the possible winning piece combinations. */
+		private var _map:WinMap;
 		
 		///////////////////////////////////////////////////////////////////////
 		// Construction
@@ -39,10 +68,11 @@ package engine
 		 * 
 		 * @param width The number of columns on the board (default: 7).
 		 * @param height The number of rows on the board (default: 6).
-		 * @param num_to_connect The number of contiguous board spaces
+		 * @param win_condition The number of contiguous board spaces
 		 *   a player needs to connect in order to win the game (default: 4).
 		 */ 
-		public function Board(width:int = DEFAULT_WIDTH, height:int = DEFAULT_HEIGHT, num_to_connect:int = DEFAULT_NUM_TO_CONNECT)
+		public function Board(width:int = DEFAULT_WIDTH, height:int = DEFAULT_HEIGHT,
+							  win_condition:int = DEFAULT_WIN_CONDITION)
 		{
 			// set board width to a valid value
 			if (width <= 0) {
@@ -54,14 +84,15 @@ package engine
 				height = DEFAULT_HEIGHT;
 			}
 			
-			// set board num_to_connect to a valid value
+			// set board win_condition to a valid value
 			// if the win condition is greater than width or height it is invalid
-			// an invalid win condition is set to the minimum of width, height, or DEFAULT_NUM_TO_CONNECT
-			if (num_to_connect <= 0 || num_to_connect > width || num_to_connect > height) {
-				this._num_to_connect = Math.min(width, height);
-				this._num_to_connect = Math.min(this._num_to_connect, DEFAULT_NUM_TO_CONNECT);
+			// an invalid win condition is set to the minimum of width, height,
+			// or DEFAULT_WIN_CONDITION
+			if (win_condition <= 0 || win_condition > width || win_condition > height) {
+				this._win_condition = Math.min(width, height);
+				this._win_condition = Math.min(this._win_condition, DEFAULT_WIN_CONDITION);
 			} else {
-				this._num_to_connect = num_to_connect;
+				this._win_condition = win_condition;
 			}
 			
 			// create the board array
@@ -74,6 +105,19 @@ package engine
 					this._board[x][y] = GamePieceEnum.NONE;
 				}
 			}
+			
+			// create the scores array
+			this._scores = new Dictionary();
+			this._scores[GamePieceEnum.BLACK] = new Array(this.num_of_win_places);
+			this._scores[GamePieceEnum.RED] = new Array(this.num_of_win_places);
+			for (var i:int = 0; i < this.num_of_win_places; i++)
+			{
+				this._scores[GamePieceEnum.BLACK][i] = 1;
+				this._scores[GamePieceEnum.RED][i] = 1;
+			}
+			
+			// create the win map
+			this._map = new WinMap(this.width, this.height, this.win_condition);
 		}
 		
 		///////////////////////////////////////////////////////////////////////
@@ -98,14 +142,20 @@ package engine
 		/**
 		 * @return The number of contiguous spaces needed to win.
 		 */
-		public function get num_to_connect():int
+		public function get win_condition():int
 		{
-			return this._num_to_connect;
+			return this._win_condition;
 		}
 		
 		public function get num_of_win_places():int
 		{
-			return Board.num_of_win_places(this.width, this.height, this._num_to_connect);
+			return Board.num_of_win_places(this.width, this.height, this._win_condition);
+		}
+		
+		/** Magic number, based on win condition, used to calculate player scores. */
+		public function get magic_win_number():int
+		{
+			return 1 << this.win_condition
 		}
 		
 		///////////////////////////////////////////////////////////////////////
@@ -125,11 +175,9 @@ package engine
 		 * board that prevents a player from dropping foreign objects into the
 		 * board. That, too, is a function of the game. Subsequently, the
 		 * virtual board does not track player turns, it just accepts the piece
-		 * it is given. It also does not check for a valid color. These checks
-		 * are delegated to the calling class. Finally, the drop function does
-		 * not check to see if the game has ended after the move. That is a
-		 * state of the board and not an operation. It must be checked by the
-		 * game code after a successful drop.
+		 * it is given. It also does not check to see if the game has ended
+		 * after the move. That is a state of the board and not an operation.
+		 * It must be checked by the game code after a successful drop.
 		 * 
 		 * @pre The game_piece is a valid GamePieceEnum value.
 		 * @pre The game piece belongs to the appropriate player.
@@ -144,24 +192,76 @@ package engine
 			// set a false return value
 			var row:int = INVALID_MOVE;
 			
-			// make sure the column exists
-			if (column >= 0 && column < this.width)
+			// check the color of the game piece
+			if (GamePieceEnum.is_valid_color(game_piece))
 			{
-				// iterate over the column
-				for (var i:int = 0; i < this.height; i++)
+				// make sure the column exists
+				if (column >= 0 && column < this.width)
 				{
-					// check for a valid drop location
-					if (this._board[column][i] == GamePieceEnum.NONE)
+					// iterate over the column
+					for (var i:int = 0; i < this.height; i++)
 					{
-						this._board[column][i] = game_piece;
-						row = i;
-						break;
+						// check for a valid drop location
+						if (this._board[column][i] == GamePieceEnum.NONE)
+						{
+							this._board[column][i] = game_piece;
+							row = i;
+							break;
+						}
 					}
 				}
 			}
 			
 			// return the row where the piece was dropped
 			return row;
+		}
+		
+		private function update_score(player:int, column:int, row:int):void
+		{
+			/*
+			register int i;
+			int win_index;
+			int this_difference = 0, other_difference = 0;
+			int **current_score_array = current_state->score_array;
+			int other_player = other(player);
+			
+			for (i=0; map[x][y][i] != -1; i++) {
+				win_index = map[x][y][i];
+				this_difference += current_score_array[player][win_index];
+				other_difference += current_score_array[other_player][win_index];
+				
+				current_score_array[player][win_index] <<= 1;
+				current_score_array[other_player][win_index] = 0;
+				
+				if (current_score_array[player][win_index] == magic_win_number)
+					if (current_state->winner == C4_NONE)
+						current_state->winner = player;
+			}
+			
+			current_state->score[player] += this_difference;
+			current_state->score[other_player] -= other_difference;
+			*/
+			
+			// check for valid color
+			if (! GamePieceEnum.is_valid_color(player)) return;
+			
+			// calulation variables
+			var player_diff:int = 0;
+			var other_diff:int = 0;
+			var other:int = GamePieceEnum.other_piece(player);
+			
+			// get the win indicies for the selected board location
+			var win_indicies:Vector.<int> = this._map.win_indicies(column, row);
+			
+			// iterate over all possible win indicies
+			for each (var win_index:int in win_indicies)
+			{
+				// TODO: Finish implementation
+				
+				// check the score differential
+				player_diff += this._scores[player][win_index];
+				other_diff += this._scores[other][win_index];
+			}
 		}
 		
 		///////////////////////////////////////////////////////////////////////
@@ -178,33 +278,33 @@ package engine
 		 * 
 		 * @param width The width of the board.
 		 * @param height The height of the board.
-		 * @param num_to_connect The number of pieces in a row needed to win.
+		 * @param win_condition The number of pieces in a row needed to win.
 		 * 
 		 * @return The number of possible winning combinations.
 		 */
-		public static function num_of_win_places(width:int, height:int, num_to_connect:int):int
+		public static function num_of_win_places(width:int, height:int, win_condition:int):int
 		{
-			if (width < num_to_connect && height < num_to_connect)
+			if (width < win_condition && height < win_condition)
 			{
 				return 0;
 			}
-			else if (width < num_to_connect)
+			else if (width < win_condition)
 			{
-				return width * ((height - num_to_connect) + 1);
+				return width * ((height - win_condition) + 1);
 			}
-			else if (height < num_to_connect)
+			else if (height < win_condition)
 			{
-				return height * ((width - num_to_connect) + 1);
+				return height * ((width - win_condition) + 1);
 			}
 			else
 			{
 				return (4 * width * height)
-					- (3 * width * num_to_connect)
-					- (3 * height * num_to_connect)
+					- (3 * width * win_condition)
+					- (3 * height * win_condition)
 					+ (3 * width)
 					+ (3 * height)
-					- (4 * num_to_connect)
-					+ (2 * num_to_connect * num_to_connect)
+					- (4 * win_condition)
+					+ (2 * win_condition * win_condition)
 					+ 2;
 			}
 		}

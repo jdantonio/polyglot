@@ -10,7 +10,7 @@ package engine
 			
 			assertEquals(board.width, 7);
 			assertEquals(board.height, 6);
-			assertEquals(board.num_to_connect, 4);
+			assertEquals(board.win_condition, 4);
 		}
 		
 		public function testConstructionWithValidArgs():void
@@ -19,7 +19,7 @@ package engine
 			
 			assertEquals(board.width, 10);
 			assertEquals(board.height, 7);
-			assertEquals(board.num_to_connect, 5);
+			assertEquals(board.win_condition, 5);
 		}
 		
 		public function testConstructionWithInvalidArgs():void
@@ -28,7 +28,7 @@ package engine
 			
 			assertEquals(board.width, 7);
 			assertEquals(board.height, 6);
-			assertEquals(board.num_to_connect, 4);
+			assertEquals(board.win_condition, 4);
 		}
 		
 		public function testNumOfWinPlaces():void
@@ -53,6 +53,16 @@ package engine
 			// standard game
 			assertEquals(Board.num_of_win_places(7, 6, 4), 69);
 			assertEquals((new Board(7, 6, 4)).num_of_win_places, 69);
+		}
+		
+		public function testMagicWinNumber():void
+		{
+			assertEquals((new Board(10, 10, 1).magic_win_number), 2);
+			assertEquals((new Board(10, 10, 2).magic_win_number), 4);
+			assertEquals((new Board(10, 10, 3).magic_win_number), 8);
+			assertEquals((new Board(10, 10, 4).magic_win_number), 16);
+			assertEquals((new Board(10, 10, 5).magic_win_number), 32);
+			assertEquals((new Board(10, 10, 6).magic_win_number), 64);
 		}
 		
 		public function testDropPiece():void

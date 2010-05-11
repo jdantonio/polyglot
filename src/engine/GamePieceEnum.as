@@ -28,6 +28,17 @@ package engine
 				return false;
 			}
 		}
+		
+		public static function other_piece(color:int):int
+		{
+			if (color == RED) {
+				return BLACK;
+			} else if (color == BLACK) {
+				return RED;
+			} else {
+				return NONE;
+			}
+		}
 	}
 }
 ////////////////////////////////////////////////////////////////////////////////
