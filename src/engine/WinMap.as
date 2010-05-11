@@ -123,9 +123,28 @@ package engine
 			// fill in the backward diagonal win positions
 			// NOTE: The algorithm in the Pomakis source does not match the sample map.
 			//       This algorithm was modified to match the sample data.
+			for (i = 0; i < width - num_to_connect + 1; i++)
+			{
+				for (j = height - num_to_connect + 1; j < height; j++)
+				{
+					// mark all winning positions with the current win index
+					for (k = 0; k < num_to_connect; k++)
+					{
+						// find the terminator position for the current location
+						for (x = 0; this._map[i+k][j-k][x] != EOL; x++) { }
+						
+						// mark the current position and the new terminator
+						this._map[i+k][j-k][x] = win_index;
+						this._map[i+k][j-k][x+1] = EOL;
+					}
+					// increment the win index
+					win_index++;
+				}
+			}
+			/*
 			for (i = 0; i < height - num_to_connect + 1; i++)
 			{
-				for (j = width - 1; j < num_to_connect - 1; j++)
+				for (j = width - 1; j >= num_to_connect - 1; j--)
 				{
 					// mark all winning positions with the current win index
 					for (k = 0; k < num_to_connect; k++)
@@ -136,11 +155,12 @@ package engine
 						// mark the current position and the new terminator
 						this._map[j-k][i+k][x] = win_index;
 						this._map[j-k][i+k][x+1] = EOL;
-					}					
+					}
 					// increment the win index
 					win_index++;
 				}
 			}
+			*/
 		}
 		
 		/**

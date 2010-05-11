@@ -12,15 +12,49 @@ package engine
 			assertEquals(map.win_indicies(1, 0).join(), "0,1,27,48");
 			assertEquals(map.win_indicies(2, 0).join(), "0,1,2,30,51");
 			assertEquals(map.win_indicies(3, 0).join(), "0,1,2,3,33,54,57");
-			assertEquals(map.win_indicies(4, 0).join(), "0,1,2,3,36,60");
+			assertEquals(map.win_indicies(4, 0).join(), "1,2,3,36,60");
 			assertEquals(map.win_indicies(5, 0).join(), "2,3,39,63");
 			assertEquals(map.win_indicies(6, 0).join(), "3,42,66");
+			
+			assertEquals(map.win_indicies(0, 1).join(), "4,24,25,46");
+			assertEquals(map.win_indicies(1, 1).join(), "4,5,27,28,45,49");
+			assertEquals(map.win_indicies(2, 1).join(), "4,5,6,30,31,48,52,57");
+			assertEquals(map.win_indicies(3, 1).join(), "4,5,6,7,33,34,51,55,58,60");
+			assertEquals(map.win_indicies(4, 1).join(), "5,6,7,36,37,54,61,63");
+			assertEquals(map.win_indicies(5, 1).join(), "6,7,39,40,64,66");
+			assertEquals(map.win_indicies(6, 1).join(), "7,42,43,67");
 
-			//assertEquals(map.win_indicies(1, 1).join(), "4,5,27,28,45,49");
-			//assertEquals(map.win_indicies(2, 2).join(), "8,9,10,31,31,32,45,49,53");
-			//assertEquals(map.win_indicies(3, 3).join(), "12,13,14,15,33,34,35,45,49,53");
-			//assertEquals(map.win_indicies(2, 4).join(), "16,17,18,31,32,47");
-			//assertEquals(map.win_indicies(6, 4).join(), "19,43,44,55");
+			assertEquals(map.win_indicies(0, 2).join(), "8,24,25,26,47");
+			assertEquals(map.win_indicies(1, 2).join(), "8,9,27,28,29,46,50,57");
+			assertEquals(map.win_indicies(2, 2).join(), "8,9,10,30,31,32,45,49,53,58,60");
+			assertEquals(map.win_indicies(3, 2).join(), "8,9,10,11,33,34,35,48,52,56,59,61,63");
+			assertEquals(map.win_indicies(4, 2).join(), "9,10,11,36,37,38,51,55,62,64,66");
+			assertEquals(map.win_indicies(5, 2).join(), "10,11,39,40,41,54,65,67");
+			assertEquals(map.win_indicies(6, 2).join(), "11,42,43,44,68");
+			
+			assertEquals(map.win_indicies(0, 3).join(), "12,24,25,26,57");
+			assertEquals(map.win_indicies(1, 3).join(), "12,13,27,28,29,47,58,60");
+			assertEquals(map.win_indicies(2, 3).join(), "12,13,14,30,31,32,46,50,59,61,63");
+			assertEquals(map.win_indicies(3, 3).join(), "12,13,14,15,33,34,35,45,49,53,62,64,66");
+			assertEquals(map.win_indicies(4, 3).join(), "13,14,15,36,37,38,48,52,56,65,67");
+			assertEquals(map.win_indicies(5, 3).join(), "14,15,39,40,41,51,55,68");
+			assertEquals(map.win_indicies(6, 3).join(), "15,42,43,44,54");
+			
+			assertEquals(map.win_indicies(0, 4).join(), "16,25,26,58");
+			assertEquals(map.win_indicies(1, 4).join(), "16,17,28,29,59,61");
+			assertEquals(map.win_indicies(2, 4).join(), "16,17,18,31,32,47,62,64");
+			assertEquals(map.win_indicies(3, 4).join(), "16,17,18,19,34,35,46,50,65,67");
+			assertEquals(map.win_indicies(4, 4).join(), "17,18,19,37,38,49,53,68");
+			assertEquals(map.win_indicies(5, 4).join(), "18,19,40,41,52,56");
+			assertEquals(map.win_indicies(6, 4).join(), "19,43,44,55");
+			
+			assertEquals(map.win_indicies(0, 5).join(), "20,26,59");
+			assertEquals(map.win_indicies(1, 5).join(), "20,21,29,62");
+			assertEquals(map.win_indicies(2, 5).join(), "20,21,22,32,65");
+			assertEquals(map.win_indicies(3, 5).join(), "20,21,22,23,35,47,68");
+			assertEquals(map.win_indicies(4, 5).join(), "21,22,23,38,50");
+			assertEquals(map.win_indicies(5, 5).join(), "22,23,41,53");
+			assertEquals(map.win_indicies(6, 5).join(), "23,44,56");
 		}
 	}
 }

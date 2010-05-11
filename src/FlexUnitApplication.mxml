@@ -8,10 +8,12 @@
 	<fx:Script>
 		<![CDATA[
 			import engine.WinMapTest;
+			import engine.BoardTest;
 			
 			public function currentRunTestSuite():Array
 			{
 				var testsToRun:Array = new Array();
+				testsToRun.push(engine.BoardTest);
 				testsToRun.push(engine.WinMapTest);
 				return testsToRun;
 			}
