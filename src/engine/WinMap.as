@@ -1,24 +1,52 @@
 package engine
 {
+	/**
+	 * Every combination of board width, height, and number of contiguous game
+	 * pieces needed to win generates a different set of win conditions. Each
+	 * win condition (possible set of n contiguous pieces) is assigned a
+	 * unique number called a win index. The number assigned to each win index
+	 * is irrelevant so long as each is unique. During a game the engine will
+	 * check the current board state against the possible win conditions to
+	 * determine if the game has been one. This class generates all possible
+	 * win conditions for a given set of game parameters and stores the data.
+	 * Internally the win indicies are stored in an x by y map representing
+	 * the game board. Each element of the map contains a set of all win
+	 * indicies using that board location.
+	 */
 	public class WinMap
 	{
 		///////////////////////////////////////////////////////////////////////
-		// Constants
-		
-		private static const EOL:int = -1;
-		
-		///////////////////////////////////////////////////////////////////////
 		// Data Members
 
-		private var _map:Array;
+		/** The internal data map of the board and all win indicies. */
+		private var _map:Array = null;
 		
 		///////////////////////////////////////////////////////////////////////
 		// Construction
 
+		/**
+		 * Create the map and populate it with all win indicies. Any size map
+		 * with any number required to win is supported.
+		 * 
+		 * NOTE: This class does not validate the inputs to determine if the
+		 * board is valid. It is entirely possible to create an unwinnable
+		 * board. It is the responsibility of the calling code to verify
+		 * the parameters before creation. If the board is not valid or
+		 * winnable the array will either be null or it will be populated
+		 * with empty vectors.
+		 * 
+		 * @param width The number of columns on the board.
+		 * @param height The number of rows on the board.
+		 * @param num_to_connect The number of contiguous board spaces
+		 *   a player needs to connect in order to win the game.
+		 */
 		public function WinMap(width:int, height:int, num_to_connect:int)
 		{
+			// check for positive dimensions
+			if (width <= 0 || height <= 0) return;
+			
 			// loop control variables
-			var i:int, j:int, k:int, x:int, y:int;
+			var i:int, j:int, k:int;
 			
 			// create the map array
 			this._map = new Array(width);
@@ -27,8 +55,7 @@ package engine
 				this._map[i] = new Array(height);
 				for (j = 0; j < height; j++)
 				{
-					this._map[i][j] = new Array((num_to_connect * 4) + 1);
-					this._map[i][j][0] = EOL;
+					this._map[i][j] = new Vector.<int>;
 				}
 			}
 			
@@ -44,13 +71,9 @@ package engine
 				{
 					// mark all winning positions with the current win index
 					for (k = 0; k < num_to_connect; k++)
-					{
-						// find the terminator position for the current location
-						for (x = 0; this._map[j+k][i][x] != EOL; x++) { }
-						
-						// mark the current position and the new terminator
-						this._map[j+k][i][x] = win_index;
-						this._map[j+k][i][x+1] = EOL;
+					{						
+						// add the new win index to the vector
+						this._map[j+k][i].push(win_index);
 					}
 					// increment the win index
 					win_index++;
@@ -66,12 +89,8 @@ package engine
 					// mark all winning positions with the current win index
 					for (k = 0; k < num_to_connect; k++)
 					{
-						// find the terminator position for the current location
-						for (x = 0; this._map[i][j+k][x] != EOL; x++) { }
-						
-						// mark the current position and the new terminator
-						this._map[i][j+k][x] = win_index;
-						this._map[i][j+k][x+1] = EOL;
+						// add the new win index to the vector
+						this._map[i][j+k].push(win_index);
 					}
 					// increment the win index
 					win_index++;
@@ -81,86 +100,46 @@ package engine
 			// fill in the forward diaginal win positions
 			// NOTE: The algorithm in the Pomakis source does not match the sample map.
 			//       This algorithm was modified to match the sample data.
-			for (i = 0; i < width - num_to_connect + 1; i++)
+			//       The two algorithms are functionally equivalent.
+			if (num_to_connect <= width && num_to_connect <= height)
 			{
-				for (j = 0; j < height - num_to_connect + 1; j++)
+				for (i = 0; i < width - num_to_connect + 1; i++)
 				{
-					// mark all winning positions with the current win index
-					for (k = 0; k < num_to_connect; k++)
+					for (j = 0; j < height - num_to_connect + 1; j++)
 					{
-						// find the terminator position for the current location
-						for (x = 0; this._map[i+k][j+k][x] != EOL; x++) { }
-						
-						// mark the current position and the new terminator
-						this._map[i+k][j+k][x] = win_index;
-						this._map[i+k][j+k][x+1] = EOL;
-					}					
-					// increment the win index
-					win_index++;
+						// mark all winning positions with the current win index
+						for (k = 0; k < num_to_connect; k++)
+						{
+							// add the new win index to the vector
+							this._map[i+k][j+k].push(win_index);
+						}					
+						// increment the win index
+						win_index++;
+					}
 				}
 			}
-			/*
-			for (i = 0; i < height - num_to_connect + 1; i++)
-			{
-				for (j = 0; j < width - num_to_connect + 1; j++)
-				{
-					// mark all winning positions with the current win index
-					for (k = 0; k < num_to_connect; k++)
-					{
-						// find the terminator position for the current location
-						for (x = 0; this._map[j+k][i+k][x] != EOL; x++) { }
-						
-						// mark the current position and the new terminator
-						this._map[j+k][i+k][x] = win_index;
-						this._map[j+k][i+k][x+1] = EOL;
-					}					
-					// increment the win index
-					win_index++;
-				}
-			}
-			*/
 			
 			// fill in the backward diagonal win positions
 			// NOTE: The algorithm in the Pomakis source does not match the sample map.
 			//       This algorithm was modified to match the sample data.
-			for (i = 0; i < width - num_to_connect + 1; i++)
+			//       The two algorithms are functionally equivalent.
+			if (num_to_connect <= width && num_to_connect <= height)
 			{
-				for (j = height - num_to_connect + 1; j < height; j++)
+				for (i = 0; i < width - num_to_connect + 1; i++)
 				{
-					// mark all winning positions with the current win index
-					for (k = 0; k < num_to_connect; k++)
+					for (j = height - num_to_connect + 1; j < height; j++)
 					{
-						// find the terminator position for the current location
-						for (x = 0; this._map[i+k][j-k][x] != EOL; x++) { }
-						
-						// mark the current position and the new terminator
-						this._map[i+k][j-k][x] = win_index;
-						this._map[i+k][j-k][x+1] = EOL;
+						// mark all winning positions with the current win index
+						for (k = 0; k < num_to_connect; k++)
+						{
+							// add the new win index to the vector
+							this._map[i+k][j-k].push(win_index);
+						}
+						// increment the win index
+						win_index++;
 					}
-					// increment the win index
-					win_index++;
 				}
 			}
-			/*
-			for (i = 0; i < height - num_to_connect + 1; i++)
-			{
-				for (j = width - 1; j >= num_to_connect - 1; j--)
-				{
-					// mark all winning positions with the current win index
-					for (k = 0; k < num_to_connect; k++)
-					{
-						// find the terminator position for the current location
-						for (x = 0; this._map[j-k][i+k][x] != EOL; x++) { }
-						
-						// mark the current position and the new terminator
-						this._map[j-k][i+k][x] = win_index;
-						this._map[j-k][i+k][x+1] = EOL;
-					}
-					// increment the win index
-					win_index++;
-				}
-			}
-			*/
 		}
 		
 		/**
@@ -170,7 +149,7 @@ package engine
 		 * @param x The x-coordinate of the board position to check.
 		 * @param y The y-coordinate of the board position to check.
 		 * 
-		 * @return A vector containing all the win indicies for the 
+		 * @return A new vector containing all the win indicies for the 
 		 *   requested board position. Invalid coordinates will result
 		 *   in an empty vector being returned.
 		 */
@@ -178,12 +157,9 @@ package engine
 		{
 			var indicies:Vector.<int> = new Vector.<int>;
 			
-			if (x < this._map.length && y < this._map[0].length)
+			if (this._map != null && x < this._map.length && y < this._map[0].length)
 			{
-				for (var i:int = 0; this._map[x][y][i] != EOL; i++)
-				{
-					indicies.push(this._map[x][y][i]);
-				}
+				for each (var x:int in this._map[x][y]) indicies.push(x);
 			}
 			
 			return indicies;

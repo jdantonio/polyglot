@@ -1,10 +1,30 @@
 package engine
 {
 	import flexunit.framework.TestCase;
-	
+
+	/**
+	 * Test the validity of the win indicies stored in a WinMap.
+	 * 
+	 * The algorithms used to populate the map of win indicies is generic
+	 * enough to support any width, height, and number of pieces in a row
+	 * required to win, even when the combination makes winning impossible.
+	 * This creates several equivalence classes for board configuration
+	 * (at least horizontal-only win, vertical-only win, invalid board
+	 * dimensions, win impossible, and regular board). A complete test suite
+	 * would thoroughly test all of these equivalence classes. When this engine
+	 * was first created the engine itself limited itself to only valid boards
+	 * and the UI limited the game to a standard 7x6x4 (seven width, six height,
+	 * four-in-a-row to win) board. Since the project was created as a learning
+	 * exercise a full test suite was not written. This suite tests every
+	 * space in a 7x6x4 board and then tests a few other variations. If this
+	 * program is ever expanded this test suite should be completed.
+	 */
 	public class WinMapTest extends TestCase
 	{
-		public function testWinIndicies():void
+		/**
+		 * Test all indicies in a standard 7-width, 6-height, 4-to-win board.
+		 */
+		public function testStandardBoardWinIndicies():void
 		{
 			var map:WinMap = new WinMap(7, 6, 4);
 
@@ -55,6 +75,70 @@ package engine
 			assertEquals(map.win_indicies(4, 5).join(), "21,22,23,38,50");
 			assertEquals(map.win_indicies(5, 5).join(), "22,23,41,53");
 			assertEquals(map.win_indicies(6, 5).join(), "23,44,56");
+		}
+		
+		/**
+		 * Test a board where it is only possible to win with a horizontal row.
+		 */
+		public function testHorizontalOnlyWinIndicies():void
+		{
+			var map:WinMap = new WinMap(7, 3, 6);
+
+			assertEquals(map.win_indicies(0, 0), "0");
+			assertEquals(map.win_indicies(1, 0), "0,1");
+			assertEquals(map.win_indicies(6, 0), "1");
+			assertEquals(map.win_indicies(0, 1), "2");
+			assertEquals(map.win_indicies(1, 1), "2,3");
+			assertEquals(map.win_indicies(6, 1), "3");
+			assertEquals(map.win_indicies(0, 2), "4");
+			assertEquals(map.win_indicies(1, 2), "4,5");
+			assertEquals(map.win_indicies(6, 2), "5");
+		}
+		
+		/**
+		 * Test a board where it is only possible to win with a vertical column.
+		 */
+		public function testVeticalOnlyWinIndicies():void
+		{
+			var map:WinMap = new WinMap(3, 7, 6);
+
+			assertEquals(map.win_indicies(0, 0), "0");
+			assertEquals(map.win_indicies(0, 1), "0,1");
+			assertEquals(map.win_indicies(0, 6), "1");
+			assertEquals(map.win_indicies(1, 0), "2");
+			assertEquals(map.win_indicies(1, 1), "2,3");
+			assertEquals(map.win_indicies(1, 6), "3");
+			assertEquals(map.win_indicies(2, 0), "4");
+			assertEquals(map.win_indicies(2, 1), "4,5");
+			assertEquals(map.win_indicies(2, 6), "5");
+		}
+		
+		/**
+		 * Test a board that has invalid dimensions.
+		 */
+		public function testInvalidBoardWinIndicies():void
+		{
+			var map:WinMap = new WinMap(-1, -1, 4);
+			assertEquals(map.win_indicies(0, 0), "");
+		}
+		
+		/**
+		 * Test a board where it is impossible to win.
+		 */
+		public function testImpossibleWinIndicies():void
+		{
+			var map:WinMap = new WinMap(2, 2, 4);
+			assertEquals(map.win_indicies(0, 0), "");
+		}
+		
+		/**
+		 * Test the return value of the win_indicies property when the
+		 * board os valid but the requested board location does not exist.
+		 */
+		public function testInvalidBoardLocation():void
+		{
+			var map:WinMap = new WinMap(3, 3, 2);
+			assertEquals(map.win_indicies(10, 10), "");
 		}
 	}
 }

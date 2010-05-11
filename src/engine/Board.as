@@ -41,8 +41,7 @@ package engine
 		 * @param width The number of columns on the board (default: 7).
 		 * @param height The number of rows on the board (default: 6).
 		 * @param num_to_connect The number of contiguous board spaces
-		 *   a player needs to connect in order to win the game
-		 *   (default: 4).
+		 *   a player needs to connect in order to win the game (default: 4).
 		 */ 
 		public function Board(width:int = DEFAULT_WIDTH, height:int = DEFAULT_HEIGHT, num_to_connect:int = DEFAULT_NUM_TO_CONNECT)
 		{

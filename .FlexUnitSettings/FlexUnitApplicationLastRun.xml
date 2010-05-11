@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testrun name="" >
 <testsuite  name="Default Test Suite" project="Connect Four">
-<testsuite name="engine:BoardTest" type="testsuiteclass"/>
 <testsuite name="engine:WinMapTest" type="testsuiteclass"/>
+<testsuite name="engine:BoardTest" type="testsuiteclass"/>
 </testsuite>
 </testrun>
