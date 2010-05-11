@@ -5,9 +5,11 @@ package engine
 		///////////////////////////////////////////////////////////////////////
 		// Constants
 		
-		public static const DEFAULT_WIDTH:int = 7; 
-		public static const DEFAULT_HEIGHT:int = 6; 
-		public static const DEFAULT_NUM_TO_CONNECT:int = 4; 
+		public static const DEFAULT_WIDTH:int = 7;
+		public static const DEFAULT_HEIGHT:int = 6;
+		public static const DEFAULT_NUM_TO_CONNECT:int = 4;
+		
+		public static const INVALID_MOVE:int = -1;
 		
 		///////////////////////////////////////////////////////////////////////
 		// Data Members
@@ -23,9 +25,6 @@ package engine
 		 * GamePieceEnum. The array must be initialized to NONE in all indicies.
 		 */
 		private var _board:Array;
-		
-		/** The last player to take a turn as indicated by their piece color. */
-		private var _last_player:int;
 		
 		/** The total number of possible winning sequences. */
 		private var _num_of_win_places:int;
@@ -45,9 +44,6 @@ package engine
 		 */ 
 		public function Board(width:int = DEFAULT_WIDTH, height:int = DEFAULT_HEIGHT, num_to_connect:int = DEFAULT_NUM_TO_CONNECT)
 		{
-			// set last player to NONE since there has yet to be a move
-			this._last_player = GamePieceEnum.NONE;
-			
 			// set board width to a valid value
 			if (width <= 0) {
 				width = DEFAULT_WIDTH;
@@ -78,8 +74,6 @@ package engine
 					this._board[x][y] = GamePieceEnum.NONE;
 				}
 			}
-			
-			// set initial player scores
 		}
 		
 		///////////////////////////////////////////////////////////////////////
@@ -114,12 +108,60 @@ package engine
 			return Board.num_of_win_places(this.width, this.height, this._num_to_connect);
 		}
 		
+		///////////////////////////////////////////////////////////////////////
+		// Game Operations
+		
 		/**
-		 * @return The color of the last player to make a move.
+		 * Drop a piece of the specified color into the game board. Return
+		 * the number of the landing row on success or INVALID_MOVE on failure.
+		 * 
+		 * As with a physical game board, the virtual Board allows the player
+		 * to select a column and drop the piece into it. The piece then falls
+		 * to the bottom-most open location. If the selected column is full
+		 * then a piece cannot be dropped. As with a real game board there is
+		 * nothing preventing a player from dropping multiple pieces in a
+		 * given turn. Turns and alternating players are functions of the game
+		 * and not the board. Similarly, there is nothing about a real game
+		 * board that prevents a player from dropping foreign objects into the
+		 * board. That, too, is a function of the game. Subsequently, the
+		 * virtual board does not track player turns, it just accepts the piece
+		 * it is given. It also does not check for a valid color. These checks
+		 * are delegated to the calling class. Finally, the drop function does
+		 * not check to see if the game has ended after the move. That is a
+		 * state of the board and not an operation. It must be checked by the
+		 * game code after a successful drop.
+		 * 
+		 * @pre The game_piece is a valid GamePieceEnum value.
+		 * @pre The game piece belongs to the appropriate player.
+		 * 
+		 * @param game_piece The virtual game piece to be dropped into the board.
+		 * @param column The column into which the piece is to be dropped.
+		 * 
+		 * @return The number of the landing row on success or INVALID_MOVE.
 		 */
-		public function get last_player():int
+		public function drop_piece(game_piece:int, column:int):int
 		{
-			return this._last_player;
+			// set a false return value
+			var row:int = INVALID_MOVE;
+			
+			// make sure the column exists
+			if (column >= 0 && column < this.width)
+			{
+				// iterate over the column
+				for (var i:int = 0; i < this.height; i++)
+				{
+					// check for a valid drop location
+					if (this._board[column][i] == GamePieceEnum.NONE)
+					{
+						this._board[column][i] = game_piece;
+						row = i;
+						break;
+					}
+				}
+			}
+			
+			// return the row where the piece was dropped
+			return row;
 		}
 		
 		///////////////////////////////////////////////////////////////////////

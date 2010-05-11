@@ -11,7 +11,6 @@ package engine
 			assertEquals(board.width, 7);
 			assertEquals(board.height, 6);
 			assertEquals(board.num_to_connect, 4);
-			assertEquals(board.last_player, GamePieceEnum.NONE);
 		}
 		
 		public function testConstructionWithValidArgs():void
@@ -21,7 +20,6 @@ package engine
 			assertEquals(board.width, 10);
 			assertEquals(board.height, 7);
 			assertEquals(board.num_to_connect, 5);
-			assertEquals(board.last_player, GamePieceEnum.NONE);
 		}
 		
 		public function testConstructionWithInvalidArgs():void
@@ -31,7 +29,6 @@ package engine
 			assertEquals(board.width, 7);
 			assertEquals(board.height, 6);
 			assertEquals(board.num_to_connect, 4);
-			assertEquals(board.last_player, GamePieceEnum.NONE);
 		}
 		
 		public function testNumOfWinPlaces():void
@@ -41,8 +38,8 @@ package engine
 			// way to create a test set but I could not find
 			// a good reference.
 			
-			// this algorithm has four equivalence classes
-			// each test below is for one of those classes
+			// This algorithm has four equivalence classes.
+			// Each test below is for one of those classes.
 			
 			// invalid board values
 			assertEquals(Board.num_of_win_places(5, 5, 10), 0);
@@ -56,6 +53,26 @@ package engine
 			// standard game
 			assertEquals(Board.num_of_win_places(7, 6, 4), 69);
 			assertEquals((new Board(7, 6, 4)).num_of_win_places, 69);
+		}
+		
+		public function testDropPiece():void
+		{
+			var board:engine.Board = new engine.Board(7, 6, 4);
+			
+			// valid drops followed by column full
+			assertEquals(board.drop_piece(GamePieceEnum.BLACK, 0), 0);
+			assertEquals(board.drop_piece(GamePieceEnum.BLACK, 0), 1);
+			assertEquals(board.drop_piece(GamePieceEnum.BLACK, 0), 2);
+			assertEquals(board.drop_piece(GamePieceEnum.BLACK, 0), 3);
+			assertEquals(board.drop_piece(GamePieceEnum.BLACK, 0), 4);
+			assertEquals(board.drop_piece(GamePieceEnum.BLACK, 0), 5);
+			assertEquals(board.drop_piece(GamePieceEnum.BLACK, 0), Board.INVALID_MOVE);
+			assertEquals(board.drop_piece(GamePieceEnum.BLACK, 0), Board.INVALID_MOVE);
+			assertEquals(board.drop_piece(GamePieceEnum.BLACK, 0), Board.INVALID_MOVE);
+			
+			// invalid colums
+			assertEquals(board.drop_piece(GamePieceEnum.BLACK, -1), Board.INVALID_MOVE);
+			assertEquals(board.drop_piece(GamePieceEnum.BLACK, 7), Board.INVALID_MOVE);
 		}
 	}
 }
