@@ -5,7 +5,7 @@ package engine
 	/**
 	 * The current score and score statistics of both players.
 	 */
-	public class Scores
+	internal class Scores
 	{
 		///////////////////////////////////////////////////////////////////////
 		// Data Members
@@ -72,6 +72,14 @@ package engine
 		
 		///////////////////////////////////////////////////////////////////////
 		// Game Operations
+		
+		/**
+		 * @return The score of the requested player at the current game state.
+		 */
+		public function score(player:int):int
+		{
+			return this._score[player];
+		}
 
 		/**
 		 * Update the scores of both players based on a given move. No attempt

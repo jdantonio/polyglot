@@ -53,8 +53,13 @@ package engine
 		/** The scores and scores statistics of both platers. */
 		private var _scores:Scores;
 		
-		/** The total number of board locations that currently have pieces. Used to determine if the game is a tie. */
+		/** The total number of board locations that currently have pieces.
+		    Used to determine if the game is a tie. */
 		private var _num_of_pieces:int;
+		
+		/** A complete history of all moves made in the game.
+		    Useful for cloning the current game state and for replaying the game. */
+		private var _history:Vector.<Move>;
 		
 		///////////////////////////////////////////////////////////////////////
 		// Construction
@@ -109,6 +114,9 @@ package engine
 			
 			// create scores manager
 			this._scores = new Scores(this);
+			
+			// create the empty history
+			this._history = new Vector.<Move>;
 		}
 		
 		///////////////////////////////////////////////////////////////////////
@@ -172,20 +180,108 @@ package engine
 		}
 		
 		/**
-		 * @return True if the game is a tie else false. A tie can only occur when
-		 *         the board is completely full and neither player has won. It is
-		 *         theoretically possible that a game may be in a state where
-		 *         neither player can win but that the board is not full. Such a
-		 *         state does not constitute a tie. The game cannot be tied until
-		 *         the board is full.
+		 * @return The score of the requested player at the current game state.
 		 */
-		public function get is_tie():Boolean
+		public function score(color:int):int
 		{
-			return (this.num_of_pieces == this.num_of_spaces) && this.winner == Player.NONE;
+			return this._scores.score(color);
+		}
+		
+		public function equals(other:Board):Boolean
+		{
+			var eq:Boolean = false;
+
+			// check the game conditions
+			if (other != null && this.width == other.width && this.height == other.height
+				&& this.win_condition == other.win_condition)
+			{
+				// compare the pieces in the entire board
+				eq = true;
+				for (var x:int = 0; x < this.width; x++)
+				{
+					for (var y:int = 0; y < this.height; y++)
+					{
+						if (this._board[x][y] != other._board[x][y])
+						{
+							eq = false;
+							break;
+						}
+					}
+				}
+			}
+			
+			return eq;
 		}
 		
 		///////////////////////////////////////////////////////////////////////
 		// Game Operations
+		
+		/**
+		 * Determine if the game is a tie. A tie can only occur when the board
+		 * is completely full and neither player has won. It is theoretically
+		 * possible that a game may be in a state where neither player can
+		 * win but that the board is not full. Such a state does not constitute
+		 * a tie. The game cannot be tied until the board is full.
+		 * 
+		 * @return True if the game is a tie else false.
+		 */
+		public function is_tie():Boolean
+		{
+			return (this.num_of_pieces == this.num_of_spaces) && this.winner == Player.NONE;
+		}
+		
+		/**
+		 * Get the color of the requested coordinates..
+		 * 
+		 * @param colum The x-coordinate of the space in the board to be checked.
+		 * @param row The y-coordinate of the space in the board to be checked.
+		 * 
+		 * @return The color of the space if the coordinates are valid and the
+		 *         space is occupied else NONE.
+		 */
+		public function color_of_space(column:int, row:int):int
+		{
+			if (column >= 0 && column < this.width && row >= 0 && row < this.height)
+			{
+				return this._board[column][row];
+			}
+			else
+			{
+				return Player.NONE;
+			}
+		}
+		
+		/**
+		 * Determine if a give space is open.
+		 * 
+		 * @param colum The x-coordinate of the space in the board to be checked.
+		 * @param row The y-coordinate of the space in the board to be checked.
+		 * 
+		 * @return True if the coordinates are valid and the space is open else false.
+		 */
+		public function is_space_open(column:int, row:int):Boolean
+		{
+			return this.color_of_space(column, row) == Player.NONE;
+		}
+		
+		public function is_column_open(column:int):Boolean
+		{
+			var open:Boolean = false;
+			
+			if (column >= 0 && column < this.width)
+			{
+				for each (var color:int in this._board[column])
+				{
+					if (color == Player.NONE)
+					{
+						open = true;
+						break;
+					}
+				}
+			}
+			
+			return open;
+		}
 		
 		/**
 		 * Drop a piece of the specified color into the game board. Return
@@ -243,6 +339,7 @@ package engine
 			{
 				this._num_of_pieces++;
 				this._scores.update_score(color, column, row);
+				this._history.push(new Move(color, column));
 			}
 			
 			// return the row where the piece was dropped
@@ -251,6 +348,30 @@ package engine
 		
 		///////////////////////////////////////////////////////////////////////
 		// Utility Methods
+		
+		/**
+		 * Create a copy of the given board to include the complete state
+		 * (pieces placed, score, etc.). This is useful if one player (such as
+		 * an AI) wantes to look ahead and evaluate moves. Since the clone will
+		 * include clones of all internal data members it is a copy that can
+		 * be safely operated on and thrown away without affecting the game.
+		 * 
+		 * @param board The board to be cloned.
+		 * 
+		 * @return The clone or null if given a null reference.
+		 */
+		public static function clone(board:Board):Board
+		{
+			var clone:Board = null;
+			
+			if (board != null)
+			{
+				clone = new Board(board.width, board.height, board.win_condition);
+				for each (var m:Move in board._history) clone.drop_piece(m.color, m.column);
+			}
+			
+			return clone;
+		}
 		
 		/**
 		 * Calculate the number of possible winning combinations in a board of

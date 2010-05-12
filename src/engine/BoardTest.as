@@ -2,6 +2,8 @@ package engine
 {
 	import flexunit.framework.TestCase;
 	
+	import mx.effects.easing.Back;
+	
 	public class BoardTest extends TestCase
 	{
 		public function testConstructionWithoutArgs():void
@@ -159,32 +161,127 @@ package engine
 			// fill the board until a tie
 			
 			board.drop_piece(Player.BLACK, 0);
-			assertFalse(board.is_tie);
+			assertFalse(board.is_tie());
 			
 			board.drop_piece(Player.RED, 1);
-			assertFalse(board.is_tie);
+			assertFalse(board.is_tie());
 			
 			board.drop_piece(Player.BLACK, 0);
-			assertFalse(board.is_tie);
+			assertFalse(board.is_tie());
 			
 			board.drop_piece(Player.RED, 1);
-			assertFalse(board.is_tie);
+			assertFalse(board.is_tie());
 			
 			board.drop_piece(Player.BLACK, 2);
-			assertFalse(board.is_tie);
+			assertFalse(board.is_tie());
 			
 			board.drop_piece(Player.RED, 0);
-			assertFalse(board.is_tie);
+			assertFalse(board.is_tie());
 			
 			board.drop_piece(Player.BLACK, 2);
-			assertFalse(board.is_tie);
+			assertFalse(board.is_tie());
 			
 			board.drop_piece(Player.RED, 2);
-			assertFalse(board.is_tie);
+			assertFalse(board.is_tie());
 			
 			// final piece should tie the game
 			board.drop_piece(Player.BLACK, 1);
-			assertTrue(board.is_tie);
+			assertTrue(board.is_tie());
+		}
+		
+		public function testSpaceColorAndOpenness():void
+		{
+			var board:Board = new Board(3, 3, 3);
+
+			// check the full board for empty
+			for (var x:int = 0; x < board.width; x++)
+			{
+				for (var y:int = 0; y < board.height; y++)
+				{
+					assertEquals(board.color_of_space(x, y), Player.NONE);
+					assertTrue(board.is_space_open(x, y));
+				}
+			}
+			
+			// drop a few pieces and check
+			
+			board.drop_piece(Player.RED, 0);
+			assertEquals(board.color_of_space(0, 0), Player.RED);
+			assertFalse(board.is_space_open(0, 0));
+			
+			board.drop_piece(Player.BLACK, 0);
+			assertEquals(board.color_of_space(0, 0), Player.RED);
+			assertFalse(board.is_space_open(0, 0));
+			assertEquals(board.color_of_space(0, 1), Player.BLACK);
+			assertFalse(board.is_space_open(0, 1));
+		}
+		
+		public function testIsColumnOpen():void
+		{
+			var board:Board = new Board(3, 3, 3);
+			
+			// check that all columns are open
+			for (var x:int = 0; x < board.width; x++)
+			{
+				assertTrue(board.is_column_open(x));
+			}
+			
+			// fill a row and check it
+			for (var y:int = 0; y < board.height - 1; y++)
+			{
+				board.drop_piece(Player.RED, 0);
+				assertTrue(board.is_column_open(0));
+			}
+			board.drop_piece(Player.RED, 0);
+			assertFalse(board.is_column_open(0));
+		}
+		
+		public function testEquals():void
+		{
+			var b1:Board = new Board();
+			var b2:Board = new Board();
+			
+			// check new boards and null
+			assertFalse(b1.equals(null));
+			assertTrue(b1.equals(b2));
+			
+			// make a few moves and check again
+			for (var x:int = 0; x < b1.width; x++)
+			{
+				b1.drop_piece(Player.BLACK, x);
+				b2.drop_piece(Player.BLACK, x);
+				b1.drop_piece(Player.RED, x);
+				b2.drop_piece(Player.RED, x);
+			}
+			assertTrue(b1.equals(b2));
+			
+			// make another move to break equality
+			b1.drop_piece(Player.BLACK, 0);
+			assertFalse(b1.equals(b2));
+			
+			// create two different boards and compare
+			b1 = new Board(7, 6, 4);
+			b2 = new Board(6, 7, 4);
+			assertFalse(b1.equals(b2));
+		}
+		
+		public function testClone():void
+		{
+			var b1:Board, b2:Board;
+
+			// clone and empty board and compare
+			b1 = new Board();
+			b2 = Board.clone(b1);
+			assertTrue(b1.equals(b2));
+			
+			// make a few moves then clone and compare
+			b1 = new Board(3, 3, 3);
+			b1.drop_piece(Player.BLACK, 0);
+			b1.drop_piece(Player.RED, 0);
+			b1.drop_piece(Player.BLACK, 2);
+			b1.drop_piece(Player.RED, 3);
+			b2 = Board.clone(b1);
+			assertTrue(b1.equals(b2));
 		}
 	}
 }

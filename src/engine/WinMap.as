@@ -13,7 +13,7 @@ package engine
 	 * the game board. Each element of the map contains a set of all win
 	 * indicies using that board location.
 	 */
-	public class WinMap
+	internal class WinMap
 	{
 		///////////////////////////////////////////////////////////////////////
 		// Data Members

@@ -1,29 +1,35 @@
 package engine
 {
-	public class TestPlayer extends Player
+	/**
+	 * A bean class for storing one move. Intended to be used for history tracking.
+	 * This is useful for replaying a game or cloning a board.
+	 */
+	public class Move
 	{
-		///////////////////////////////////////////////////////////////////////
-		// Data Members
-		
-		private var _move_counter:int = 0;
-		
-		///////////////////////////////////////////////////////////////////////
-		// Construction
-		
-		public function TestPlayer(board:Board, color:int)
+		private var _color:int;
+		private var _column:int;
+		private var _timestamp:Date;
+
+		public function Move(color:int, column:int)
 		{
-			// call the parent constructor to remove abstract
-			super(this, board, color);
+			this._color = color;
+			this._column = column;
+			this._timestamp = new Date();
 		}
-		
-		///////////////////////////////////////////////////////////////////////
-		// Game Operations
-		
-		public override function make_move():int
+
+		public function get color():int
 		{
-			var next_move:int = this._move_counter;
-			if (++this._move_counter == 4) this._move_counter = 0;
-			return next_move;
+			return this._color;
+		}
+
+		public function get column():int
+		{
+			return this._column;
+		}
+
+		public function get timestamp():Date
+		{
+			return this._timestamp;
 		}
 	}
 }

@@ -1,29 +1,53 @@
 package engine
 {
-	public class TestPlayer extends Player
-	{
-		///////////////////////////////////////////////////////////////////////
-		// Data Members
-		
-		private var _move_counter:int = 0;
-		
-		///////////////////////////////////////////////////////////////////////
-		// Construction
-		
-		public function TestPlayer(board:Board, color:int)
+	import flexunit.framework.TestCase;
+	
+	public class AIPlayerTest extends TestCase
+	{		
+		public function testConstruction():void
 		{
-			// call the parent constructor to remove abstract
-			super(this, board, color);
+			var ai:AIPlayer;
+			var color:int = Player.RED;
+			var board:Board = new Board();
+			
+			// test various skill level settings
+			
+			ai = new AIPlayer(board, color);
+			assertEquals(ai.skill, AIPlayer.DEFAULT_SKILL);
+			
+			ai = new AIPlayer(board, color, AIPlayer.MIN_SKILL - 1);
+			assertEquals(ai.skill, AIPlayer.MIN_SKILL);
+			
+			ai = new AIPlayer(board, color, AIPlayer.MIN_SKILL + 1);
+			assertEquals(ai.skill, AIPlayer.MIN_SKILL + 1);
+			
+			ai = new AIPlayer(board, color, AIPlayer.MAX_SKILL + 1);
+			assertEquals(ai.skill, AIPlayer.MAX_SKILL);
 		}
 		
-		///////////////////////////////////////////////////////////////////////
-		// Game Operations
-		
-		public override function make_move():int
+		public function testAllisOpen():void
 		{
-			var next_move:int = this._move_counter;
-			if (++this._move_counter == 4) this._move_counter = 0;
-			return next_move;
+			var ai:AIPlayer;
+			var board:Board;
+			
+			// first move of game, odd width (TRUE)
+			board = new Board(3, 3, 3);
+			ai = new AIPlayer(board, Player.RED);
+			assertEquals(ai.make_move(), 1);
+			
+			// second move of game, odd width (TRUE)
+			board = new Board(3, 3, 3);
+			board.drop_piece(Player.BLACK, 0);
+			ai = new AIPlayer(board, Player.RED);
+			assertEquals(ai.make_move(), 1);
+		}
+		
+		public function testDropOrder():void
+		{
+			assertEquals(AIPlayer.drop_order(3).join(), "1,2,0");
+			assertEquals(AIPlayer.drop_order(7).join(), "3,4,2,5,1,6,0");
+			assertEquals(AIPlayer.drop_order(8).join(), "3,4,2,5,1,6,0,7");
+			assertEquals(AIPlayer.drop_order(10).join(), "4,5,3,6,2,7,1,8,0,9");
 		}
 	}
 }

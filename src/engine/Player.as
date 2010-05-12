@@ -21,20 +21,25 @@ package engine
 		
 		private var _color:int;
 		
+		private var _board:Board;
+		
 		///////////////////////////////////////////////////////////////////////
 		// Construction
 
-		public function Player(self:Player, color:int)
+		public function Player(self:Player, board:Board, color:int)
 		{
 			// validate parameters
 			if (self != this) {
 				throw new IllegalOperationError("Player cannot be instantiated directly.");
 			} else if (! Player.is_valid_color(color)) {
 				throw new TypeError("Player must be instantiated with a valid color.");
+			} else if (board == null) {
+				throw new TypeError("Player must be instantiated with a valid board.");
 			}
 			
-			// set the color
+			// set the internal data
 			this._color = color;
+			this._board = board;
 		}
 		
 		///////////////////////////////////////////////////////////////////////
@@ -43,6 +48,11 @@ package engine
 		public function get color():int
 		{
 			return this._color;
+		}
+		
+		protected function get board():Board
+		{
+			return this._board;
 		}
 		
 		///////////////////////////////////////////////////////////////////////
