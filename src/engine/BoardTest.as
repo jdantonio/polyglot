@@ -55,16 +55,6 @@ package engine
 			assertEquals((new Board(7, 6, 4)).num_of_win_places, 69);
 		}
 		
-		public function testMagicWinNumber():void
-		{
-			assertEquals((new Board(10, 10, 1).magic_win_number), 2);
-			assertEquals((new Board(10, 10, 2).magic_win_number), 4);
-			assertEquals((new Board(10, 10, 3).magic_win_number), 8);
-			assertEquals((new Board(10, 10, 4).magic_win_number), 16);
-			assertEquals((new Board(10, 10, 5).magic_win_number), 32);
-			assertEquals((new Board(10, 10, 6).magic_win_number), 64);
-		}
-		
 		public function testDropPiece():void
 		{
 			var board:engine.Board = new engine.Board(7, 6, 4);

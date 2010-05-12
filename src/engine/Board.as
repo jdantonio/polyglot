@@ -1,7 +1,5 @@
 package engine
-{
-	import flash.utils.Dictionary;
-	
+{	
 	/**
 	 * A virtual representation of a the game board. Virtual pieces can be placed
 	 * into the game board by "dropping" them into columns. Like a real game
@@ -52,12 +50,6 @@ package engine
 		/** The total number of possible winning sequences. */
 		private var _num_of_win_places:int;
 		
-		/** Hash for storing the current scored for all players. */
-		private var _scores:Dictionary;
-		
-		/** Object for storing all the possible winning piece combinations. */
-		private var _map:WinMap;
-		
 		///////////////////////////////////////////////////////////////////////
 		// Construction
 		
@@ -105,19 +97,6 @@ package engine
 					this._board[x][y] = GamePieceEnum.NONE;
 				}
 			}
-			
-			// create the scores array
-			this._scores = new Dictionary();
-			this._scores[GamePieceEnum.BLACK] = new Array(this.num_of_win_places);
-			this._scores[GamePieceEnum.RED] = new Array(this.num_of_win_places);
-			for (var i:int = 0; i < this.num_of_win_places; i++)
-			{
-				this._scores[GamePieceEnum.BLACK][i] = 1;
-				this._scores[GamePieceEnum.RED][i] = 1;
-			}
-			
-			// create the win map
-			this._map = new WinMap(this.width, this.height, this.win_condition);
 		}
 		
 		///////////////////////////////////////////////////////////////////////
@@ -150,12 +129,6 @@ package engine
 		public function get num_of_win_places():int
 		{
 			return Board.num_of_win_places(this.width, this.height, this._win_condition);
-		}
-		
-		/** Magic number, based on win condition, used to calculate player scores. */
-		public function get magic_win_number():int
-		{
-			return 1 << this.win_condition
 		}
 		
 		///////////////////////////////////////////////////////////////////////
@@ -216,54 +189,6 @@ package engine
 			return row;
 		}
 		
-		private function update_score(player:int, column:int, row:int):void
-		{
-			/*
-			register int i;
-			int win_index;
-			int this_difference = 0, other_difference = 0;
-			int **current_score_array = current_state->score_array;
-			int other_player = other(player);
-			
-			for (i=0; map[x][y][i] != -1; i++) {
-				win_index = map[x][y][i];
-				this_difference += current_score_array[player][win_index];
-				other_difference += current_score_array[other_player][win_index];
-				
-				current_score_array[player][win_index] <<= 1;
-				current_score_array[other_player][win_index] = 0;
-				
-				if (current_score_array[player][win_index] == magic_win_number)
-					if (current_state->winner == C4_NONE)
-						current_state->winner = player;
-			}
-			
-			current_state->score[player] += this_difference;
-			current_state->score[other_player] -= other_difference;
-			*/
-			
-			// check for valid color
-			if (! GamePieceEnum.is_valid_color(player)) return;
-			
-			// calulation variables
-			var player_diff:int = 0;
-			var other_diff:int = 0;
-			var other:int = GamePieceEnum.other_piece(player);
-			
-			// get the win indicies for the selected board location
-			var win_indicies:Vector.<int> = this._map.win_indicies(column, row);
-			
-			// iterate over all possible win indicies
-			for each (var win_index:int in win_indicies)
-			{
-				// TODO: Finish implementation
-				
-				// check the score differential
-				player_diff += this._scores[player][win_index];
-				other_diff += this._scores[other][win_index];
-			}
-		}
-		
 		///////////////////////////////////////////////////////////////////////
 		// Utility Methods
 		
@@ -271,10 +196,6 @@ package engine
 		 * Calculate the number of possible winning combinations in a board of
 		 * a given set of dimensions with a given number of pieces in a row
 		 * required to win.
-		 * 
-		 * @note The algorithm of this function came directly from the source
-		 *       Pomakis' game engine. There was no explanation of how this
-		 *       worked. I am talking it on blind faith that it is correct.
 		 * 
 		 * @param width The width of the board.
 		 * @param height The height of the board.

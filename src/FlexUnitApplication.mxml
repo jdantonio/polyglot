@@ -7,6 +7,7 @@
 			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600" xmlns:flexui="flexunit.flexui.*" creationComplete="onCreationComplete()">
 	<fx:Script>
 		<![CDATA[
+			import engine.ScoresTest;
 			import engine.BoardTest;
 			import engine.WinMapTest;
 			
@@ -15,6 +16,7 @@
 				var testsToRun:Array = new Array();
 				testsToRun.push(engine.WinMapTest);
 				testsToRun.push(engine.BoardTest);
+				testsToRun.push(engine.ScoresTest);
 				return testsToRun;
 			}
 			
