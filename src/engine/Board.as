@@ -53,6 +53,9 @@ package engine
 		/** The scores and scores statistics of both platers. */
 		private var _scores:Scores;
 		
+		/** The total number of board locations that currently have pieces. Used to determine if the game is a tie. */
+		private var _num_of_pieces:int;
+		
 		///////////////////////////////////////////////////////////////////////
 		// Construction
 		
@@ -78,6 +81,9 @@ package engine
 			if (height <= 0) {
 				height = DEFAULT_HEIGHT;
 			}
+			
+			// declare this an empty board
+			this._num_of_pieces = 0;
 			
 			// set board win_condition to a valid value
 			// if the win condition is greater than width or height it is invalid
@@ -132,14 +138,50 @@ package engine
 			return this._win_condition;
 		}
 		
+		/**
+		 * @return The number possible winning combinations for this board.
+		 */
 		public function get num_of_win_places():int
 		{
 			return Board.num_of_win_places(this.width, this.height, this._win_condition);
 		}
 		
+		/**
+		 * @return The number of game pieces that have been dropped into this board.
+		 */
+		public function get num_of_pieces():int
+		{
+			return this._num_of_pieces
+		}
+		
+		/**
+		 * @return The total number of spaces available for game pieces in this board.
+		 */
+		public function get num_of_spaces():int
+		{
+			return this.height * this.width;
+		}
+		
+		/**
+		 * @return The color of the player currently winning this board. NONE if the
+		 *         board is empty or in any other non-winning state.
+		 */
 		public function get winner():int
 		{
 			return this._scores.winner;
+		}
+		
+		/**
+		 * @return True if the game is a tie else false. A tie can only occur when
+		 *         the board is completely full and neither player has won. It is
+		 *         theoretically possible that a game may be in a state where
+		 *         neither player can win but that the board is not full. Such a
+		 *         state does not constitute a tie. The game cannot be tied until
+		 *         the board is full.
+		 */
+		public function get is_tie():Boolean
+		{
+			return (this.num_of_pieces == this.num_of_spaces) && this.winner == Player.NONE;
 		}
 		
 		///////////////////////////////////////////////////////////////////////
@@ -199,6 +241,7 @@ package engine
 			// update the scores
 			if (row != INVALID_MOVE)
 			{
+				this._num_of_pieces++;
 				this._scores.update_score(color, column, row);
 			}
 			

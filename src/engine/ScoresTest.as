@@ -4,9 +4,52 @@ package engine
 	
 	public class ScoresTest extends TestCase
 	{
-		public function testWinner():void
+		public function testWinnerEmptyBoard():void
 		{
 			assertEquals(new Scores(new Board(1, 1, 1)).winner, Player.NONE)
+		}
+		
+		public function testWinnerVerticalWin():void
+		{
+			var n:int = 3;
+			var winner:int = Player.BLACK;
+			var scores:Scores = new Scores(new Board(n, n, n));
+			
+			for (var i:int = 0; i < n; i++)
+			{
+				scores.update_score(winner, 0, i);
+			}
+			assertEquals(scores.winner, winner);
+		}
+		
+		public function testWinnerHorizontalWin():void
+		{
+			var n:int = 3;
+			var winner:int = Player.BLACK;
+			var scores:Scores = new Scores(new Board(n, n, n));
+			
+			for (var i:int = 0; i < n; i++)
+			{
+				scores.update_score(winner, i, 0);
+			}
+			assertEquals(scores.winner, winner);
+		}
+		
+		public function testWinnerTie():void
+		{
+			var scores:Scores = new Scores(new Board(3, 3, 3));
+			
+			scores.update_score(Player.BLACK, 0, 0);
+			scores.update_score(Player.RED, 1, 0);
+			scores.update_score(Player.BLACK, 0, 1);
+			scores.update_score(Player.RED, 1, 1);
+			scores.update_score(Player.BLACK, 2, 0);
+			scores.update_score(Player.RED, 0, 2);
+			scores.update_score(Player.BLACK, 2, 1);
+			scores.update_score(Player.RED, 2, 2);
+			scores.update_score(Player.BLACK, 1, 2);
+
+			assertEquals(scores.winner, Player.NONE);
 		}
 		
 		public function testMagicWinNumber():void

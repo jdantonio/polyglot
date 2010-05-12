@@ -19,12 +19,14 @@ package engine
 			var active_player:Player = player1;
 			
 			// while no winner and no tie
-			while (board.winner == Player.NONE)
+			while (board.winner == Player.NONE && ! board.is_tie)
 			{
 				// active player moves
 				var next_move:int = active_player.make_move();
 				var next_color:int = active_player.color;
 				var row:int = board.drop_piece(next_color, next_move);
+				
+				while (board.drop_piece(active_player.color, active_player.make_move()) != Board.INVALID_MOVE) { }
 
 				// render the board
 				
@@ -37,6 +39,7 @@ package engine
 			}
 			
 			// announce the winner
+			var winner:int = board.winner;
 		}
 	}
 }

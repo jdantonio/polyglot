@@ -86,6 +86,106 @@ package engine
 			assertEquals(board.drop_piece(Player.RED, -1), Board.INVALID_MOVE);
 			assertEquals(board.drop_piece(Player.BLACK, board.width), Board.INVALID_MOVE);
 		}
+		
+		public function testNumSpaces():void
+		{
+			assertEquals(new Board(1, 1, 1).num_of_spaces, 1);
+			assertEquals(new Board(3, 3, 1).num_of_spaces, 9);
+			assertEquals(new Board(6, 7, 1).num_of_spaces, 42);
+			assertEquals(new Board(6, 7, 9).num_of_spaces, 42);
+			assertEquals(new Board(7, 6, 1).num_of_spaces, 42);
+			assertEquals(new Board(7, 6, 9).num_of_spaces, 42);
+		}
+		
+		public function testNumPiecesValidMoves():void
+		{
+			var board:Board = new Board(3, 3, 3);
+			
+			// empty board
+			assertEquals(board.num_of_pieces, 0);
+
+			// fill the board until a tie
+			
+			board.drop_piece(Player.BLACK, 0);
+			assertEquals(board.num_of_pieces , 1);
+			
+			board.drop_piece(Player.RED, 1);
+			assertEquals(board.num_of_pieces , 2);
+			
+			board.drop_piece(Player.BLACK, 0);
+			assertEquals(board.num_of_pieces , 3);
+			
+			board.drop_piece(Player.RED, 1);
+			assertEquals(board.num_of_pieces , 4);
+			
+			board.drop_piece(Player.BLACK, 2);
+			assertEquals(board.num_of_pieces , 5);
+			
+			board.drop_piece(Player.RED, 0);
+			assertEquals(board.num_of_pieces , 6);
+			
+			board.drop_piece(Player.BLACK, 2);
+			assertEquals(board.num_of_pieces , 7);
+			
+			board.drop_piece(Player.RED, 1);
+			assertEquals(board.num_of_pieces , 8);
+			
+			board.drop_piece(Player.BLACK, 2);
+			assertEquals(board.num_of_pieces , 9);
+		}
+		
+		public function testNumPiecesInalidMoves():void
+		{
+			var board:Board = new Board(2, 2, 2);
+			
+			// fill the first column and verify the number of pieces
+			board.drop_piece(Player.BLACK, 0);
+			board.drop_piece(Player.RED, 0);
+			assertEquals(board.num_of_pieces , 2);
+			
+			// add more to the row and verify the count does not increment
+			for (var i:int = 0; i < 5; i++)
+			{
+				board.drop_piece(Player.BLACK, 0);
+				board.drop_piece(Player.RED, 0);
+				assertEquals(board.num_of_pieces , 2);
+			}
+		}
+		
+		public function testIsTie():void
+		{
+			var board:Board = new Board(3, 3, 3);
+			
+			// fill the board until a tie
+			
+			board.drop_piece(Player.BLACK, 0);
+			assertFalse(board.is_tie);
+			
+			board.drop_piece(Player.RED, 1);
+			assertFalse(board.is_tie);
+			
+			board.drop_piece(Player.BLACK, 0);
+			assertFalse(board.is_tie);
+			
+			board.drop_piece(Player.RED, 1);
+			assertFalse(board.is_tie);
+			
+			board.drop_piece(Player.BLACK, 2);
+			assertFalse(board.is_tie);
+			
+			board.drop_piece(Player.RED, 0);
+			assertFalse(board.is_tie);
+			
+			board.drop_piece(Player.BLACK, 2);
+			assertFalse(board.is_tie);
+			
+			board.drop_piece(Player.RED, 2);
+			assertFalse(board.is_tie);
+			
+			// final piece should tie the game
+			board.drop_piece(Player.BLACK, 1);
+			assertTrue(board.is_tie);
+		}
 	}
 }
 ////////////////////////////////////////////////////////////////////////////////
