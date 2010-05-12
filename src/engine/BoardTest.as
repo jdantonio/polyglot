@@ -60,19 +60,19 @@ package engine
 			var board:engine.Board = new engine.Board(7, 6, 4);
 			
 			// valid drops followed by column full
-			assertEquals(board.drop_piece(GamePieceEnum.BLACK, 0), 0);
-			assertEquals(board.drop_piece(GamePieceEnum.BLACK, 0), 1);
-			assertEquals(board.drop_piece(GamePieceEnum.BLACK, 0), 2);
-			assertEquals(board.drop_piece(GamePieceEnum.BLACK, 0), 3);
-			assertEquals(board.drop_piece(GamePieceEnum.BLACK, 0), 4);
-			assertEquals(board.drop_piece(GamePieceEnum.BLACK, 0), 5);
-			assertEquals(board.drop_piece(GamePieceEnum.BLACK, 0), Board.INVALID_MOVE);
-			assertEquals(board.drop_piece(GamePieceEnum.BLACK, 0), Board.INVALID_MOVE);
-			assertEquals(board.drop_piece(GamePieceEnum.BLACK, 0), Board.INVALID_MOVE);
+			assertEquals(board.drop_piece(Player.BLACK, 0), 0);
+			assertEquals(board.drop_piece(Player.BLACK, 0), 1);
+			assertEquals(board.drop_piece(Player.BLACK, 0), 2);
+			assertEquals(board.drop_piece(Player.BLACK, 0), 3);
+			assertEquals(board.drop_piece(Player.BLACK, 0), 4);
+			assertEquals(board.drop_piece(Player.BLACK, 0), 5);
+			assertEquals(board.drop_piece(Player.BLACK, 0), Board.INVALID_MOVE);
+			assertEquals(board.drop_piece(Player.BLACK, 0), Board.INVALID_MOVE);
+			assertEquals(board.drop_piece(Player.BLACK, 0), Board.INVALID_MOVE);
 			
 			// invalid colums
-			assertEquals(board.drop_piece(GamePieceEnum.BLACK, -1), Board.INVALID_MOVE);
-			assertEquals(board.drop_piece(GamePieceEnum.BLACK, 7), Board.INVALID_MOVE);
+			assertEquals(board.drop_piece(Player.BLACK, -1), Board.INVALID_MOVE);
+			assertEquals(board.drop_piece(Player.BLACK, 7), Board.INVALID_MOVE);
 		}
 	}
 }

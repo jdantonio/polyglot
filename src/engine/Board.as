@@ -40,7 +40,7 @@ package engine
 		 * represents the x-axis and the height represents the y-axis. Location
 		 * (0,0) is the bottom left-hand corner. The value of each index
 		 * indicates what piece is in the grid and must come from the enum
-		 * GamePieceEnum. The array must be initialized to NONE in all indicies.
+		 * Player. The array must be initialized to NONE in all indicies.
 		 */
 		private var _board:Array;
 		
@@ -49,6 +49,9 @@ package engine
 		
 		/** The total number of possible winning sequences. */
 		private var _num_of_win_places:int;
+		
+		/** The scores and scores statistics of both platers. */
+		private var _scores:Scores;
 		
 		///////////////////////////////////////////////////////////////////////
 		// Construction
@@ -94,9 +97,12 @@ package engine
 				this._board[x] = new Array(height)
 				for (var y:int; y < height; y++)
 				{
-					this._board[x][y] = GamePieceEnum.NONE;
+					this._board[x][y] = Player.NONE;
 				}
 			}
+			
+			// create scores manager
+			this._scores = new Scores(this);
 		}
 		
 		///////////////////////////////////////////////////////////////////////
@@ -131,6 +137,11 @@ package engine
 			return Board.num_of_win_places(this.width, this.height, this._win_condition);
 		}
 		
+		public function get winner():int
+		{
+			return this._scores.winner;
+		}
+		
 		///////////////////////////////////////////////////////////////////////
 		// Game Operations
 		
@@ -152,7 +163,7 @@ package engine
 		 * after the move. That is a state of the board and not an operation.
 		 * It must be checked by the game code after a successful drop.
 		 * 
-		 * @pre The game_piece is a valid GamePieceEnum value.
+		 * @pre The game_piece is a valid Player value.
 		 * @pre The game piece belongs to the appropriate player.
 		 * 
 		 * @param game_piece The virtual game piece to be dropped into the board.
@@ -160,13 +171,13 @@ package engine
 		 * 
 		 * @return The number of the landing row on success or INVALID_MOVE.
 		 */
-		public function drop_piece(game_piece:int, column:int):int
+		public function drop_piece(player:int, column:int):int
 		{
 			// set a false return value
 			var row:int = INVALID_MOVE;
 			
 			// check the color of the game piece
-			if (GamePieceEnum.is_valid_color(game_piece))
+			if (Player.is_valid_color(player))
 			{
 				// make sure the column exists
 				if (column >= 0 && column < this.width)
@@ -175,14 +186,20 @@ package engine
 					for (var i:int = 0; i < this.height; i++)
 					{
 						// check for a valid drop location
-						if (this._board[column][i] == GamePieceEnum.NONE)
+						if (this._board[column][i] == Player.NONE)
 						{
-							this._board[column][i] = game_piece;
+							this._board[column][i] = player;
 							row = i;
 							break;
 						}
 					}
 				}
+			}
+			
+			// update the scores
+			if (row != INVALID_MOVE)
+			{
+				this._scores.update_score(player, column, row);
 			}
 			
 			// return the row where the piece was dropped

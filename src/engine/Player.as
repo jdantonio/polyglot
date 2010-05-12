@@ -1,7 +1,21 @@
 package engine
 {
+	import flash.errors.IllegalOperationError;
+	
+	/**
+	 * An abstract class
+	 * 
+	 * http://joshblog.net/2007/08/19/enforcing-abstract-classes-at-runtime-in-actionscript-3/
+	 */
 	public class Player
 	{
+		///////////////////////////////////////////////////////////////////////
+		// Constants
+		
+		public static const NONE:int = 0;
+		public static const RED:int = 1;
+		public static const BLACK:int = 2;
+		
 		///////////////////////////////////////////////////////////////////////
 		// Data Members
 		
@@ -9,16 +23,65 @@ package engine
 		
 		///////////////////////////////////////////////////////////////////////
 		// Construction
-		
-		public function Player(color:int)
+
+		public function Player(self:Player, color:int)
 		{
-			if (GamePieceEnum.is_valid_color(color))
-			{
-				this._color = color;
+			// validate parameters
+			if (self != this) {
+				throw new IllegalOperationError("Player cannot be instantiated directly.");
+			} else if (! Player.is_valid_color(color)) {
+				throw new TypeError("Player must be instantiated with a valid color.");
 			}
-			else
-			{
-				throw TypeError;
+			
+			// set the color
+			this._color = color;
+		}
+		
+		///////////////////////////////////////////////////////////////////////
+		// Property Accessors
+		
+		public function get color():int
+		{
+			return this._color;
+		}
+		
+		///////////////////////////////////////////////////////////////////////
+		// Game Operations
+		
+		public function make_move():int
+		{
+			return Board.INVALID_MOVE;
+		}
+		
+		///////////////////////////////////////////////////////////////////////
+		// Enum Functions
+		
+		public static function is_valid_color(color:int):Boolean
+		{
+			if (color == RED || color == BLACK) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		
+		public static function is_valid(color:int):Boolean
+		{
+			if (color == RED || color == BLACK || color == NONE) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		
+		public static function other_color(color:int):int
+		{
+			if (color == RED) {
+				return BLACK;
+			} else if (color == BLACK) {
+				return RED;
+			} else {
+				return NONE;
 			}
 		}
 	}

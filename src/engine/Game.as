@@ -1,27 +1,12 @@
 package engine
 {
-	/**
-	 * @link http://blog.pixelbreaker.com/flash/as30-better-singletons
-	 */
 	public class Game
-	{
-		public static const _instance:Game;
-		
-		public static function get instance():Game
+	{		
+		public function Game():void
 		{
-			if( instance == null ) instance = new Game(new GameEnforcer());
-			return instance;
-		}
-		
-		public function Game(pvt:GameEnforcer)
-		{
-			// init class
 		}
 	}
 }
-
-internal class GameEnforcer{}
-
 ////////////////////////////////////////////////////////////////////////////////
 // 
 // Copyright (c) 2010 Jerry D'Antonio <stumpjumper@gmail.com>.

@@ -4,5 +4,6 @@
 <testsuite name="engine:WinMapTest" type="testsuiteclass"/>
 <testsuite name="engine:BoardTest" type="testsuiteclass"/>
 <testsuite name="engine:ScoresTest" type="testsuiteclass"/>
+<testsuite name="engine:GameIntegrationTest" type="testsuiteclass"/>
 </testsuite>
 </testrun>
