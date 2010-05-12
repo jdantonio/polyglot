@@ -5,7 +5,7 @@ package engine
 		///////////////////////////////////////////////////////////////////////
 		// Construction
 		
-		private var _move_counter:int = -1;
+		private var _move_counter:int = 0;
 		
 		///////////////////////////////////////////////////////////////////////
 		// Construction
@@ -21,8 +21,9 @@ package engine
 		
 		public override function make_move():int
 		{
-			this._move_counter++;
-			return this._move_counter;
+			var next_move:int = this._move_counter;
+			if (++this._move_counter == 4) this._move_counter = 0;
+			return next_move;
 		}
 	}
 }

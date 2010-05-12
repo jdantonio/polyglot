@@ -6,7 +6,7 @@ package engine
 	{
 		public function testConstructionWithoutArgs():void
 		{
-			var board:engine.Board = new engine.Board();
+			var board:Board = new Board();
 			
 			assertEquals(board.width, 7);
 			assertEquals(board.height, 6);
@@ -15,7 +15,7 @@ package engine
 		
 		public function testConstructionWithValidArgs():void
 		{
-			var board:engine.Board = new engine.Board(10, 7, 5);
+			var board:Board = new Board(10, 7, 5);
 			
 			assertEquals(board.width, 10);
 			assertEquals(board.height, 7);
@@ -24,7 +24,7 @@ package engine
 		
 		public function testConstructionWithInvalidArgs():void
 		{
-			var board:engine.Board = new engine.Board(-1, 0, 1000);
+			var board:Board = new Board(-1, 0, 1000);
 			
 			assertEquals(board.width, 7);
 			assertEquals(board.height, 6);
@@ -55,24 +55,36 @@ package engine
 			assertEquals((new Board(7, 6, 4)).num_of_win_places, 69);
 		}
 		
-		public function testDropPiece():void
+		public function testDropPieceVertical():void
 		{
-			var board:engine.Board = new engine.Board(7, 6, 4);
-			
-			// valid drops followed by column full
-			assertEquals(board.drop_piece(Player.BLACK, 0), 0);
-			assertEquals(board.drop_piece(Player.BLACK, 0), 1);
-			assertEquals(board.drop_piece(Player.BLACK, 0), 2);
-			assertEquals(board.drop_piece(Player.BLACK, 0), 3);
-			assertEquals(board.drop_piece(Player.BLACK, 0), 4);
-			assertEquals(board.drop_piece(Player.BLACK, 0), 5);
+			// valid vertical drops followed by column full
+			var board:Board = new Board();
+			for (var i:int = 0; i < board.height; i++)
+			{
+				assertEquals(board.drop_piece(Player.BLACK, 0), i);
+				assertEquals(board.drop_piece(Player.RED, 1), i);
+			}
 			assertEquals(board.drop_piece(Player.BLACK, 0), Board.INVALID_MOVE);
-			assertEquals(board.drop_piece(Player.BLACK, 0), Board.INVALID_MOVE);
-			assertEquals(board.drop_piece(Player.BLACK, 0), Board.INVALID_MOVE);
-			
+			assertEquals(board.drop_piece(Player.RED, 1), Board.INVALID_MOVE);
+		}
+		
+		public function testDropPieceHorizontal():void
+		{
+			// valid horizontal drops
+			var board:Board = new Board();
+			for (var i:int = 0; i < board.width; i++)
+			{
+				assertEquals(board.drop_piece(Player.BLACK, i), 0);
+				assertEquals(board.drop_piece(Player.RED, i), 1);
+			}
+		}
+		
+		public function testDropPieceInvalidColumn():void
+		{
 			// invalid colums
-			assertEquals(board.drop_piece(Player.BLACK, -1), Board.INVALID_MOVE);
-			assertEquals(board.drop_piece(Player.BLACK, 7), Board.INVALID_MOVE);
+			var board:Board = new Board();
+			assertEquals(board.drop_piece(Player.RED, -1), Board.INVALID_MOVE);
+			assertEquals(board.drop_piece(Player.BLACK, board.width), Board.INVALID_MOVE);
 		}
 	}
 }

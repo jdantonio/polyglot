@@ -6,8 +6,6 @@ package engine
 	{
 		public function testSimpleGame():void
 		{
-			return;
-			
 			// create the first player
 			var player1:TestPlayer = new TestPlayer(Player.BLACK);			
 			

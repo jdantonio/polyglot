@@ -95,7 +95,7 @@ package engine
 			for (var x:int = 0; x < width; x++)
 			{
 				this._board[x] = new Array(height)
-				for (var y:int; y < height; y++)
+				for (var y:int = 0; y < height; y++)
 				{
 					this._board[x][y] = Player.NONE;
 				}
@@ -166,18 +166,18 @@ package engine
 		 * @pre The game_piece is a valid Player value.
 		 * @pre The game piece belongs to the appropriate player.
 		 * 
-		 * @param game_piece The virtual game piece to be dropped into the board.
+		 * @param color The virtual game piece to be dropped into the board.
 		 * @param column The column into which the piece is to be dropped.
 		 * 
 		 * @return The number of the landing row on success or INVALID_MOVE.
 		 */
-		public function drop_piece(player:int, column:int):int
+		public function drop_piece(color:int, column:int):int
 		{
 			// set a false return value
 			var row:int = INVALID_MOVE;
 			
 			// check the color of the game piece
-			if (Player.is_valid_color(player))
+			if (Player.is_valid_color(color))
 			{
 				// make sure the column exists
 				if (column >= 0 && column < this.width)
@@ -188,7 +188,7 @@ package engine
 						// check for a valid drop location
 						if (this._board[column][i] == Player.NONE)
 						{
-							this._board[column][i] = player;
+							this._board[column][i] = color;
 							row = i;
 							break;
 						}
@@ -199,7 +199,7 @@ package engine
 			// update the scores
 			if (row != INVALID_MOVE)
 			{
-				this._scores.update_score(player, column, row);
+				this._scores.update_score(color, column, row);
 			}
 			
 			// return the row where the piece was dropped
