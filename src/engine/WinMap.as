@@ -37,10 +37,10 @@ package engine
 		 * 
 		 * @param width The number of columns on the board.
 		 * @param height The number of rows on the board.
-		 * @param num_to_connect The number of contiguous board spaces
+		 * @param win_condition The number of contiguous board spaces
 		 *   a player needs to connect in order to win the game.
 		 */
-		public function WinMap(width:int, height:int, num_to_connect:int)
+		public function WinMap(width:int, height:int, win_condition:int)
 		{
 			// check for positive dimensions
 			if (width <= 0 || height <= 0) return;
@@ -67,10 +67,10 @@ package engine
 			for (i = 0; i < height; i++)
 			{
 				// loop through all columns that can be the start of a win
-				for (j = 0; j < width - num_to_connect + 1; j++)
+				for (j = 0; j < width - win_condition + 1; j++)
 				{
 					// mark all winning positions with the current win index
-					for (k = 0; k < num_to_connect; k++)
+					for (k = 0; k < win_condition; k++)
 					{						
 						// add the new win index to the vector
 						this._map[j+k][i].push(win_index);
@@ -84,10 +84,10 @@ package engine
 			for (i = 0; i < width; i++)
 			{
 				// loop through all columns that can be the start of a win
-				for (j = 0; j < height - num_to_connect + 1; j++)
+				for (j = 0; j < height - win_condition + 1; j++)
 				{
 					// mark all winning positions with the current win index
-					for (k = 0; k < num_to_connect; k++)
+					for (k = 0; k < win_condition; k++)
 					{
 						// add the new win index to the vector
 						this._map[i][j+k].push(win_index);
@@ -98,46 +98,34 @@ package engine
 			}
 			
 			// fill in the forward diaginal win positions
-			// NOTE: The algorithm in the Pomakis source does not match the sample map.
-			//       This algorithm was modified to match the sample data.
-			//       The two algorithms are functionally equivalent.
-			if (num_to_connect <= width && num_to_connect <= height)
+			for (i = 0; i < height - win_condition + 1; i++)
 			{
-				for (i = 0; i < width - num_to_connect + 1; i++)
+				for (j = 0; j < width - win_condition + 1; j++)
 				{
-					for (j = 0; j < height - num_to_connect + 1; j++)
+					// mark all winning positions with the current win index
+					for (k = 0; k < win_condition; k++)
 					{
-						// mark all winning positions with the current win index
-						for (k = 0; k < num_to_connect; k++)
-						{
-							// add the new win index to the vector
-							this._map[i+k][j+k].push(win_index);
-						}					
-						// increment the win index
-						win_index++;
-					}
+						// add the new win index to the vector
+						this._map[j+k][i+k].push(win_index);
+					}					
+					// increment the win index
+					win_index++;
 				}
 			}
 			
 			// fill in the backward diagonal win positions
-			// NOTE: The algorithm in the Pomakis source does not match the sample map.
-			//       This algorithm was modified to match the sample data.
-			//       The two algorithms are functionally equivalent.
-			if (num_to_connect <= width && num_to_connect <= height)
+			for (i = 0; i < height - win_condition + 1; i++)
 			{
-				for (i = 0; i < width - num_to_connect + 1; i++)
+				for (j = width - 1; j >= win_condition - 1; j--)
 				{
-					for (j = height - num_to_connect + 1; j < height; j++)
+					// mark all winning positions with the current win index
+					for (k = 0; k < win_condition; k++)
 					{
-						// mark all winning positions with the current win index
-						for (k = 0; k < num_to_connect; k++)
-						{
-							// add the new win index to the vector
-							this._map[i+k][j-k].push(win_index);
-						}
-						// increment the win index
-						win_index++;
+						// add the new win index to the vector
+						this._map[j-k][i+k].push(win_index);
 					}
+					// increment the win index
+					win_index++;
 				}
 			}
 		}
