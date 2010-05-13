@@ -20,6 +20,8 @@ package engine
 	 * state of the board, changes every time a piece is dropped into the board,
 	 * and is algorithmically tied to the size of the board and the number of
 	 * possible win conditions. 
+	 * 
+	 * @link http://www.pomakis.com/c4/
 	 */
 	public class Board
 	{

@@ -141,7 +141,9 @@ package engine
 		 * it is the opening turn for the AI and takes the center column if
 		 * the board has an odd number of columns and that space is available.
 		 * This method does not restrict itself to a 7x6 board so it is a
-		 * little more promiscuous than Victor Allis' proof.  
+		 * little more promiscuous than Victor Allis' proof.
+		 * 
+		 * @link http://www.informatik.uni-trier.de/~fernau/DSL0607/Masterthesis-Viergewinnt.pdf
 		 */
 		protected function allis_open():int
 		{

@@ -1,13 +1,78 @@
 = CONNECT FOUR
 
+== What It's All About ==
 
+This is a demo application written as a way for me to learn Adobe Flex development.
+The main goal was to familiarize myself with Flex and ActionScript but I didn't want
+to just whip out a "Flex in a Week" kind of application. I wanted to do something
+that was a little closer to what I would do at work: solid design, adherence to
+best practices, unit and integration testing, etc. I also wanted to get it done in
+about a week or so. This is the result.
 
+=== The Perilous Process of Porting the Pomakis Program ===
 
+Being the kind of person who doesn't like to reinvent the wheel, I did a brief web
+search looking for some algorithmic direction. I wanted to find something that would
+be a good reference, that decoupled the game logic from the interface, and that
+would require me to write enough code to get a good feel of the ActionScript langauge.
+Alex Pomakis wrote a simple Connect Four engine in 1992 and released it to the
+public domain (http://www.pomakis.com/c4/). The Pomakis code worked for me for
+several reasons:
+
+* It completely decouples the game engine from the UI.
+* It was written for an AI class so I assume the AL algorithms are solid.
+* The board algorithms support any arbitraty board size.
+* The code was written in ANSI C which means I had to rewrite everything.
+
+For reference the Pomakis code is included with the source in the doc folder.
+
+=== What I am Happy About ===
+
+Overall I am happy about the code. It has a game engine that is completely decoupled 
+from the UI; it has a good suite of test cases; the design has plenty of room to grow.
+I was able to dig into ActionScript to a fairly reasonable level. Not bad for a little
+over a week's work.
+
+=== What I am Unhappy About ===
+
+Not everything in this program is perfect. If I had infinite time to work on it I would
+do a couple of things a little differently:
+
+==== Board Width, Height, and Win Condition ====
+
+The class structure I created feels pretty good. Separating the Player, ScoreKeeper, and
+WinMap from the Board works pretty weel. Each of those classes is a good example of the
+Single Responsibility Principle. The problem is that all four need access to the width
+and height of the board and also the number of pieces in a row neede to win. Getting
+this data required redundancy in the consttructors and callback references to the Board
+class. This has a little stink. I considered creating a bean-like class to hold these
+properties but this wouldn't decrease the coupling and didn't really stink less.
+
+==== Bitwise Operations ====
+
+The Pomakis code used a "magic win number" to verify the winning move. The magic number
+and the related checks all use bitwise operations (old school C-style, baby!). Although
+I understand the overall algorithm I never learned how to do bitwise operations in my
+head so I had to take the original operations on blind faith. Since most programmers
+today don't do many bitwise operations my preference would be to remove these calculations.
+
+==== Test Data ====
+
+Although I am pretty happy with my test cases my test data is somewhat limited. The problem
+is that a standard 6x7 board generates many permutations of board state. Since my algorithms
+are not limited to one board size I had to do a fair amount of testing. I didn't have time
+to manually figure out a representative set of board states so many of my tests used very
+small boards (2x2 and 3x3). This was sufficient for a demo project but a production
+application needs much better test data.
 
 == Resources
 
 === Connect Four Algorithms
 
+* Connect Four on Wikipedia (http://en.wikipedia.org/wiki/Connect_Four)
+* Keith Pomakis "n-In-A-Row" (http://www.pomakis.com/c4/)
+* "Alpha-beta pruning" on Wikipedia (http://en.wikipedia.org/wiki/Alpha-beta_pruning)
+ 
 === General Information about Flex Development
 
 * "Flash Builder 4 and Flex 4 Bible" (Safari Books Online)
@@ -19,7 +84,7 @@
 * FunFX at GitHub (http://wiki.github.com/peternic/funfx/)
 * FlexUnit at Adobe Open Source (http://opensource.adobe.com/wiki/display/flexunit/FlexUnit)
 
-== Cucumber Testing:
+==== Cucumber Testing ====
 
 * sudo gem install cucumber
 * sudo gem install funfx
