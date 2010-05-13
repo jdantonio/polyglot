@@ -68,13 +68,6 @@ Putting aside the philosophical issue of using a proprietary technology like Fla
 * FunFX at GitHub (http://wiki.github.com/peternic/funfx/)
 * FlexUnit at Adobe Open Source (http://opensource.adobe.com/wiki/display/flexunit/FlexUnit)
 
-==== Cucumber Testing
-
-* sudo gem install cucumber
-* sudo gem install funfx
-* sudo gem install safariwatir
-* sudo gem install firewatir
-
 == COPYRIGHT
 
 Copyright (c) 2010 Jerry D'Antonio <stumpjumper@gmail.com>.
