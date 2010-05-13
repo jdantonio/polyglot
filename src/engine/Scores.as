@@ -28,6 +28,9 @@ package engine
 		///////////////////////////////////////////////////////////////////////
 		// Construction
 
+		/**
+		 * @param board The board on which these scores are calculated.
+		 */
 		public function Scores(board:Board)
 		{
 			// set the board reference

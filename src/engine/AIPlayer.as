@@ -1,24 +1,41 @@
 package engine
 {
+	/**
+	 * A basic artifical intelligence for playing connect four either against
+	 * a human player or another AI. The algorithms employed were developed by
+	 * Keith Pomakis in 1992 and eventually released into the public domain.
+	 */
 	public class AIPlayer extends Player
 	{
 		///////////////////////////////////////////////////////////////////////
 		// Constants
 	
+		/** The minimum skill level that the AI can be set to. */
 		public static const MIN_SKILL:int = 1;
+
+		/** The maximum skill level that the AI can be set to. */
 		public static const MAX_SKILL:int = 20;
+		
+		/** The default skill level for the AI when not explicitly set. */
 		public static const DEFAULT_SKILL:int = 5;
 		
 		///////////////////////////////////////////////////////////////////////
 		// Data Members
-		
+
+		/** The current skill level of the AI. */
 		private var _skill:int;
 		
+		/** An ordered list of columns for the AI to check when making moves. */
 		private var _drop_order:Array;
 		
 		///////////////////////////////////////////////////////////////////////
 		// Construction
-		
+
+		/**
+		 * @param board The board that the AI is playing the game on.
+		 * @param color The color of game piece the AI is using.
+		 * @param skill The skill level of the AI when it calculates its moves.
+		 */
 		public function AIPlayer(board:Board, color:int, skill:int = DEFAULT_SKILL)
 		{
 			// call the parent constructor to remove abstract
@@ -40,6 +57,7 @@ package engine
 		///////////////////////////////////////////////////////////////////////
 		// Property Accessors
 		
+		/** The current skill level of the AI. */
 		public function get skill():int
 		{
 			return this._skill;
@@ -47,7 +65,13 @@ package engine
 	
 		///////////////////////////////////////////////////////////////////////
 		// Game Operations
-		
+
+		/**
+		 * Examine the board and determine the next move.
+		 * 
+		 * @return The space selected for the next move or Board.INVALID_MOVE
+		 *         if the board is full.
+		 */
 		public override function make_move():int
 		{
 			// check for center-space openning move
@@ -130,7 +154,22 @@ package engine
 			
 			return column;
 		}
-		
+
+		/**
+		 * Recursively check moves for both the AI and the opposing player to
+		 * determine which move is the most liekly to lead to victory. The
+		 * greater the skill level of the AI the more potential moves forward
+		 * it will evaluate. An alpha-beta pruning algorithm is used to limit
+		 * the number of nodes evaluated. This method is based entirely on
+		 * the logic developed by Pomakis. 
+		 * 
+		 * @params board The clone board being used to propose future moves.
+		 * @params color The color of the player for which the board will
+		 *         be evaluated.
+		 * @params depth The number of levels deep the evaluation has gone.
+		 * @params alpha The current player's best choice.
+		 * @param beta The opposing player's best choice.
+		 */
 		private function evaluate(board:Board, color:int, depth:int, alpha:int, beta:int):int
 		{
 			var goodness:int = 0;

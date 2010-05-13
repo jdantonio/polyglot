@@ -26,10 +26,16 @@ package engine
 		///////////////////////////////////////////////////////////////////////
 		// Constants
 		
+		/** The width of a commercial Connect Four board. */
 		public static const DEFAULT_WIDTH:int = 7;
+		
+		/** The height of a commercial Connect Four board. */
 		public static const DEFAULT_HEIGHT:int = 6;
+		
+		/** The number of pieces in a row needed to win the commercial Connect Four game. */
 		public static const DEFAULT_WIN_CONDITION:int = 4;
 		
+		/** A constant used to represent an invalid move. */
 		public static const INVALID_MOVE:int = -1;
 		
 		///////////////////////////////////////////////////////////////////////
@@ -187,6 +193,12 @@ package engine
 			return this._scores.score(color);
 		}
 		
+		/**
+		 * Compare this board to another for equivalence. Equivalence occurs when the
+		 * two boards have the same height and width, both are working toward the same
+		 * win condition, and both have the same spaces occupied by pieces of the
+		 * same color.
+		 */
 		public function equals(other:Board):Boolean
 		{
 			var eq:Boolean = false;
