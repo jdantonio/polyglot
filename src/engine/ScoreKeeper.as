@@ -5,12 +5,12 @@ package engine
 	/**
 	 * The current score and score statistics of both players.
 	 */
-	internal class Scores
+	internal class ScoreKeeper
 	{
 		///////////////////////////////////////////////////////////////////////
 		// Data Members
 		
-		/** The board the game is being played on. Scores and the board are tightly coupled. */
+		/** The board the game is being played on. ScoreKeeper and the board are tightly coupled. */
 		private var _board:Board;
 		
 		/** Hash for storing the current score of each player. */
@@ -31,7 +31,7 @@ package engine
 		/**
 		 * @param board The board on which these scores are calculated.
 		 */
-		public function Scores(board:Board)
+		public function ScoreKeeper(board:Board)
 		{
 			// set the board reference
 			this._board = board;

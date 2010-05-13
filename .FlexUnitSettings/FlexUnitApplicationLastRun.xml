@@ -3,7 +3,7 @@
 <testsuite  name="Default Test Suite" project="Connect Four">
 <testsuite name="engine:WinMapTest" type="testsuiteclass"/>
 <testsuite name="engine:BoardTest" type="testsuiteclass"/>
-<testsuite name="engine:ScoresTest" type="testsuiteclass"/>
+<testsuite name="engine:ScoreKeeperTest" type="testsuiteclass"/>
 <testsuite name="engine:AIPlayerTest" type="testsuiteclass"/>
 <testsuite name="engine:GameIntegrationTest" type="testsuiteclass"/>
 </testsuite>

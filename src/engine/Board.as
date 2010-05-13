@@ -57,7 +57,7 @@ package engine
 		private var _num_of_win_places:int;
 		
 		/** The scores and scores statistics of both platers. */
-		private var _scores:Scores;
+		private var _scores:ScoreKeeper;
 		
 		/** The total number of board locations that currently have pieces.
 		    Used to determine if the game is a tie. */
@@ -119,7 +119,7 @@ package engine
 			}
 			
 			// create scores manager
-			this._scores = new Scores(this);
+			this._scores = new ScoreKeeper(this);
 			
 			// create the empty history
 			this._history = new Vector.<Move>;

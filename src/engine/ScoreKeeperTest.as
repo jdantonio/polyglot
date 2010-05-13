@@ -2,18 +2,18 @@ package engine
 {
 	import flexunit.framework.TestCase;
 	
-	public class ScoresTest extends TestCase
+	public class ScoreKeeperTest extends TestCase
 	{
 		public function testWinnerEmptyBoard():void
 		{
-			assertEquals(new Scores(new Board(1, 1, 1)).winner, Player.NONE)
+			assertEquals(new ScoreKeeper(new Board(1, 1, 1)).winner, Player.NONE)
 		}
 		
 		public function testWinnerVerticalWin():void
 		{
 			var n:int = 3;
 			var winner:int = Player.BLACK;
-			var scores:Scores = new Scores(new Board(n, n, n));
+			var scores:ScoreKeeper = new ScoreKeeper(new Board(n, n, n));
 			
 			for (var i:int = 0; i < n; i++)
 			{
@@ -26,7 +26,7 @@ package engine
 		{
 			var n:int = 3;
 			var winner:int = Player.BLACK;
-			var scores:Scores = new Scores(new Board(n, n, n));
+			var scores:ScoreKeeper = new ScoreKeeper(new Board(n, n, n));
 			
 			for (var i:int = 0; i < n; i++)
 			{
@@ -37,7 +37,7 @@ package engine
 		
 		public function testWinnerTie():void
 		{
-			var scores:Scores = new Scores(new Board(3, 3, 3));
+			var scores:ScoreKeeper = new ScoreKeeper(new Board(3, 3, 3));
 			
 			scores.update_score(Player.BLACK, 0, 0);
 			scores.update_score(Player.RED, 1, 0);
@@ -54,18 +54,18 @@ package engine
 		
 		public function testMagicWinNumber():void
 		{
-			assertEquals((new Scores(new Board(10, 10, 1)).magic_win_number), 2);
-			assertEquals((new Scores(new Board(10, 10, 2)).magic_win_number), 4);
-			assertEquals((new Scores(new Board(10, 10, 3)).magic_win_number), 8);
-			assertEquals((new Scores(new Board(10, 10, 4)).magic_win_number), 16);
-			assertEquals((new Scores(new Board(10, 10, 5)).magic_win_number), 32);
-			assertEquals((new Scores(new Board(10, 10, 6)).magic_win_number), 64);
+			assertEquals((new ScoreKeeper(new Board(10, 10, 1)).magic_win_number), 2);
+			assertEquals((new ScoreKeeper(new Board(10, 10, 2)).magic_win_number), 4);
+			assertEquals((new ScoreKeeper(new Board(10, 10, 3)).magic_win_number), 8);
+			assertEquals((new ScoreKeeper(new Board(10, 10, 4)).magic_win_number), 16);
+			assertEquals((new ScoreKeeper(new Board(10, 10, 5)).magic_win_number), 32);
+			assertEquals((new ScoreKeeper(new Board(10, 10, 6)).magic_win_number), 64);
 		}
 		
-		public function testUpdateScores():void
+		public function testUpdateScoreKeeper():void
 		{
 			// create a 2x2x2 board and scores array
-			var scores:Scores = new Scores(new Board(2, 2, 2));
+			var scores:ScoreKeeper = new ScoreKeeper(new Board(2, 2, 2));
 			
 			// drop pieces until we get a winner
 			assertEquals(scores.update_score(Player.BLACK, 0, 0), Player.NONE);
@@ -75,7 +75,7 @@ package engine
 			assertEquals(scores.winner, Player.BLACK);
 
 			// create a standard board and scores array
-			scores = new Scores(new Board(7, 6, 4));
+			scores = new ScoreKeeper(new Board(7, 6, 4));
 			
 			// drop pieces until we get a winner
 			assertEquals(scores.update_score(Player.RED, 0, 0), Player.NONE);

@@ -9,14 +9,14 @@ Please click on the "Refresh" icon in "FlexUnit Results" view to regenerate this
 	<fx:Script>
 		<![CDATA[
 			import engine.GameIntegrationTest;
-			import engine.ScoresTest;
+			import engine.ScoreKeeperTest;
 			import engine.BoardTest;
 			import engine.WinMapTest;
 			
 			private var engine_GameIntegrationTest_obj:engine.GameIntegrationTest;
 			
 			
-			private var engine_ScoresTest_obj:engine.ScoresTest;
+			private var engine_ScoreKeeperTest_obj:engine.ScoreKeeperTest;
 			
 			
 			private var engine_BoardTest_obj:engine.BoardTest;
