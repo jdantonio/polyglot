@@ -89,19 +89,7 @@
 							else
 							{
 								current_player = null;
-								//currentState = "GameOver";
-								//<s:Label x="10" y="200" text="Game Over!" width="760" height="64" fontSize="48" fontWeight="bold" verticalAlign="middle" textAlign="center"/>
-								var lbl:Label = new Label();
-								lbl.x = 10;
-								lbl.y = 200;
-								lbl.width = 760;
-								lbl.height = 64;
-								lbl.setStyle("fontSize", 48);
-								lbl.setStyle("fontWeight", "bold");
-								lbl.setStyle("verticalAlign", "verticalAlign");
-								lbl.setStyle("textAlign", "center");
-								main_panel.addChild(lbl);
-								game_board.enabled = false;
+								currentState = "GameOver";
 							}
 						}
 					}					
