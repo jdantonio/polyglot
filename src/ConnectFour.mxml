@@ -19,11 +19,20 @@
 			
 			import engine.*;
 
+			/** The board being used for th game. */
 			private var board:Board = null;
+			
+			/** The AI player for when the user is playing against the computer. */
 			private var ai:AIPlayer = null;
 			
+			/** The color of the currently active player. */
 			private var current_color:int = Player.NONE;
 			
+			/**
+			 * Start a new game.
+			 * 
+			 * @param pvp Set to true for player vs. player or set to false for player vs. AI.
+			 */
 			private function start_game(pvp:Boolean):void
 			{
 				current_color = Player.BLACK;
@@ -34,6 +43,9 @@
 				currentState = "GameBoard";
 			}
 			
+			/**
+			 * Update the panel title bar to show the currently active player.
+			 */
 			private function display_turn_info():void
 			{
 				if (current_color == Player.RED) {
@@ -42,7 +54,11 @@
 					main_panel.title = "Connect Four - BLACK PLAYER'S TURN"
 				}
 			}
-			
+
+			/**
+			 * Set the button representing the latest move to the appropriate color
+			 * and disable it.
+			 */
 			private function set_button_color(column:int, row:int):void
 			{
 				var col_grp:Group = game_board.getChildAt(column) as Group;				
@@ -61,6 +77,9 @@
 				}					
 			}
 			
+			/**
+			 * Update state in preparation for the next turn.
+			 */
 			private function next_turn():void
 			{
 				current_color = Player.other_color(current_color);
@@ -68,6 +87,9 @@
 				ai_turn();
 			}
 			
+			/**
+			 * If the AI is playing have it take its turn.
+			 */
 			private function ai_turn():void
 			{
 				if (ai != null && current_color == ai.color) {
@@ -75,12 +97,18 @@
 				}
 			}
 			
+			/**
+			 * End the game.
+			 */
 			private function end_game():void
 			{
 				currentState = "GameOver";
 				winner_message.text = (current_color == Player.BLACK ? "Black" : "Red") + " has won the game!";
 			}
 			
+			/**
+			 * Process the move selected by the active player.
+			 */
 			private function make_move(column:int):void
 			{
 				var row:int = board.drop_piece(current_color, column);
@@ -96,6 +124,9 @@
 				}
 			}
 			
+			/**
+			 * Reset the game so another can be played.
+			 */
 			private function reset_game():void
 			{
 				board = null;
@@ -105,6 +136,9 @@
 				currentState = "NewGame";
 			}
 			
+			/**
+			 * Reset all buttons on the UI board in preparation for a new game.
+			 */
 			private function reset_board():void
 			{
 				for (var x:int = 0; x < 7; x++)
