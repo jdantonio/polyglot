@@ -29,6 +29,10 @@ Not everything in this program is perfect. If I had infinite time to work on it 
 
 The class structure I created feels pretty good. Separating the Player, ScoreKeeper, and WinMap from the Board works pretty weel. Each of those classes is a good example of the Single Responsibility Principle. The problem is that all four need access to the width and height of the board and also the number of pieces in a row neede to win. Getting this data required redundancy in the consttructors and callback references to the Board class. This has a little stink. I considered creating a bean-like class to hold these properties but this wouldn't decrease the coupling and didn't really stink less.
 
+==== The GUI
+
+Most of my career has been spent writing server-side code and not user interfaces. What UI work I have done has been almost entirely web pages. Building rich user interfaces is not my forte. This one of the reasons why I invested most of my time in the engine. The GUI I created is pedestrian at best (see extensive comments in ConnectFour.mxml). I spent a couple of hours with the Mate framework (http://mate.asfusion.com/) but decided this was more effort than necessary for a demo project.
+
 ==== Bitwise Operations
 
 The Pomakis code used a "magic win number" to verify the winning move. The magic number and the related checks all use bitwise operations (old school C-style, baby!). Although I understand the overall algorithm I never learned how to do bitwise operations in my head so I had to take the original operations on blind faith. Since most programmers today don't do many bitwise operations my preference would be to remove these calculations.

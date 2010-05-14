@@ -17,6 +17,65 @@
 	<fx:Script>
 		<![CDATA[
 			
+			/**
+			 * This is the main UI logic for a Flash Connect Four game. It uses the
+			 * Connect Four engine in the "engine" package to do the heavy lifting.
+			 * This class just builds the UI and interacts with the user.
+			 * 
+			 * This class has three states. All three states must be traversed sequentially.
+			 * The first state is NewGame where the user is given the option of chosing
+			 * a Player vs. Player or Player vs. Computer game. Selecting the appropriate
+			 * button will cause a new game board to be created and will then shift to the
+			 * second state. The second state is the GameBoard state and it is where the
+			 * actual game is played. The viewable board is a collection of big buttons,
+			 * each of which represents one space on the board. When the game is over
+			 * (either by winning or a tie) the third state is initiated. This final
+			 * state is the GameOver state where the players are told who won (or if the
+			 * game was a tie). This final state also gives the player(s) an opportunity
+			 * to reset the game and start again. In this case the program loops back to
+			 * the NewGame state.
+			 * 
+			 * The missing state:
+			 * 
+			 * This game needs another state. When the game ends the application immediately
+			 * shifts to the GameOver state. The players do not have a chace to see the
+			 * winning board layout.
+			 * 
+			 * Computer vs. Computer:
+			 * 
+			 * The game engine is capable of running a game between two AIs. I originally
+			 * intended to include that option from the GUI but the lifecycle of the app
+			 * was very different. There was no easy wat to handle it under the current
+			 * set of states so I decided to abandon it. This is just a demo project.
+			 * 
+			 * AI skill level:
+			 * 
+			 * The game engine algorithm allows for a variable AI skill level. That code
+			 * works but at higher levels it causes the Flash application to exceed the
+			 * Flash Player timeout (15 seconds). To keep things simple in the GUI I
+			 * fixed the AI skill level at 5.
+			 * 
+			 * Rendering the board:
+			 * 
+			 * I really hate the way the board is rendered. Explicitly dropping 42 buttons
+			 * on the canvas offends me. This is clearly a case where two nested loops would
+			 * work fine (that is how the engine does it internally). I played with this and
+			 * almost had it working but I ran into trouble with states. Apparently states
+			 * aren't initialized until they are used so I could not dyamically put the
+			 * buttons on the cancas until after it appeared. I believe that states have an
+			 * initialization method but I was running out of time so I gave up on that, too.
+			 * I'm disappointed in that because the game engine supports arbitrary size boards.
+			 * Letting the player choose the board size and win condition would have been a
+			 * nice feature.
+			 * 
+			 * Too much code?:
+			 * 
+			 * Finally, this class feels like it has too much code. Mixing MXML with this much
+			 * AS feels wrong to me. I can't really say because I do not know what the best
+			 * practices for Flex are. I experimented with trying to put some of this code
+			 * into a Game class but this didn't really change things much.
+			 */
+			
 			import engine.*;
 
 			/** The board being used for th game. */
@@ -99,11 +158,17 @@
 			
 			/**
 			 * End the game.
+			 * 
+			 * @param tie True of the game is a tie else false.
 			 */
-			private function end_game():void
+			private function end_game(tie:Boolean):void
 			{
 				currentState = "GameOver";
-				winner_message.text = (current_color == Player.BLACK ? "Black" : "Red") + " has won the game!";
+				if (tie) {
+					winner_message.text = "The game has ended in a tie.";
+				} else {
+					winner_message.text = (current_color == Player.BLACK ? "Black" : "Red") + " has won the game!";
+				}
 			}
 			
 			/**
@@ -119,7 +184,7 @@
 					if (board.winner == Player.NONE && ! board.is_tie()) {
 						next_turn();
 					} else {
-						end_game();
+						end_game(board.is_tie());
 					}
 				}
 			}
