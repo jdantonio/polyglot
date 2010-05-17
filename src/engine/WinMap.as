@@ -147,7 +147,7 @@ package engine
 			
 			if (this._map != null && x < this._map.length && y < this._map[0].length)
 			{
-				for each (var x:int in this._map[x][y]) indicies.push(x);
+				for each (var idx:int in this._map[x][y]) indicies.push(idx);
 			}
 			
 			return indicies;
