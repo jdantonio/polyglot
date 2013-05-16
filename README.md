@@ -3,6 +3,10 @@ census-data-sample
 
 Sample Ruby web app for consuming the US Census Data API (see http://www.census.gov/developers/)
 
+### It. Is. Alive!
+
+Check me out on Heroku: http://census-data-sample.herokuapp.com/
+
 ### A few useful links
 
 * http://www.census.gov/developers/
