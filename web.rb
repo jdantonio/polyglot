@@ -4,6 +4,11 @@ require 'xmlsimple'
 require 'open-uri'
 require 'rinruby'
 
+$URI = 'http://www.census.gov/developers/data/sf1.xml'
+$SF1 = open($URI) do |f|
+  XmlSimple.xml_in(f)
+end['concept'].freeze
+
 get '/' do
 
   api_key = ENV['API_KEY']
@@ -26,10 +31,11 @@ get '/' do
     html += "<p>The standard deviation is #{R.stddev}</p>"
 
     html += "<p>Retrieving Census XML data...</p>"
-    uri = 'http://www.census.gov/developers/data/sf1.xml'
-    sf1 = open(uri) do |f|
-      XmlSimple.xml_in(f)
+    html += "<ul>"
+    $SF1.each do |concept|
+      html += "<li>#{concept['name']}</li>"
     end
+    html += "</ul>"
     html += "<p>Succeeded in retrieving Census XML data...</p>"
 
     html += "<p>Accessing the Census API...</p>"
