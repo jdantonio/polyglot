@@ -7,6 +7,7 @@ Sample Ruby web app for consuming the US Census Data API (see http://www.census.
 
 * http://www.census.gov/developers/
 * http://www.census.gov/developers/data/sf1.xml
+* https://github.com/tyrauber/census_api
 * https://sites.google.com/a/ddahl.org/rinruby-users/
 * https://github.com/clbustos/rinruby
 * https://github.com/virtualstaticvoid/heroku-buildpack-r
