@@ -10,7 +10,7 @@
   <p class="lead">
   <ul class="lead">
     <% variables.each do |var| %>
-      <li><%= var['content'] %> is <%= format_number(data[var['name']]) %></li>
+      <li><%= var['content'] %> is <strong><%= format_number(data[var['name']]) %></strong></li>
     <% end %>
   </ul>
   </p>
