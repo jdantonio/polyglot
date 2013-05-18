@@ -1,0 +1,19 @@
+<div class="featurette">
+
+  <h2 class="featurette-heading">
+    <span class="muted">Census Data for</span> Ohio
+  </h2>
+
+  <p class="lead">
+  <ul class="lead">
+
+
+    <% concepts.each do |concept| %>
+      <% name = concept['name'] %>
+      <% if name =~ /^([A-Z]+\d+)\./ %>
+        <li><a href="<%= url("/counts/#{$1}") %>"><%= name %></a></li>
+      <% end %>
+    <% end %>
+  </ul>
+  </p>
+</div>

@@ -1,0 +1,36 @@
+<div class="featurette">
+
+  <h2 class="featurette-heading">Error</h2>
+
+  <p class="lead">
+  The census API returned an error. It is likely there were too many variables in the request.
+  </p>
+
+  <% if defined?(api_request) && api_request.size > 0 %>
+    <p class="lead">The request was: <%= api_request %></p>
+  <% end %>
+
+  <% if defined?(api_response) && api_response.size > 0 %>
+    <p class="lead">
+    The API returned the following api_response data:
+    <ul class="lead">
+      <% api_response.each do |key, value| %>
+        <% unless value.nil? %>
+          <li><%= key %>: <%= value %></li>
+        <% end %>
+      <% end %>
+    </ul>
+    </p>
+  <% end %>
+
+  <% if defined?(request_fields) && request_fields.size > 0 %>
+    <p class="lead">
+    The following fields were requested:
+    <ul class="lead">
+      <% request_fields.each do |field| %>
+        <li><%= field %></li>
+      <% end %>
+    </ul>
+    </p>
+  <% end %>
+</div>
