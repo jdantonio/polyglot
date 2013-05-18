@@ -24,12 +24,41 @@ concepts.each do |concept|
   puts concept['name']
 
   fields = concept['variable'].collect{|var| var['name']}.join(',')
-  p fields
   data = client.sf1(fields, 'STATE:39').first
-  pp data
+  concept['variable'].each do |var|
+    puts "\t#{var['content']} for #{data['name']} is #{format_number(data[var['name']])}"
+  end
+end;nil
 
-  #concept['variable'].each do |var|
-    #data = client.sf1(var['name'], 'STATE:39').first
-    #puts "\t#{var['content']} for #{data['name']} is #{format_number(data[var['name']])}"
-  #end
-end
+[{"name"=>"Geographies",
+  "variable"=>
+   [{"name"=>"NAME",
+     "concept"=>"Geographies",
+     "content"=>"Geographic Area Name"}]},
+ {"name"=>"P1. Total Population [1]",
+  "variable"=>
+   [{"name"=>"P0010001",
+     "concept"=>"P1. Total Population [1]",
+     "content"=>"Total Population"}]},
+ {"name"=>"P3. RACE [8]",
+  "variable"=>
+   [{"name"=>"P0030001",
+     "concept"=>"P3. RACE [8]",
+     "content"=>"Total population"},
+    {"name"=>"P0030002", "concept"=>"P3. RACE [8]", "content"=>"White alone"},
+    {"name"=>"P0030003",
+     "concept"=>"P3. RACE [8]",
+     "content"=>"Black or African American alone"},
+    {"name"=>"P0030004",
+     "concept"=>"P3. RACE [8]",
+     "content"=>"American Indian and Alaska Native alone"},
+    {"name"=>"P0030005", "concept"=>"P3. RACE [8]", "content"=>"Asian alone"},
+    {"name"=>"P0030006",
+     "concept"=>"P3. RACE [8]",
+     "content"=>"Native Hawaiian and Other Pacific Islander alone"},
+    {"name"=>"P0030007",
+     "concept"=>"P3. RACE [8]",
+     "content"=>"Some Other Race alone"},
+    {"name"=>"P0030008",
+     "concept"=>"P3. RACE [8]",
+     "content"=>"Two or More Races"}]}]

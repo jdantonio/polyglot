@@ -8,4 +8,5 @@ gem 'rinruby'
 
 group :development do
   gem 'foreman'
+  gem 'rerun'
 end
