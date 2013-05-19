@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/TR/xhtml1/strict">
+        <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>List of Geographies</title>
+<style type="text/css">
+table {
+  font-family: arial;
+  font-size: 12pt;
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+  padding: 2px;
+}
+
+/*th {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  padding:2px;
+}
+
+td {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  padding: 3px;
+}*/
+
+</style>
+
+        </head>
+        <body>
+            <table border="1">
+                <tr>
+                    <th>Summary Level</th>
+                    <th>Description</th>
+                    <th>Example URLs</th>
+                </tr>
+                <tr><td>010</td><td>us</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=us:1<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=us:*</td></tr><tr><td>020</td><td>region</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=region:2<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=region:*</td></tr><tr><td>030</td><td>division</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=division:1<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=division:*</td></tr><tr><td>040</td><td>state</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=state:01<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=state:*</td></tr><tr><td>050</td><td>state-county</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=county:001&amp;in=state:06<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=county:*&amp;in=state:06<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=county:*</td></tr><tr><td>060</td><td>state-county-county subdivision</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=county+subdivision:86690&amp;in=state:02+county:290<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=county+subdivision:*&amp;in=state:02+county:290</td></tr><tr><td>140</td><td>state-county-tract</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=tract:000101&amp;in=state:02+county:170<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=tract:*&amp;in=state:02+county:170</td></tr><tr><td>150</td><td>state-county-tract-block group</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=block+group:1&amp;in=state:02+county:170+tract:000101<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=block+group:*&amp;in=state:02+county:170+tract:000101</td></tr><tr><td>160</td><td>state-place</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=place:00135&amp;in=state:06<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=place:*&amp;in=state:06<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=place:*</td></tr><tr><td>250</td><td>american indian area/alaska native area/hawaiian home land</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=american+indian+area/alaska+native+area/hawaiian+home+land:0010<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=american+indian+area/alaska+native+area/hawaiian+home+land:*</td></tr><tr><td>310</td><td>metropolitan statistical area/micropolitan statistical area</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=metropolitan+statistical+area/micropolitan+statistical+area:10020<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=metropolitan+statistical+area/micropolitan+statistical+area:*</td></tr><tr><td>320</td><td>state-metropolitan statistical area/micropolitan statistical area</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=metropolitan+statistical+area/micropolitan+statistical+area:10700&amp;in=state:01<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=metropolitan+statistical+area/micropolitan+statistical+area:*&amp;in=state:01</td></tr><tr><td>330</td><td>combined statistical area</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=combined+statistical+area:102<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=combined+statistical+area:*</td></tr><tr><td>340</td><td>state-combined statistical area</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=combined+statistical+area:122&amp;in=state:01<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=combined+statistical+area:*&amp;in=state:01</td></tr><tr><td>350</td><td>new england city and town area</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=new+england+city+and+town+area:70300<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=new+england+city+and+town+area:*</td></tr><tr><td>400</td><td>urban area</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=urban+area:00037<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=urban+area:*</td></tr><tr><td>500</td><td>state-congressional district</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=congressional+district:01&amp;in=state:24<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=congressional+district:*&amp;in=state:24<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=congressional+district:*</td></tr><tr><td>510</td><td>state-congressional district-county</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=county:003&amp;in=state:01+congressional+district:01<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=county:*&amp;in=state:01+congressional+district:01</td></tr><tr><td>610</td><td>state-state legislative district (upper chamber)</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=state+legislative+district+(upper+chamber):001&amp;in=state:01<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=state+legislative+district+(upper+chamber):*&amp;in=state:01</td></tr><tr><td>620</td><td>state-state legislative district (lower chamber)</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=state+legislative+district+(lower+chamber):001&amp;in=state:01<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=state+legislative+district+(lower+chamber):*&amp;in=state:01</td></tr><tr><td>795</td><td>state-public use microdata area</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=public+use+microdata+area:00100&amp;in=state:01<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=public+use+microdata+area:*&amp;in=state:01</td></tr><tr><td>860</td><td>zip code tabulation area</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=zip+code+tabulation+area:00602<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=zip+code+tabulation+area:*</td></tr><tr><td>950</td><td>state-school district (elementary)</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=school+district+(elementary):00006&amp;in=state:06<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=school+district+(elementary):*&amp;in=state:06</td></tr><tr><td>960</td><td>state-school district (secondary)</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=school+district+(secondary):01650&amp;in=state:06<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=school+district+(secondary):*&amp;in=state:06</td></tr><tr><td>970</td><td>state-school district (unified)</td><td>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=school+district+(unified):00001&amp;in=state:06<br></br><br></br>http://api.census.gov/data/2011/acs5?get=B00001_001E&amp;for=school+district+(unified):*&amp;in=state:06</td></tr>
+            </table>
+        </body>
+        </html>

@@ -1,0 +1,993 @@
+<apivariables>
+  <concept name="Geographies">
+    <variable name="NAME" concept="Geographies">Geographic Area Name</variable>
+  </concept>
+  <concept name="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">
+    <variable name="DP02_0001E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Total households</variable>
+    <variable name="DP02_0001M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Total households MARGIN OF ERROR</variable>
+    <variable name="DP02_0002E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Family households (families)</variable>
+    <variable name="DP02_0002M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Family households (families) MARGIN OF ERROR</variable>
+    <variable name="DP02_0003E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Family households (families) !! With own children under 18 years</variable>
+    <variable name="DP02_0003M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Family households (families) !! With own children under 18 years MARGIN OF ERROR</variable>
+    <variable name="DP02_0004E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Family households (families) !! Married-couple family</variable>
+    <variable name="DP02_0004M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Family households (families) !! Married-couple family MARGIN OF ERROR</variable>
+    <variable name="DP02_0005E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Family households (families) !! Married-couple family !! With own children under 18 years</variable>
+    <variable name="DP02_0005M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Family households (families) !! Married-couple family !! With own children under 18 years MARGIN OF ERROR</variable>
+    <variable name="DP02_0006E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;HOUSEHOLDS BY TYPE !! Family households (families) !! Male householder, no wife present, family&quot;</variable>
+    <variable name="DP02_0006M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;HOUSEHOLDS BY TYPE !! Family households (families) !! Male householder, no wife present, family&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0007E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;HOUSEHOLDS BY TYPE !! Family households (families )!! Male householder, no wife present, family!! With own children under 18 years&quot;</variable>
+    <variable name="DP02_0007M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;HOUSEHOLDS BY TYPE !! Family households (families )!! Male householder, no wife present, family!! With own children under 18 years&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0008E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;HOUSEHOLDS BY TYPE !! Family households (families) !! Female householder, no husband present, family&quot;</variable>
+    <variable name="DP02_0008M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;HOUSEHOLDS BY TYPE !! Family households (families) !! Female householder, no husband present, family&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0009E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;HOUSEHOLDS BY TYPE !! Family households (families) !! Female householder, no husband present, family !! With own children under 18 years&quot;</variable>
+    <variable name="DP02_0009M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;HOUSEHOLDS BY TYPE !! Family households (families) !! Female householder, no husband present, family !! With own children under 18 years&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0010E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Nonfamily households</variable>
+    <variable name="DP02_0010M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Nonfamily households MARGIN OF ERROR</variable>
+    <variable name="DP02_0011E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Nonfamily households !! Householder living alone</variable>
+    <variable name="DP02_0011M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Nonfamily households !! Householder living alone MARGIN OF ERROR</variable>
+    <variable name="DP02_0012E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Nonfamily households !! Householder living alone!! 65 years and over</variable>
+    <variable name="DP02_0012M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Nonfamily households !! Householder living alone!! 65 years and over MARGIN OF ERROR</variable>
+    <variable name="DP02_0013E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Households with one or more people under 18 years</variable>
+    <variable name="DP02_0013M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Households with one or more people under 18 years MARGIN OF ERROR</variable>
+    <variable name="DP02_0014E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Households with one or more people 65 years and over</variable>
+    <variable name="DP02_0014M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Households with one or more people 65 years and over MARGIN OF ERROR</variable>
+    <variable name="DP02_0015E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Average household size</variable>
+    <variable name="DP02_0015M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Average household size MARGIN OF ERROR</variable>
+    <variable name="DP02_0016E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Average family size</variable>
+    <variable name="DP02_0016M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">HOUSEHOLDS BY TYPE !! Average family size MARGIN OF ERROR</variable>
+    <variable name="DP02_0017E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RELATIONSHIP !! Population in households</variable>
+    <variable name="DP02_0017M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RELATIONSHIP !! Population in households MARGIN OF ERROR</variable>
+    <variable name="DP02_0018E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RELATIONSHIP !! Population in households !! Householder</variable>
+    <variable name="DP02_0018M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RELATIONSHIP !! Population in households !! Householder MARGIN OF ERROR</variable>
+    <variable name="DP02_0019E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RELATIONSHIP !! Population in households !! Spouse</variable>
+    <variable name="DP02_0019M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RELATIONSHIP !! Population in households !! Spouse MARGIN OF ERROR</variable>
+    <variable name="DP02_0020E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RELATIONSHIP !! Population in households !! Child</variable>
+    <variable name="DP02_0020M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RELATIONSHIP !! Population in households !! Child MARGIN OF ERROR</variable>
+    <variable name="DP02_0021E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RELATIONSHIP !! Population in households !! Other relatives</variable>
+    <variable name="DP02_0021M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RELATIONSHIP !! Population in households !! Other relatives MARGIN OF ERROR</variable>
+    <variable name="DP02_0022E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RELATIONSHIP !! Population in households !! Nonrelatives</variable>
+    <variable name="DP02_0022M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RELATIONSHIP !! Population in households !! Nonrelatives MARGIN OF ERROR</variable>
+    <variable name="DP02_0023E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RELATIONSHIP !! Population in households !! Nonrelatives !! Unmarried partner</variable>
+    <variable name="DP02_0023M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RELATIONSHIP !! Population in households !! Nonrelatives !! Unmarried partner MARGIN OF ERROR</variable>
+    <variable name="DP02_0024E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">MARITAL STATUS !! Males 15 years and over</variable>
+    <variable name="DP02_0024M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">MARITAL STATUS !! Males 15 years and over MARGIN OF ERROR</variable>
+    <variable name="DP02_0025E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">MARITAL STATUS !! Males 15 years and over !! Never married</variable>
+    <variable name="DP02_0025M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">MARITAL STATUS !! Males 15 years and over !! Never married MARGIN OF ERROR</variable>
+    <variable name="DP02_0026E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;MARITAL STATUS !! Males 15 years and over !! Now married, except separated&quot;</variable>
+    <variable name="DP02_0026M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;MARITAL STATUS !! Males 15 years and over !! Now married, except separated&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0027E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">MARITAL STATUS !! Males 15 years and over !! Separated</variable>
+    <variable name="DP02_0027M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">MARITAL STATUS !! Males 15 years and over !! Separated MARGIN OF ERROR</variable>
+    <variable name="DP02_0028E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">MARITAL STATUS !! Males 15 years and over !! Widowed</variable>
+    <variable name="DP02_0028M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">MARITAL STATUS !! Males 15 years and over !! Widowed MARGIN OF ERROR</variable>
+    <variable name="DP02_0029E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">MARITAL STATUS !! Males 15 years and over !! Divorced</variable>
+    <variable name="DP02_0029M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">MARITAL STATUS !! Males 15 years and over !! Divorced MARGIN OF ERROR</variable>
+    <variable name="DP02_0030E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">MARITAL STATUS !! Females 15 years and over</variable>
+    <variable name="DP02_0030M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">MARITAL STATUS !! Females 15 years and over MARGIN OF ERROR</variable>
+    <variable name="DP02_0031E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">MARITAL STATUS !! Females 15 years and over !! Never married</variable>
+    <variable name="DP02_0031M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">MARITAL STATUS !! Females 15 years and over !! Never married MARGIN OF ERROR</variable>
+    <variable name="DP02_0032E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;MARITAL STATUS !! Females 15 years and over !! Now married, except separated&quot;</variable>
+    <variable name="DP02_0032M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;MARITAL STATUS !! Females 15 years and over !! Now married, except separated&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0033E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">MARITAL STATUS !! Females 15 years and over !! Separated</variable>
+    <variable name="DP02_0033M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">MARITAL STATUS !! Females 15 years and over !! Separated MARGIN OF ERROR</variable>
+    <variable name="DP02_0034E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">MARITAL STATUS !! Females 15 years and over !! Widowed</variable>
+    <variable name="DP02_0034M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">MARITAL STATUS !! Females 15 years and over !! Widowed MARGIN OF ERROR</variable>
+    <variable name="DP02_0035E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">MARITAL STATUS !! Females 15 years and over !! Divorced</variable>
+    <variable name="DP02_0035M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">MARITAL STATUS !! Females 15 years and over !! Divorced MARGIN OF ERROR</variable>
+    <variable name="DP02_0036E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">FERTILITY !! Number of women 15 to 50 years old who had a birth in the past 12 months</variable>
+    <variable name="DP02_0036M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">FERTILITY !! Number of women 15 to 50 years old who had a birth in the past 12 months MARGIN OF ERROR</variable>
+    <variable name="DP02_0037E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;FERTILITY !! Number of women 15 to 50 years old who had a birth in the past 12 months !! Unmarried women (widowed, divorced, and never married)&quot;</variable>
+    <variable name="DP02_0037M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;FERTILITY !! Number of women 15 to 50 years old who had a birth in the past 12 months !! Unmarried women (widowed, divorced, and never married)&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0038E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;FERTILITY !! Number of women 15 to 50 years old who had a birth in the past 12 months !! Unmarried women (widowed, divorced, and never married) !! Per 1,000 unmarried women&quot;</variable>
+    <variable name="DP02_0038M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;FERTILITY !! Number of women 15 to 50 years old who had a birth in the past 12 months !! Unmarried women (widowed, divorced, and never married) !! Per 1,000 unmarried women&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0039E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;FERTILITY !! Per 1,000 women 15 to 50 years old&quot;</variable>
+    <variable name="DP02_0039M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;FERTILITY !! Per 1,000 women 15 to 50 years old&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0040E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;FERTILITY !! Per 1,000 women 15 to 19 years old&quot;</variable>
+    <variable name="DP02_0040M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;FERTILITY !! Per 1,000 women 15 to 19 years old&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0041E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;FERTILITY !! Per 1,000 women 20 to 34 years old&quot;</variable>
+    <variable name="DP02_0041M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;FERTILITY !! Per 1,000 women 20 to 34 years old&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0042E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;FERTILITY !! Per 1,000 women 35 to 50 years old&quot;</variable>
+    <variable name="DP02_0042M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;FERTILITY !! Per 1,000 women 35 to 50 years old&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0043E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">GRANDPARENTS !! Number of grandparents living with own grandchildren under 18 years</variable>
+    <variable name="DP02_0043M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">GRANDPARENTS !! Number of grandparents living with own grandchildren under 18 years MARGIN OF ERROR</variable>
+    <variable name="DP02_0044E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">GRANDPARENTS !! Number of grandparents living with own grandchildren under 18 years !! Responsible for grandchildren</variable>
+    <variable name="DP02_0044M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">GRANDPARENTS !! Number of grandparents living with own grandchildren under 18 years !! Responsible for grandchildren MARGIN OF ERROR</variable>
+    <variable name="DP02_0045E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">GRANDPARENTS !! Number of grandparents living with own grandchildren under 18 years !! Responsible for grandchildren !! Years responsible for grandchildren !! Less than 1 year</variable>
+    <variable name="DP02_0045M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">GRANDPARENTS !! Number of grandparents living with own grandchildren under 18 years !! Responsible for grandchildren !! Years responsible for grandchildren !! Less than 1 year MARGIN OF ERROR</variable>
+    <variable name="DP02_0046E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">GRANDPARENTS !! Number of grandparents living with own grandchildren under 18 years !! Responsible for grandchildren !! Years responsible for grandchildren !! 1 or 2 years</variable>
+    <variable name="DP02_0046M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">GRANDPARENTS !! Number of grandparents living with own grandchildren under 18 years !! Responsible for grandchildren !! Years responsible for grandchildren !! 1 or 2 years MARGIN OF ERROR</variable>
+    <variable name="DP02_0047E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">GRANDPARENTS !! Number of grandparents living with own grandchildren under 18 years !! Responsible for grandchildren !! Years responsible for grandchildren !! 3 or 4 years</variable>
+    <variable name="DP02_0047M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">GRANDPARENTS !! Number of grandparents living with own grandchildren under 18 years !! Responsible for grandchildren !! Years responsible for grandchildren !! 3 or 4 years MARGIN OF ERROR</variable>
+    <variable name="DP02_0048E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">GRANDPARENTS !! Number of grandparents living with own grandchildren under 18 years !! Responsible for grandchildren !! Years responsible for grandchildren !! 5 or more years</variable>
+    <variable name="DP02_0048M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">GRANDPARENTS !! Number of grandparents living with own grandchildren under 18 years !! Responsible for grandchildren !! Years responsible for grandchildren !! 5 or more years MARGIN OF ERROR</variable>
+    <variable name="DP02_0049E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">GRANDPARENTS !! Responsible for grandchildren !! Number of grandparents responsible for own grandchildren under 18 years</variable>
+    <variable name="DP02_0049M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">GRANDPARENTS !! Responsible for grandchildren !! Number of grandparents responsible for own grandchildren under 18 years MARGIN OF ERROR</variable>
+    <variable name="DP02_0050E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">GRANDPARENTS !! Responsible for grandchildren !! Number of grandparents responsible for own grandchildren under 18 years !! Who are female</variable>
+    <variable name="DP02_0050M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">GRANDPARENTS !! Responsible for grandchildren !! Number of grandparents responsible for own grandchildren under 18 years !! Who are female MARGIN OF ERROR</variable>
+    <variable name="DP02_0051E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">GRANDPARENTS !! Responsible for grandchildren !! Number of grandparents responsible for own grandchildren under 18 years !! Who are married</variable>
+    <variable name="DP02_0051M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">GRANDPARENTS !! Responsible for grandchildren !! Number of grandparents responsible for own grandchildren under 18 years !! Who are married MARGIN OF ERROR</variable>
+    <variable name="DP02_0052E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">SCHOOL ENROLLMENT !! Population 3 years and over enrolled in school</variable>
+    <variable name="DP02_0052M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">SCHOOL ENROLLMENT !! Population 3 years and over enrolled in school MARGIN OF ERROR</variable>
+    <variable name="DP02_0053E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;SCHOOL ENROLLMENT !! Population 3 years and over enrolled in school !! Nursery school, preschool&quot;</variable>
+    <variable name="DP02_0053M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;SCHOOL ENROLLMENT !! Population 3 years and over enrolled in school !! Nursery school, preschool&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0054E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">SCHOOL ENROLLMENT !! Population 3 years and over enrolled in school !! Kindergarten</variable>
+    <variable name="DP02_0054M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">SCHOOL ENROLLMENT !! Population 3 years and over enrolled in school !! Kindergarten MARGIN OF ERROR</variable>
+    <variable name="DP02_0055E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">SCHOOL ENROLLMENT !! Population 3 years and over enrolled in school !! Elementary school (grades 1-8)</variable>
+    <variable name="DP02_0055M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">SCHOOL ENROLLMENT !! Population 3 years and over enrolled in school !! Elementary school (grades 1-8) MARGIN OF ERROR</variable>
+    <variable name="DP02_0056E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">SCHOOL ENROLLMENT !! Population 3 years and over enrolled in school !! High school (grades 9-12)</variable>
+    <variable name="DP02_0056M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">SCHOOL ENROLLMENT !! Population 3 years and over enrolled in school !! High school (grades 9-12) MARGIN OF ERROR</variable>
+    <variable name="DP02_0057E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">SCHOOL ENROLLMENT !! Population 3 years and over enrolled in school !! College or graduate school</variable>
+    <variable name="DP02_0057M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">SCHOOL ENROLLMENT !! Population 3 years and over enrolled in school !! College or graduate school MARGIN OF ERROR</variable>
+    <variable name="DP02_0058E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">EDUCATIONAL ATTAINMENT !! Population 25 years and over</variable>
+    <variable name="DP02_0058M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">EDUCATIONAL ATTAINMENT !! Population 25 years and over MARGIN OF ERROR</variable>
+    <variable name="DP02_0059E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">EDUCATIONAL ATTAINMENT !! Population 25 years and over !! Less than 9th grade</variable>
+    <variable name="DP02_0059M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">EDUCATIONAL ATTAINMENT !! Population 25 years and over !! Less than 9th grade MARGIN OF ERROR</variable>
+    <variable name="DP02_0060E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;EDUCATIONAL ATTAINMENT !! Population 25 years and over !! 9th to 12th grade, no diploma&quot;</variable>
+    <variable name="DP02_0060M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;EDUCATIONAL ATTAINMENT !! Population 25 years and over !! 9th to 12th grade, no diploma&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0061E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">EDUCATIONAL ATTAINMENT !! Population 25 years and over !! High school graduate (includes equivalency)</variable>
+    <variable name="DP02_0061M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">EDUCATIONAL ATTAINMENT !! Population 25 years and over !! High school graduate (includes equivalency) MARGIN OF ERROR</variable>
+    <variable name="DP02_0062E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;EDUCATIONAL ATTAINMENT !! Population 25 years and over !! Some college, no degree&quot;</variable>
+    <variable name="DP02_0062M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;EDUCATIONAL ATTAINMENT !! Population 25 years and over !! Some college, no degree&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0063E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">EDUCATIONAL ATTAINMENT !! Population 25 years and over !! Associate&apos;s degree</variable>
+    <variable name="DP02_0063M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">EDUCATIONAL ATTAINMENT !! Population 25 years and over !! Associate&apos;s degree MARGIN OF ERROR</variable>
+    <variable name="DP02_0064E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">EDUCATIONAL ATTAINMENT !! Population 25 years and over !! Bachelor&apos;s degree</variable>
+    <variable name="DP02_0064M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">EDUCATIONAL ATTAINMENT !! Population 25 years and over !! Bachelor&apos;s degree MARGIN OF ERROR</variable>
+    <variable name="DP02_0065E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">EDUCATIONAL ATTAINMENT !! Population 25 years and over !! Graduate or professional degree</variable>
+    <variable name="DP02_0065M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">EDUCATIONAL ATTAINMENT !! Population 25 years and over !! Graduate or professional degree MARGIN OF ERROR</variable>
+    <variable name="DP02_0066E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">EDUCATIONAL ATTAINMENT !! Population 25 years and over !! Percent high school graduate or higher</variable>
+    <variable name="DP02_0066M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">EDUCATIONAL ATTAINMENT !! Population 25 years and over !! Percent high school graduate or higher MARGIN OF ERROR</variable>
+    <variable name="DP02_0067E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">EDUCATIONAL ATTAINMENT !! Population 25 years and over !! Percent bachelor&apos;s degree or higher</variable>
+    <variable name="DP02_0067M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">EDUCATIONAL ATTAINMENT !! Population 25 years and over !! Percent bachelor&apos;s degree or higher MARGIN OF ERROR</variable>
+    <variable name="DP02_0068E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">VETERAN STATUS !! Civilian population 18 years and over</variable>
+    <variable name="DP02_0068M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">VETERAN STATUS !! Civilian population 18 years and over MARGIN OF ERROR</variable>
+    <variable name="DP02_0069E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">VETERAN STATUS !! Civilian population 18 years and over !! Civilian veterans</variable>
+    <variable name="DP02_0069M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">VETERAN STATUS !! Civilian population 18 years and over !! Civilian veterans MARGIN OF ERROR</variable>
+    <variable name="DP02_0070E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">DISABILITY STATUS OF THE CIVILIAN NONINSTITUTIONALIZED POPULATION !! Total Civilian Noninstitutionalized Population</variable>
+    <variable name="DP02_0070M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">DISABILITY STATUS OF THE CIVILIAN NONINSTITUTIONALIZED POPULATION !! Total Civilian Noninstitutionalized Population MARGIN OF ERROR</variable>
+    <variable name="DP02_0071E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">DISABILITY STATUS OF THE CIVILIAN NONINSTITUTIONALIZED POPULATION !! Total Civilian Noninstitutionalized Population !! With a disability</variable>
+    <variable name="DP02_0071M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">DISABILITY STATUS OF THE CIVILIAN NONINSTITUTIONALIZED POPULATION !! Total Civilian Noninstitutionalized Population !! With a disability MARGIN OF ERROR</variable>
+    <variable name="DP02_0072E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">DISABILITY STATUS OF THE CIVILIAN NONINSTITUTIONALIZED POPULATION !! Total Civilian Noninstitutionalized Population !! Under 18 years</variable>
+    <variable name="DP02_0072M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">DISABILITY STATUS OF THE CIVILIAN NONINSTITUTIONALIZED POPULATION !! Total Civilian Noninstitutionalized Population !! Under 18 years MARGIN OF ERROR</variable>
+    <variable name="DP02_0073E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">DISABILITY STATUS OF THE CIVILIAN NONINSTITUTIONALIZED POPULATION !! Total Civilian Noninstitutionalized Population !! Under 18 years !! With a disability</variable>
+    <variable name="DP02_0073M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">DISABILITY STATUS OF THE CIVILIAN NONINSTITUTIONALIZED POPULATION !! Total Civilian Noninstitutionalized Population !! Under 18 years !! With a disability MARGIN OF ERROR</variable>
+    <variable name="DP02_0074E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">DISABILITY STATUS OF THE CIVILIAN NONINSTITUTIONALIZED POPULATION !! Total Civilian Noninstitutionalized Population !! 18 to 64 years </variable>
+    <variable name="DP02_0074M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">DISABILITY STATUS OF THE CIVILIAN NONINSTITUTIONALIZED POPULATION !! Total Civilian Noninstitutionalized Population !! 18 to 64 years  MARGIN OF ERROR</variable>
+    <variable name="DP02_0075E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">DISABILITY STATUS OF THE CIVILIAN NONINSTITUTIONALIZED POPULATION !! Total Civilian Noninstitutionalized Population !! 18 to 64 years !! With a disability</variable>
+    <variable name="DP02_0075M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">DISABILITY STATUS OF THE CIVILIAN NONINSTITUTIONALIZED POPULATION !! Total Civilian Noninstitutionalized Population !! 18 to 64 years !! With a disability MARGIN OF ERROR</variable>
+    <variable name="DP02_0076E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">DISABILITY STATUS OF THE CIVILIAN NONINSTITUTIONALIZED POPULATION !! Total Civilian Noninstitutionalized Population !! 65 years and over</variable>
+    <variable name="DP02_0076M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">DISABILITY STATUS OF THE CIVILIAN NONINSTITUTIONALIZED POPULATION !! Total Civilian Noninstitutionalized Population !! 65 years and over MARGIN OF ERROR</variable>
+    <variable name="DP02_0077E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">DISABILITY STATUS OF THE CIVILIAN NONINSTITUTIONALIZED POPULATION !! Total Civilian Noninstitutionalized Population !! 65 years and over !! With a disability</variable>
+    <variable name="DP02_0077M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">DISABILITY STATUS OF THE CIVILIAN NONINSTITUTIONALIZED POPULATION !! Total Civilian Noninstitutionalized Population !! 65 years and over !! With a disability MARGIN OF ERROR</variable>
+    <variable name="DP02_0078E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RESIDENCE 1 YEAR AGO !! Population 1 year and over</variable>
+    <variable name="DP02_0078M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RESIDENCE 1 YEAR AGO !! Population 1 year and over MARGIN OF ERROR</variable>
+    <variable name="DP02_0079E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RESIDENCE 1 YEAR AGO !! Population 1 year and over !! Same house</variable>
+    <variable name="DP02_0079M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RESIDENCE 1 YEAR AGO !! Population 1 year and over !! Same house MARGIN OF ERROR</variable>
+    <variable name="DP02_0080E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RESIDENCE 1 YEAR AGO !! Population 1 year and over !! Different house in the U.S.</variable>
+    <variable name="DP02_0080M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RESIDENCE 1 YEAR AGO !! Population 1 year and over !! Different house in the U.S. MARGIN OF ERROR</variable>
+    <variable name="DP02_0081E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RESIDENCE 1 YEAR AGO !! Population 1 year and over !! Different house in the U.S. !! Same county</variable>
+    <variable name="DP02_0081M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RESIDENCE 1 YEAR AGO !! Population 1 year and over !! Different house in the U.S. !! Same county MARGIN OF ERROR</variable>
+    <variable name="DP02_0082E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RESIDENCE 1 YEAR AGO !! Population 1 year and over !! Different house in the U.S. !! Different county</variable>
+    <variable name="DP02_0082M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RESIDENCE 1 YEAR AGO !! Population 1 year and over !! Different house in the U.S. !! Different county MARGIN OF ERROR</variable>
+    <variable name="DP02_0083E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RESIDENCE 1 YEAR AGO !! Population 1 year and over !! Different house in the U.S. !! Different county !! Same state</variable>
+    <variable name="DP02_0083M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RESIDENCE 1 YEAR AGO !! Population 1 year and over !! Different house in the U.S. !! Different county !! Same state MARGIN OF ERROR</variable>
+    <variable name="DP02_0084E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RESIDENCE 1 YEAR AGO !! Population 1 year and over !! Different house in the U.S. !! Different county !! Different state</variable>
+    <variable name="DP02_0084M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RESIDENCE 1 YEAR AGO !! Population 1 year and over !! Different house in the U.S. !! Different county !! Different state MARGIN OF ERROR</variable>
+    <variable name="DP02_0085E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RESIDENCE 1 YEAR AGO !! Population 1 year and over !! Abroad</variable>
+    <variable name="DP02_0085M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">RESIDENCE 1 YEAR AGO !! Population 1 year and over !! Abroad MARGIN OF ERROR</variable>
+    <variable name="DP02_0086E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">PLACE OF BIRTH !! Total population</variable>
+    <variable name="DP02_0086M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">PLACE OF BIRTH !! Total population MARGIN OF ERROR</variable>
+    <variable name="DP02_0087E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">PLACE OF BIRTH !! Total population !! Native</variable>
+    <variable name="DP02_0087M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">PLACE OF BIRTH !! Total population !! Native MARGIN OF ERROR</variable>
+    <variable name="DP02_0088E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">PLACE OF BIRTH !! Total population !! Native !! Born in the United States</variable>
+    <variable name="DP02_0088M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">PLACE OF BIRTH !! Total population !! Native !! Born in the United States MARGIN OF ERROR</variable>
+    <variable name="DP02_0089E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">PLACE OF BIRTH !! Total population !! Native !! Born in the United States !! State of residence</variable>
+    <variable name="DP02_0089M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">PLACE OF BIRTH !! Total population !! Native !! Born in the United States !! State of residence MARGIN OF ERROR</variable>
+    <variable name="DP02_0090E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">PLACE OF BIRTH !! Total population !! Native !! Born in the United States !!  Different state</variable>
+    <variable name="DP02_0090M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">PLACE OF BIRTH !! Total population !! Native !! Born in the United States !!  Different state MARGIN OF ERROR</variable>
+    <variable name="DP02_0091E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;PLACE OF BIRTH !! Total population !! Native !! Born in Puerto Rico, U.S. Island areas, or born abroad to American parent(s)&quot;</variable>
+    <variable name="DP02_0091M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;PLACE OF BIRTH !! Total population !! Native !! Born in Puerto Rico, U.S. Island areas, or born abroad to American parent(s)&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0092E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">PLACE OF BIRTH !! Total population !! Foreign born</variable>
+    <variable name="DP02_0092M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">PLACE OF BIRTH !! Total population !! Foreign born MARGIN OF ERROR</variable>
+    <variable name="DP02_0093E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">U.S. CITIZENSHIP STATUS !! Foreign-born population</variable>
+    <variable name="DP02_0093M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">U.S. CITIZENSHIP STATUS !! Foreign-born population MARGIN OF ERROR</variable>
+    <variable name="DP02_0094E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">U.S. CITIZENSHIP STATUS !! Foreign-born population !! Naturalized U.S. citizen</variable>
+    <variable name="DP02_0094M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">U.S. CITIZENSHIP STATUS !! Foreign-born population !! Naturalized U.S. citizen MARGIN OF ERROR</variable>
+    <variable name="DP02_0095E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">U.S. CITIZENSHIP STATUS !! Foreign-born population !! Not a U.S. citizen</variable>
+    <variable name="DP02_0095M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">U.S. CITIZENSHIP STATUS !! Foreign-born population !! Not a U.S. citizen MARGIN OF ERROR</variable>
+    <variable name="DP02_0096E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">YEAR OF ENTRY !! Population born outside the United States</variable>
+    <variable name="DP02_0096M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">YEAR OF ENTRY !! Population born outside the United States MARGIN OF ERROR</variable>
+    <variable name="DP02_0097E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">YEAR OF ENTRY !! Native</variable>
+    <variable name="DP02_0097M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">YEAR OF ENTRY !! Native MARGIN OF ERROR</variable>
+    <variable name="DP02_0098E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">YEAR OF ENTRY !! Native !! Entered 2000 or later</variable>
+    <variable name="DP02_0098M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">YEAR OF ENTRY !! Native !! Entered 2000 or later MARGIN OF ERROR</variable>
+    <variable name="DP02_0099E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">YEAR OF ENTRY !! Native !! Entered before 2000</variable>
+    <variable name="DP02_0099M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">YEAR OF ENTRY !! Native !! Entered before 2000 MARGIN OF ERROR</variable>
+    <variable name="DP02_0100E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">YEAR OF ENTRY !! Foreign born</variable>
+    <variable name="DP02_0100M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">YEAR OF ENTRY !! Foreign born MARGIN OF ERROR</variable>
+    <variable name="DP02_0101E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">YEAR OF ENTRY !! Foreign born !! Entered 2000 or later</variable>
+    <variable name="DP02_0101M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">YEAR OF ENTRY !! Foreign born !! Entered 2000 or later MARGIN OF ERROR</variable>
+    <variable name="DP02_0102E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">YEAR OF ENTRY !! Foreign born !! Entered before 2000</variable>
+    <variable name="DP02_0102M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">YEAR OF ENTRY !! Foreign born !! Entered before 2000 MARGIN OF ERROR</variable>
+    <variable name="DP02_0103E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;WORLD REGION OF BIRTH OF FOREIGN BORN !! Foreign-born population, excluding population born at sea&quot;</variable>
+    <variable name="DP02_0103M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;WORLD REGION OF BIRTH OF FOREIGN BORN !! Foreign-born population, excluding population born at sea&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0104E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;WORLD REGION OF BIRTH OF FOREIGN BORN !! Foreign-born population, excluding population born at sea !! Europe&quot;</variable>
+    <variable name="DP02_0104M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;WORLD REGION OF BIRTH OF FOREIGN BORN !! Foreign-born population, excluding population born at sea !! Europe&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0105E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;WORLD REGION OF BIRTH OF FOREIGN BORN !! Foreign-born population, excluding population born at sea !! Asia&quot;</variable>
+    <variable name="DP02_0105M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;WORLD REGION OF BIRTH OF FOREIGN BORN !! Foreign-born population, excluding population born at sea !! Asia&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0106E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;WORLD REGION OF BIRTH OF FOREIGN BORN !! Foreign-born population, excluding population born at sea !! Africa&quot;</variable>
+    <variable name="DP02_0106M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;WORLD REGION OF BIRTH OF FOREIGN BORN !! Foreign-born population, excluding population born at sea !! Africa&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0107E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;WORLD REGION OF BIRTH OF FOREIGN BORN !! Foreign-born population, excluding population born at sea !! Oceania&quot;</variable>
+    <variable name="DP02_0107M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;WORLD REGION OF BIRTH OF FOREIGN BORN !! Foreign-born population, excluding population born at sea !! Oceania&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0108E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;WORLD REGION OF BIRTH OF FOREIGN BORN !! Foreign-born population, excluding population born at sea !! Latin America&quot;</variable>
+    <variable name="DP02_0108M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;WORLD REGION OF BIRTH OF FOREIGN BORN !! Foreign-born population, excluding population born at sea !! Latin America&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0109E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;WORLD REGION OF BIRTH OF FOREIGN BORN !! Foreign-born population, excluding population born at sea !! Northern America&quot;</variable>
+    <variable name="DP02_0109M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;WORLD REGION OF BIRTH OF FOREIGN BORN !! Foreign-born population, excluding population born at sea !! Northern America&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0110E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">LANGUAGE SPOKEN AT HOME !! Population 5 years and over</variable>
+    <variable name="DP02_0110M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">LANGUAGE SPOKEN AT HOME !! Population 5 years and over MARGIN OF ERROR</variable>
+    <variable name="DP02_0111E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! English only</variable>
+    <variable name="DP02_0111M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! English only MARGIN OF ERROR</variable>
+    <variable name="DP02_0112E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! Language other than English</variable>
+    <variable name="DP02_0112M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! Language other than English MARGIN OF ERROR</variable>
+    <variable name="DP02_0113E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! Language other than English !! Speak English less than &quot;&quot;very well&quot;&quot;&quot;</variable>
+    <variable name="DP02_0113M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! Language other than English !! Speak English less than &quot;&quot;very well&quot;&quot;&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0114E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! Language other than English !! Spanish</variable>
+    <variable name="DP02_0114M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! Language other than English !! Spanish MARGIN OF ERROR</variable>
+    <variable name="DP02_0115E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! Language other than English !! Spanish !! Speak English less than &quot;&quot;very well&quot;&quot;&quot;</variable>
+    <variable name="DP02_0115M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! Language other than English !! Spanish !! Speak English less than &quot;&quot;very well&quot;&quot;&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0116E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! Language other than English !! Other Indo-European languages</variable>
+    <variable name="DP02_0116M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! Language other than English !! Other Indo-European languages MARGIN OF ERROR</variable>
+    <variable name="DP02_0117E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! Language other than English !! Other Indo-European languages !! Speak English less than &quot;&quot;very well&quot;&quot;&quot;</variable>
+    <variable name="DP02_0117M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! Language other than English !! Other Indo-European languages !! Speak English less than &quot;&quot;very well&quot;&quot;&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0118E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! Language other than English !! Asian and Pacific Islander languages</variable>
+    <variable name="DP02_0118M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! Language other than English !! Asian and Pacific Islander languages MARGIN OF ERROR</variable>
+    <variable name="DP02_0119E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! Language other than English !! Asian and Pacific Islander languages !! Speak English less than &quot;&quot;very well&quot;&quot;&quot;</variable>
+    <variable name="DP02_0119M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! Language other than English !! Asian and Pacific Islander languages !! Speak English less than &quot;&quot;very well&quot;&quot;&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0120E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! Language other than English !! Other languages</variable>
+    <variable name="DP02_0120M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! Language other than English !! Other languages MARGIN OF ERROR</variable>
+    <variable name="DP02_0121E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! Language other than English !! Other languages !! Speak English less than &quot;&quot;very well&quot;&quot;&quot;</variable>
+    <variable name="DP02_0121M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">&quot;LANGUAGE SPOKEN AT HOME !! Population 5 years and over !! Language other than English !! Other languages !! Speak English less than &quot;&quot;very well&quot;&quot;&quot; MARGIN OF ERROR</variable>
+    <variable name="DP02_0123E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! American</variable>
+    <variable name="DP02_0123M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! American MARGIN OF ERROR</variable>
+    <variable name="DP02_0124E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Arab</variable>
+    <variable name="DP02_0124M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Arab MARGIN OF ERROR</variable>
+    <variable name="DP02_0125E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Czech</variable>
+    <variable name="DP02_0125M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Czech MARGIN OF ERROR</variable>
+    <variable name="DP02_0126E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Danish</variable>
+    <variable name="DP02_0126M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Danish MARGIN OF ERROR</variable>
+    <variable name="DP02_0127E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Dutch</variable>
+    <variable name="DP02_0127M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Dutch MARGIN OF ERROR</variable>
+    <variable name="DP02_0128E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! English</variable>
+    <variable name="DP02_0128M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! English MARGIN OF ERROR</variable>
+    <variable name="DP02_0129E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! French (except Basque)</variable>
+    <variable name="DP02_0129M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! French (except Basque) MARGIN OF ERROR</variable>
+    <variable name="DP02_0130E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! French Canadian</variable>
+    <variable name="DP02_0130M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! French Canadian MARGIN OF ERROR</variable>
+    <variable name="DP02_0131E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! German</variable>
+    <variable name="DP02_0131M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! German MARGIN OF ERROR</variable>
+    <variable name="DP02_0132E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Greek</variable>
+    <variable name="DP02_0132M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Greek MARGIN OF ERROR</variable>
+    <variable name="DP02_0133E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Hungarian</variable>
+    <variable name="DP02_0133M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Hungarian MARGIN OF ERROR</variable>
+    <variable name="DP02_0134E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Irish</variable>
+    <variable name="DP02_0134M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Irish MARGIN OF ERROR</variable>
+    <variable name="DP02_0135E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Italian</variable>
+    <variable name="DP02_0135M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Italian MARGIN OF ERROR</variable>
+    <variable name="DP02_0136E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Lithuanian</variable>
+    <variable name="DP02_0136M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Lithuanian MARGIN OF ERROR</variable>
+    <variable name="DP02_0137E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Norwegian</variable>
+    <variable name="DP02_0137M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Norwegian MARGIN OF ERROR</variable>
+    <variable name="DP02_0138E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Polish</variable>
+    <variable name="DP02_0138M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Polish MARGIN OF ERROR</variable>
+    <variable name="DP02_0139E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Portuguese</variable>
+    <variable name="DP02_0139M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Portuguese MARGIN OF ERROR</variable>
+    <variable name="DP02_0140E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Russian</variable>
+    <variable name="DP02_0140M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Russian MARGIN OF ERROR</variable>
+    <variable name="DP02_0141E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Scotch-Irish</variable>
+    <variable name="DP02_0141M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Scotch-Irish MARGIN OF ERROR</variable>
+    <variable name="DP02_0142E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Scottish</variable>
+    <variable name="DP02_0142M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Scottish MARGIN OF ERROR</variable>
+    <variable name="DP02_0143E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Slovak</variable>
+    <variable name="DP02_0143M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Slovak MARGIN OF ERROR</variable>
+    <variable name="DP02_0144E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Subsaharan African</variable>
+    <variable name="DP02_0144M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Subsaharan African MARGIN OF ERROR</variable>
+    <variable name="DP02_0145E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Swedish</variable>
+    <variable name="DP02_0145M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Swedish MARGIN OF ERROR</variable>
+    <variable name="DP02_0146E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Swiss</variable>
+    <variable name="DP02_0146M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Swiss MARGIN OF ERROR</variable>
+    <variable name="DP02_0147E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Ukrainian</variable>
+    <variable name="DP02_0147M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Ukrainian MARGIN OF ERROR</variable>
+    <variable name="DP02_0148E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Welsh</variable>
+    <variable name="DP02_0148M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! Welsh MARGIN OF ERROR</variable>
+    <variable name="DP02_0149E" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! West Indian (excluding Hispanic origin groups)</variable>
+    <variable name="DP02_0149M" concept="SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES">ANCESTRY !! Total population !! West Indian (excluding Hispanic origin groups) MARGIN OF ERROR</variable>
+  </concept>
+  <concept name="SELECTED ECONOMIC CHARACTERISTICS">
+    <variable name="DP03_0001E" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over</variable>
+    <variable name="DP03_0001M" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over MARGIN OF ERROR</variable>
+    <variable name="DP03_0002E" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! In labor force</variable>
+    <variable name="DP03_0002M" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! In labor force MARGIN OF ERROR</variable>
+    <variable name="DP03_0003E" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! In labor force !! Civilian labor force</variable>
+    <variable name="DP03_0003M" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! In labor force !! Civilian labor force MARGIN OF ERROR</variable>
+    <variable name="DP03_0004E" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! In labor force !! Civilian labor force !! Employed</variable>
+    <variable name="DP03_0004M" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! In labor force !! Civilian labor force !! Employed MARGIN OF ERROR</variable>
+    <variable name="DP03_0005E" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! In labor force !! Civilian labor force !! Unemployed</variable>
+    <variable name="DP03_0005M" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! In labor force !! Civilian labor force !! Unemployed MARGIN OF ERROR</variable>
+    <variable name="DP03_0006E" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! In labor force !! Civilian labor force !! Armed Forces</variable>
+    <variable name="DP03_0006M" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! In labor force !! Civilian labor force !! Armed Forces MARGIN OF ERROR</variable>
+    <variable name="DP03_0007E" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! Not in labor force</variable>
+    <variable name="DP03_0007M" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! Not in labor force MARGIN OF ERROR</variable>
+    <variable name="DP03_0009E" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! In labor force !! Civilian labor force !! Percent Unemployed</variable>
+    <variable name="DP03_0009M" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! In labor force !! Civilian labor force !! Percent Unemployed MARGIN OF ERROR</variable>
+    <variable name="DP03_0010E" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! Females 16 years and over</variable>
+    <variable name="DP03_0010M" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! Females 16 years and over MARGIN OF ERROR</variable>
+    <variable name="DP03_0011E" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! Females 16 years and over !! In labor force</variable>
+    <variable name="DP03_0011M" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! Females 16 years and over !! In labor force MARGIN OF ERROR</variable>
+    <variable name="DP03_0012E" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! Females 16 years and over !! In labor force !! Civilian labor force</variable>
+    <variable name="DP03_0012M" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! Females 16 years and over !! In labor force !! Civilian labor force MARGIN OF ERROR</variable>
+    <variable name="DP03_0013E" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! Females 16 years and over !! In labor force !! Civilian labor force !! Employed</variable>
+    <variable name="DP03_0013M" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! Females 16 years and over !! In labor force !! Civilian labor force !! Employed MARGIN OF ERROR</variable>
+    <variable name="DP03_0014E" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! Own children under 6 years</variable>
+    <variable name="DP03_0014M" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! Own children under 6 years MARGIN OF ERROR</variable>
+    <variable name="DP03_0015E" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! Own children under 6 years !! All parents in family in labor force</variable>
+    <variable name="DP03_0015M" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! Own children under 6 years !! All parents in family in labor force MARGIN OF ERROR</variable>
+    <variable name="DP03_0016E" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! Own children 6 to 17 years</variable>
+    <variable name="DP03_0016M" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! Own children 6 to 17 years MARGIN OF ERROR</variable>
+    <variable name="DP03_0017E" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! Own children 6 to 17 years !! All parents in family in labor force</variable>
+    <variable name="DP03_0017M" concept="SELECTED ECONOMIC CHARACTERISTICS">EMPLOYMENT STATUS !! Population 16 years and over !! Own children 6 to 17 years !! All parents in family in labor force MARGIN OF ERROR</variable>
+    <variable name="DP03_0018E" concept="SELECTED ECONOMIC CHARACTERISTICS">COMMUTING TO WORK !! Workers 16 years and over</variable>
+    <variable name="DP03_0018M" concept="SELECTED ECONOMIC CHARACTERISTICS">COMMUTING TO WORK !! Workers 16 years and over MARGIN OF ERROR</variable>
+    <variable name="DP03_0019E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;COMMUTING TO WORK !! Workers 16 years and over !! Car, truck, or van -- drove alone&quot;</variable>
+    <variable name="DP03_0019M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;COMMUTING TO WORK !! Workers 16 years and over !! Car, truck, or van -- drove alone&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0020E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;COMMUTING TO WORK !! Workers 16 years and over !! Car, truck, or van -- carpooled&quot;</variable>
+    <variable name="DP03_0020M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;COMMUTING TO WORK !! Workers 16 years and over !! Car, truck, or van -- carpooled&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0021E" concept="SELECTED ECONOMIC CHARACTERISTICS">COMMUTING TO WORK !! Workers 16 years and over !! Public transportation (excluding taxicab)</variable>
+    <variable name="DP03_0021M" concept="SELECTED ECONOMIC CHARACTERISTICS">COMMUTING TO WORK !! Workers 16 years and over !! Public transportation (excluding taxicab) MARGIN OF ERROR</variable>
+    <variable name="DP03_0022E" concept="SELECTED ECONOMIC CHARACTERISTICS">COMMUTING TO WORK !! Workers 16 years and over !! Walked</variable>
+    <variable name="DP03_0022M" concept="SELECTED ECONOMIC CHARACTERISTICS">COMMUTING TO WORK !! Workers 16 years and over !! Walked MARGIN OF ERROR</variable>
+    <variable name="DP03_0023E" concept="SELECTED ECONOMIC CHARACTERISTICS">COMMUTING TO WORK !! Workers 16 years and over !! Other means</variable>
+    <variable name="DP03_0023M" concept="SELECTED ECONOMIC CHARACTERISTICS">COMMUTING TO WORK !! Workers 16 years and over !! Other means MARGIN OF ERROR</variable>
+    <variable name="DP03_0024E" concept="SELECTED ECONOMIC CHARACTERISTICS">COMMUTING TO WORK !! Workers 16 years and over !! Worked at home</variable>
+    <variable name="DP03_0024M" concept="SELECTED ECONOMIC CHARACTERISTICS">COMMUTING TO WORK !! Workers 16 years and over !! Worked at home MARGIN OF ERROR</variable>
+    <variable name="DP03_0025E" concept="SELECTED ECONOMIC CHARACTERISTICS">COMMUTING TO WORK !! Workers 16 years and over !! Mean travel time to work (minutes)</variable>
+    <variable name="DP03_0025M" concept="SELECTED ECONOMIC CHARACTERISTICS">COMMUTING TO WORK !! Workers 16 years and over !! Mean travel time to work (minutes) MARGIN OF ERROR</variable>
+    <variable name="DP03_0026E" concept="SELECTED ECONOMIC CHARACTERISTICS">OCCUPATION !! Civilian employed population 16 years and over</variable>
+    <variable name="DP03_0026M" concept="SELECTED ECONOMIC CHARACTERISTICS">OCCUPATION !! Civilian employed population 16 years and over MARGIN OF ERROR</variable>
+    <variable name="DP03_0027E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;OCCUPATION !! Civilian employed population 16 years and over !! Management, business, science, and arts occupations&quot;</variable>
+    <variable name="DP03_0027M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;OCCUPATION !! Civilian employed population 16 years and over !! Management, business, science, and arts occupations&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0028E" concept="SELECTED ECONOMIC CHARACTERISTICS">OCCUPATION !! Civilian employed population 16 years and over !! Service occupations</variable>
+    <variable name="DP03_0028M" concept="SELECTED ECONOMIC CHARACTERISTICS">OCCUPATION !! Civilian employed population 16 years and over !! Service occupations MARGIN OF ERROR</variable>
+    <variable name="DP03_0029E" concept="SELECTED ECONOMIC CHARACTERISTICS">OCCUPATION !! Civilian employed population 16 years and over !! Sales and office occupations</variable>
+    <variable name="DP03_0029M" concept="SELECTED ECONOMIC CHARACTERISTICS">OCCUPATION !! Civilian employed population 16 years and over !! Sales and office occupations MARGIN OF ERROR</variable>
+    <variable name="DP03_0030E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;OCCUPATION !! Civilian employed population 16 years and over !! Natural resources, construction, and maintenance occupations&quot;</variable>
+    <variable name="DP03_0030M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;OCCUPATION !! Civilian employed population 16 years and over !! Natural resources, construction, and maintenance occupations&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0031E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;OCCUPATION !! Civilian employed population 16 years and over !! Production, transportation, and material moving occupations&quot;</variable>
+    <variable name="DP03_0031M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;OCCUPATION !! Civilian employed population 16 years and over !! Production, transportation, and material moving occupations&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0033E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INDUSTRY !! Civilian employed population 16 years and over !! Agriculture, forestry, fishing and hunting, and mining&quot;</variable>
+    <variable name="DP03_0033M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INDUSTRY !! Civilian employed population 16 years and over !! Agriculture, forestry, fishing and hunting, and mining&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0034E" concept="SELECTED ECONOMIC CHARACTERISTICS">INDUSTRY !! Civilian employed population 16 years and over !! Construction</variable>
+    <variable name="DP03_0034M" concept="SELECTED ECONOMIC CHARACTERISTICS">INDUSTRY !! Civilian employed population 16 years and over !! Construction MARGIN OF ERROR</variable>
+    <variable name="DP03_0035E" concept="SELECTED ECONOMIC CHARACTERISTICS">INDUSTRY !! Civilian employed population 16 years and over !! Manufacturing</variable>
+    <variable name="DP03_0035M" concept="SELECTED ECONOMIC CHARACTERISTICS">INDUSTRY !! Civilian employed population 16 years and over !! Manufacturing MARGIN OF ERROR</variable>
+    <variable name="DP03_0036E" concept="SELECTED ECONOMIC CHARACTERISTICS">INDUSTRY !! Civilian employed population 16 years and over !! Wholesale trade</variable>
+    <variable name="DP03_0036M" concept="SELECTED ECONOMIC CHARACTERISTICS">INDUSTRY !! Civilian employed population 16 years and over !! Wholesale trade MARGIN OF ERROR</variable>
+    <variable name="DP03_0037E" concept="SELECTED ECONOMIC CHARACTERISTICS">INDUSTRY !! Civilian employed population 16 years and over !! Retail trade</variable>
+    <variable name="DP03_0037M" concept="SELECTED ECONOMIC CHARACTERISTICS">INDUSTRY !! Civilian employed population 16 years and over !! Retail trade MARGIN OF ERROR</variable>
+    <variable name="DP03_0038E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INDUSTRY !! Civilian employed population 16 years and over !! Transportation and warehousing, and utilities&quot;</variable>
+    <variable name="DP03_0038M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INDUSTRY !! Civilian employed population 16 years and over !! Transportation and warehousing, and utilities&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0039E" concept="SELECTED ECONOMIC CHARACTERISTICS">INDUSTRY !! Civilian employed population 16 years and over !! Information</variable>
+    <variable name="DP03_0039M" concept="SELECTED ECONOMIC CHARACTERISTICS">INDUSTRY !! Civilian employed population 16 years and over !! Information MARGIN OF ERROR</variable>
+    <variable name="DP03_0040E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INDUSTRY !! Civilian employed population 16 years and over !! Finance and insurance, and real estate and rental and leasing&quot;</variable>
+    <variable name="DP03_0040M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INDUSTRY !! Civilian employed population 16 years and over !! Finance and insurance, and real estate and rental and leasing&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0041E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INDUSTRY !! Civilian employed population 16 years and over !! Professional, scientific, and management, and administrative and waste management services&quot;</variable>
+    <variable name="DP03_0041M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INDUSTRY !! Civilian employed population 16 years and over !! Professional, scientific, and management, and administrative and waste management services&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0042E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INDUSTRY !! Civilian employed population 16 years and over !! Educational services, and health care and social assistance&quot;</variable>
+    <variable name="DP03_0042M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INDUSTRY !! Civilian employed population 16 years and over !! Educational services, and health care and social assistance&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0043E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INDUSTRY !! Civilian employed population 16 years and over !! Arts, entertainment, and recreation, and accommodation and food services&quot;</variable>
+    <variable name="DP03_0043M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INDUSTRY !! Civilian employed population 16 years and over !! Arts, entertainment, and recreation, and accommodation and food services&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0044E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INDUSTRY !! Civilian employed population 16 years and over !! Other services, except public administration&quot;</variable>
+    <variable name="DP03_0044M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INDUSTRY !! Civilian employed population 16 years and over !! Other services, except public administration&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0045E" concept="SELECTED ECONOMIC CHARACTERISTICS">INDUSTRY !! Civilian employed population 16 years and over !! Public administration</variable>
+    <variable name="DP03_0045M" concept="SELECTED ECONOMIC CHARACTERISTICS">INDUSTRY !! Civilian employed population 16 years and over !! Public administration MARGIN OF ERROR</variable>
+    <variable name="DP03_0047E" concept="SELECTED ECONOMIC CHARACTERISTICS">CLASS OF WORKER !! Civilian employed population 16 years and over !! Private wage and salary workers</variable>
+    <variable name="DP03_0047M" concept="SELECTED ECONOMIC CHARACTERISTICS">CLASS OF WORKER !! Civilian employed population 16 years and over !! Private wage and salary workers MARGIN OF ERROR</variable>
+    <variable name="DP03_0048E" concept="SELECTED ECONOMIC CHARACTERISTICS">CLASS OF WORKER !! Civilian employed population 16 years and over !! Government workers</variable>
+    <variable name="DP03_0048M" concept="SELECTED ECONOMIC CHARACTERISTICS">CLASS OF WORKER !! Civilian employed population 16 years and over !! Government workers MARGIN OF ERROR</variable>
+    <variable name="DP03_0049E" concept="SELECTED ECONOMIC CHARACTERISTICS">CLASS OF WORKER !! Civilian employed population 16 years and over !! Self-employed in own not incorporated business workers</variable>
+    <variable name="DP03_0049M" concept="SELECTED ECONOMIC CHARACTERISTICS">CLASS OF WORKER !! Civilian employed population 16 years and over !! Self-employed in own not incorporated business workers MARGIN OF ERROR</variable>
+    <variable name="DP03_0050E" concept="SELECTED ECONOMIC CHARACTERISTICS">CLASS OF WORKER !! Civilian employed population 16 years and over !! Unpaid family workers</variable>
+    <variable name="DP03_0050M" concept="SELECTED ECONOMIC CHARACTERISTICS">CLASS OF WORKER !! Civilian employed population 16 years and over !! Unpaid family workers MARGIN OF ERROR</variable>
+    <variable name="DP03_0051E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households</variable>
+    <variable name="DP03_0051M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households MARGIN OF ERROR</variable>
+    <variable name="DP03_0052E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Less than $10,000&quot;</variable>
+    <variable name="DP03_0052M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Less than $10,000&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0053E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! $10,000 to $14,999&quot;</variable>
+    <variable name="DP03_0053M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! $10,000 to $14,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0054E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! $15,000 to $24,999&quot;</variable>
+    <variable name="DP03_0054M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! $15,000 to $24,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0055E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! $25,000 to $34,999&quot;</variable>
+    <variable name="DP03_0055M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! $25,000 to $34,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0056E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! $35,000 to $49,999&quot;</variable>
+    <variable name="DP03_0056M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! $35,000 to $49,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0057E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! $50,000 to $74,999&quot;</variable>
+    <variable name="DP03_0057M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! $50,000 to $74,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0058E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! $75,000 to $99,999&quot;</variable>
+    <variable name="DP03_0058M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! $75,000 to $99,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0059E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! $100,000 to $149,999&quot;</variable>
+    <variable name="DP03_0059M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! $100,000 to $149,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0060E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! $150,000 to $199,999&quot;</variable>
+    <variable name="DP03_0060M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! $150,000 to $199,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0061E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! $200,000 or more&quot;</variable>
+    <variable name="DP03_0061M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! $200,000 or more&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0062E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Median household income (dollars)</variable>
+    <variable name="DP03_0062M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Median household income (dollars) MARGIN OF ERROR</variable>
+    <variable name="DP03_0063E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Mean household income (dollars)</variable>
+    <variable name="DP03_0063M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Mean household income (dollars) MARGIN OF ERROR</variable>
+    <variable name="DP03_0064E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With earnings</variable>
+    <variable name="DP03_0064M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With earnings MARGIN OF ERROR</variable>
+    <variable name="DP03_0065E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With earnings !! Mean earnings (dollars)</variable>
+    <variable name="DP03_0065M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With earnings !! Mean earnings (dollars) MARGIN OF ERROR</variable>
+    <variable name="DP03_0066E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With Social Security</variable>
+    <variable name="DP03_0066M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With Social Security MARGIN OF ERROR</variable>
+    <variable name="DP03_0067E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With Social Security !! Mean Social Security income (dollars)</variable>
+    <variable name="DP03_0067M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With Social Security !! Mean Social Security income (dollars) MARGIN OF ERROR</variable>
+    <variable name="DP03_0068E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With retirement income</variable>
+    <variable name="DP03_0068M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With retirement income MARGIN OF ERROR</variable>
+    <variable name="DP03_0069E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With retirement income !! Mean retirement income (dollars)</variable>
+    <variable name="DP03_0069M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With retirement income !! Mean retirement income (dollars) MARGIN OF ERROR</variable>
+    <variable name="DP03_0070E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With Supplemental Security Income</variable>
+    <variable name="DP03_0070M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With Supplemental Security Income MARGIN OF ERROR</variable>
+    <variable name="DP03_0071E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With Supplemental Security Income !! Mean Supplemental Security Income (dollars)</variable>
+    <variable name="DP03_0071M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With Supplemental Security Income !! Mean Supplemental Security Income (dollars) MARGIN OF ERROR</variable>
+    <variable name="DP03_0072E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With cash public assistance income</variable>
+    <variable name="DP03_0072M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With cash public assistance income MARGIN OF ERROR</variable>
+    <variable name="DP03_0073E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With cash public assistance income !! Mean cash public assistance income (dollars)</variable>
+    <variable name="DP03_0073M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With cash public assistance income !! Mean cash public assistance income (dollars) MARGIN OF ERROR</variable>
+    <variable name="DP03_0074E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With Food Stamp/SNAP benefits in the past 12 months</variable>
+    <variable name="DP03_0074M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! With Food Stamp/SNAP benefits in the past 12 months MARGIN OF ERROR</variable>
+    <variable name="DP03_0075E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Families</variable>
+    <variable name="DP03_0075M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Families MARGIN OF ERROR</variable>
+    <variable name="DP03_0076E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Families !! Less than $10,000&quot;</variable>
+    <variable name="DP03_0076M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Families !! Less than $10,000&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0077E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Families !! $10,000 to $14,999&quot;</variable>
+    <variable name="DP03_0077M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Families !! $10,000 to $14,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0078E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !!Total households !!  Families !! $15,000 to $24,999&quot;</variable>
+    <variable name="DP03_0078M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !!Total households !!  Families !! $15,000 to $24,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0079E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !!Total households !!  Families !! $25,000 to $34,999&quot;</variable>
+    <variable name="DP03_0079M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !!Total households !!  Families !! $25,000 to $34,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0080E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Families !! $35,000 to $49,999&quot;</variable>
+    <variable name="DP03_0080M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Families !! $35,000 to $49,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0081E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Families !! $50,000 to $74,999&quot;</variable>
+    <variable name="DP03_0081M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Families !! $50,000 to $74,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0082E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Families !! $75,000 to $99,999&quot;</variable>
+    <variable name="DP03_0082M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Families !! $75,000 to $99,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0083E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Families !! $100,000 to $149,999&quot;</variable>
+    <variable name="DP03_0083M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Families !! $100,000 to $149,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0084E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !!  Families !! $150,000 to $199,999&quot;</variable>
+    <variable name="DP03_0084M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !!  Families !! $150,000 to $199,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0085E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !!  Families !! $200,000 or more&quot;</variable>
+    <variable name="DP03_0085M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !!  Families !! $200,000 or more&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0086E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !!  Families !! Median family income (dollars)</variable>
+    <variable name="DP03_0086M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !!  Families !! Median family income (dollars) MARGIN OF ERROR</variable>
+    <variable name="DP03_0087E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Families !! Mean family income (dollars)</variable>
+    <variable name="DP03_0087M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Families !! Mean family income (dollars) MARGIN OF ERROR</variable>
+    <variable name="DP03_0088E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Per capita income (dollars)</variable>
+    <variable name="DP03_0088M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Per capita income (dollars) MARGIN OF ERROR</variable>
+    <variable name="DP03_0089E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Nonfamily households</variable>
+    <variable name="DP03_0089M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Nonfamily households MARGIN OF ERROR</variable>
+    <variable name="DP03_0090E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Nonfamily households !! Median nonfamily income (dollars)</variable>
+    <variable name="DP03_0090M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Nonfamily households !! Median nonfamily income (dollars) MARGIN OF ERROR</variable>
+    <variable name="DP03_0091E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Nonfamily households !! Mean nonfamily income (dollars)</variable>
+    <variable name="DP03_0091M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Nonfamily households !! Mean nonfamily income (dollars) MARGIN OF ERROR</variable>
+    <variable name="DP03_0092E" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Median earnings for workers (dollars)</variable>
+    <variable name="DP03_0092M" concept="SELECTED ECONOMIC CHARACTERISTICS">INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Median earnings for workers (dollars) MARGIN OF ERROR</variable>
+    <variable name="DP03_0093E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Median earnings for male full-time, year-round workers (dollars)&quot;</variable>
+    <variable name="DP03_0093M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Median earnings for male full-time, year-round workers (dollars)&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0094E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Median earnings for female full-time, year-round workers (dollars)&quot;</variable>
+    <variable name="DP03_0094M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;INCOME AND BENEFITS (IN 2011 INFLATION-ADJUSTED DOLLARS) !! Total households !! Median earnings for female full-time, year-round workers (dollars)&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0095E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population</variable>
+    <variable name="DP03_0095M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population MARGIN OF ERROR</variable>
+    <variable name="DP03_0096E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population !! With health insurance coverage</variable>
+    <variable name="DP03_0096M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population !! With health insurance coverage MARGIN OF ERROR</variable>
+    <variable name="DP03_0097E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population !! With health insurance coverage !! With private health insurance</variable>
+    <variable name="DP03_0097M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population !! With health insurance coverage !! With private health insurance MARGIN OF ERROR</variable>
+    <variable name="DP03_0098E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population !! With health insurance coverage !! With public coverage</variable>
+    <variable name="DP03_0098M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population !! With health insurance coverage !! With public coverage MARGIN OF ERROR</variable>
+    <variable name="DP03_0099E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population !! No health insurance coverage</variable>
+    <variable name="DP03_0099M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population !! No health insurance coverage MARGIN OF ERROR</variable>
+    <variable name="DP03_0100E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population under 18 years</variable>
+    <variable name="DP03_0100M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population under 18 years MARGIN OF ERROR</variable>
+    <variable name="DP03_0101E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population under 18 years !! No health insurance coverage</variable>
+    <variable name="DP03_0101M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population under 18 years !! No health insurance coverage MARGIN OF ERROR</variable>
+    <variable name="DP03_0102E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years</variable>
+    <variable name="DP03_0102M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years MARGIN OF ERROR</variable>
+    <variable name="DP03_0103E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force</variable>
+    <variable name="DP03_0103M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force MARGIN OF ERROR</variable>
+    <variable name="DP03_0104E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force !! Employed</variable>
+    <variable name="DP03_0104M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force !! Employed MARGIN OF ERROR</variable>
+    <variable name="DP03_0105E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force !! Employed !! With health insurance coverage</variable>
+    <variable name="DP03_0105M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force !! Employed !! With health insurance coverage MARGIN OF ERROR</variable>
+    <variable name="DP03_0106E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force !! Employed !! With health insurance coverage !! With private health insurance</variable>
+    <variable name="DP03_0106M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force !! Employed !! With health insurance coverage !! With private health insurance MARGIN OF ERROR</variable>
+    <variable name="DP03_0107E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force !! Employed !! With health insurance coverage !! With public coverage</variable>
+    <variable name="DP03_0107M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force !! Employed !! With health insurance coverage !! With public coverage MARGIN OF ERROR</variable>
+    <variable name="DP03_0108E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force !! Employed !! No health insurance coverage</variable>
+    <variable name="DP03_0108M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force !! Employed !! No health insurance coverage MARGIN OF ERROR</variable>
+    <variable name="DP03_0109E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force !! Unemployed</variable>
+    <variable name="DP03_0109M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force !! Unemployed MARGIN OF ERROR</variable>
+    <variable name="DP03_0110E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force !! Unemployed !! With health insurance coverage</variable>
+    <variable name="DP03_0110M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force !! Unemployed !! With health insurance coverage MARGIN OF ERROR</variable>
+    <variable name="DP03_0111E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force !! Unemployed !! With health insurance coverage !! With private health insurance</variable>
+    <variable name="DP03_0111M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force !! Unemployed !! With health insurance coverage !! With private health insurance MARGIN OF ERROR</variable>
+    <variable name="DP03_0112E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force !! Unemployed !! With health insurance coverage !! With public coverage</variable>
+    <variable name="DP03_0112M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force !! Unemployed !! With health insurance coverage !! With public coverage MARGIN OF ERROR</variable>
+    <variable name="DP03_0113E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force !! Unemployed !! No health insurance coverage</variable>
+    <variable name="DP03_0113M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population 18 to 64 years !! In labor force !! Unemployed !! No health insurance coverage MARGIN OF ERROR</variable>
+    <variable name="DP03_0114E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population !! Not in labor force</variable>
+    <variable name="DP03_0114M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population !! Not in labor force MARGIN OF ERROR</variable>
+    <variable name="DP03_0115E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population !! Not in labor force !! With health insurance coverage</variable>
+    <variable name="DP03_0115M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population !! Not in labor force !! With health insurance coverage MARGIN OF ERROR</variable>
+    <variable name="DP03_0116E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population !! Not in labor force !! With health insurance coverage !! With private health insurance</variable>
+    <variable name="DP03_0116M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population !! Not in labor force !! With health insurance coverage !! With private health insurance MARGIN OF ERROR</variable>
+    <variable name="DP03_0117E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population !! Not in labor force !! With health insurance coverage !! With public coverage</variable>
+    <variable name="DP03_0117M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population !! Not in labor force !! With health insurance coverage !! With public coverage MARGIN OF ERROR</variable>
+    <variable name="DP03_0118E" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population !! Not in labor force !! No health insurance coverage</variable>
+    <variable name="DP03_0118M" concept="SELECTED ECONOMIC CHARACTERISTICS">HEALTH INSURANCE COVERAGE !! Civilian noninstitutionalized population !! Not in labor force !! No health insurance coverage MARGIN OF ERROR</variable>
+    <variable name="DP03_0119E" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All families</variable>
+    <variable name="DP03_0119M" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All families MARGIN OF ERROR</variable>
+    <variable name="DP03_0120E" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All families !! With related children under 18 years</variable>
+    <variable name="DP03_0120M" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All families !! With related children under 18 years MARGIN OF ERROR</variable>
+    <variable name="DP03_0121E" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All families !! With related children under 18 years !! With related children under 5 years only</variable>
+    <variable name="DP03_0121M" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All families !! With related children under 18 years !! With related children under 5 years only MARGIN OF ERROR</variable>
+    <variable name="DP03_0122E" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! Married couple families</variable>
+    <variable name="DP03_0122M" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! Married couple families MARGIN OF ERROR</variable>
+    <variable name="DP03_0123E" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! Married couple families !! With related children under 18 years</variable>
+    <variable name="DP03_0123M" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! Married couple families !! With related children under 18 years MARGIN OF ERROR</variable>
+    <variable name="DP03_0124E" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! Married couple families !! With related children under 18 years !! With related children under 5 years only</variable>
+    <variable name="DP03_0124M" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! Married couple families !! With related children under 18 years !! With related children under 5 years only MARGIN OF ERROR</variable>
+    <variable name="DP03_0125E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! Families with female householder, no husband present&quot;</variable>
+    <variable name="DP03_0125M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! Families with female householder, no husband present&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0126E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! Families with female householder, no husband present !! With related children under 18 years&quot;</variable>
+    <variable name="DP03_0126M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! Families with female householder, no husband present !! With related children under 18 years&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0127E" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! Families with female householder, no husband present !! With related children under 18 years !! With related children under 5 years only&quot;</variable>
+    <variable name="DP03_0127M" concept="SELECTED ECONOMIC CHARACTERISTICS">&quot;PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! Families with female householder, no husband present !! With related children under 18 years !! With related children under 5 years only&quot; MARGIN OF ERROR</variable>
+    <variable name="DP03_0128E" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All people</variable>
+    <variable name="DP03_0128M" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All people MARGIN OF ERROR</variable>
+    <variable name="DP03_0129E" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All people !! Under 18 years</variable>
+    <variable name="DP03_0129M" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All people !! Under 18 years MARGIN OF ERROR</variable>
+    <variable name="DP03_0130E" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All people !! Under 18 years !! Related children under 18 years</variable>
+    <variable name="DP03_0130M" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All people !! Under 18 years !! Related children under 18 years MARGIN OF ERROR</variable>
+    <variable name="DP03_0131E" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All people !! Under 18 years !! Related children under 18 years !! Related children under 5 years</variable>
+    <variable name="DP03_0131M" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All people !! Under 18 years !! Related children under 18 years !! Related children under 5 years MARGIN OF ERROR</variable>
+    <variable name="DP03_0132E" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All people !! Under 18 years !! Related children under 18 years !! Related children 5 to 17 years</variable>
+    <variable name="DP03_0132M" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All people !! Under 18 years !! Related children under 18 years !! Related children 5 to 17 years MARGIN OF ERROR</variable>
+    <variable name="DP03_0133E" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All people !! 18 years and over</variable>
+    <variable name="DP03_0133M" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All people !! 18 years and over MARGIN OF ERROR</variable>
+    <variable name="DP03_0134E" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All people !! 18 years and over !! 18 to 64 years</variable>
+    <variable name="DP03_0134M" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All people !! 18 years and over !! 18 to 64 years MARGIN OF ERROR</variable>
+    <variable name="DP03_0135E" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All people !! 18 years and over !! 65 years and over</variable>
+    <variable name="DP03_0135M" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! All people !! 18 years and over !! 65 years and over MARGIN OF ERROR</variable>
+    <variable name="DP03_0136E" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! People in families</variable>
+    <variable name="DP03_0136M" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! People in families MARGIN OF ERROR</variable>
+    <variable name="DP03_0137E" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! Unrelated individuals 15 years and over</variable>
+    <variable name="DP03_0137M" concept="SELECTED ECONOMIC CHARACTERISTICS">PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL !! Unrelated individuals 15 years and over MARGIN OF ERROR</variable>
+  </concept>
+  <concept name="SELECTED HOUSING CHARACTERISTICS">
+    <variable name="DP04_0001E" concept="SELECTED HOUSING CHARACTERISTICS">HOUSING OCCUPANCY !! Total housing units</variable>
+    <variable name="DP04_0001M" concept="SELECTED HOUSING CHARACTERISTICS">HOUSING OCCUPANCY !! Total housing units MARGIN OF ERROR</variable>
+    <variable name="DP04_0002E" concept="SELECTED HOUSING CHARACTERISTICS">HOUSING OCCUPANCY !! Total housing units !! Occupied housing units</variable>
+    <variable name="DP04_0002M" concept="SELECTED HOUSING CHARACTERISTICS">HOUSING OCCUPANCY !! Total housing units !! Occupied housing units MARGIN OF ERROR</variable>
+    <variable name="DP04_0003E" concept="SELECTED HOUSING CHARACTERISTICS">HOUSING OCCUPANCY !! Total housing units !! Vacant housing units</variable>
+    <variable name="DP04_0003M" concept="SELECTED HOUSING CHARACTERISTICS">HOUSING OCCUPANCY !! Total housing units !! Vacant housing units MARGIN OF ERROR</variable>
+    <variable name="DP04_0004E" concept="SELECTED HOUSING CHARACTERISTICS">HOUSING OCCUPANCY !! Homeowner vacancy rate</variable>
+    <variable name="DP04_0004M" concept="SELECTED HOUSING CHARACTERISTICS">HOUSING OCCUPANCY !! Homeowner vacancy rate MARGIN OF ERROR</variable>
+    <variable name="DP04_0005E" concept="SELECTED HOUSING CHARACTERISTICS">HOUSING OCCUPANCY !! Rental vacancy rate</variable>
+    <variable name="DP04_0005M" concept="SELECTED HOUSING CHARACTERISTICS">HOUSING OCCUPANCY !! Rental vacancy rate MARGIN OF ERROR</variable>
+    <variable name="DP04_0007E" concept="SELECTED HOUSING CHARACTERISTICS">&quot;UNITS IN STRUCTURE !! Total housing units !! 1-unit, detached&quot;</variable>
+    <variable name="DP04_0007M" concept="SELECTED HOUSING CHARACTERISTICS">&quot;UNITS IN STRUCTURE !! Total housing units !! 1-unit, detached&quot; MARGIN OF ERROR</variable>
+    <variable name="DP04_0008E" concept="SELECTED HOUSING CHARACTERISTICS">&quot;UNITS IN STRUCTURE !! Total housing units !! 1-unit, attached&quot;</variable>
+    <variable name="DP04_0008M" concept="SELECTED HOUSING CHARACTERISTICS">&quot;UNITS IN STRUCTURE !! Total housing units !! 1-unit, attached&quot; MARGIN OF ERROR</variable>
+    <variable name="DP04_0009E" concept="SELECTED HOUSING CHARACTERISTICS">UNITS IN STRUCTURE !! Total housing units !! 2 units</variable>
+    <variable name="DP04_0009M" concept="SELECTED HOUSING CHARACTERISTICS">UNITS IN STRUCTURE !! Total housing units !! 2 units MARGIN OF ERROR</variable>
+    <variable name="DP04_0010E" concept="SELECTED HOUSING CHARACTERISTICS">UNITS IN STRUCTURE !! Total housing units !! 3 or 4 units</variable>
+    <variable name="DP04_0010M" concept="SELECTED HOUSING CHARACTERISTICS">UNITS IN STRUCTURE !! Total housing units !! 3 or 4 units MARGIN OF ERROR</variable>
+    <variable name="DP04_0011E" concept="SELECTED HOUSING CHARACTERISTICS">UNITS IN STRUCTURE !! Total housing units !! 5 to 9 units</variable>
+    <variable name="DP04_0011M" concept="SELECTED HOUSING CHARACTERISTICS">UNITS IN STRUCTURE !! Total housing units !! 5 to 9 units MARGIN OF ERROR</variable>
+    <variable name="DP04_0012E" concept="SELECTED HOUSING CHARACTERISTICS">UNITS IN STRUCTURE !! Total housing units !! 10 to 19 units</variable>
+    <variable name="DP04_0012M" concept="SELECTED HOUSING CHARACTERISTICS">UNITS IN STRUCTURE !! Total housing units !! 10 to 19 units MARGIN OF ERROR</variable>
+    <variable name="DP04_0013E" concept="SELECTED HOUSING CHARACTERISTICS">UNITS IN STRUCTURE !! Total housing units !! 20 or more units</variable>
+    <variable name="DP04_0013M" concept="SELECTED HOUSING CHARACTERISTICS">UNITS IN STRUCTURE !! Total housing units !! 20 or more units MARGIN OF ERROR</variable>
+    <variable name="DP04_0014E" concept="SELECTED HOUSING CHARACTERISTICS">UNITS IN STRUCTURE !! Total housing units !! Mobile home</variable>
+    <variable name="DP04_0014M" concept="SELECTED HOUSING CHARACTERISTICS">UNITS IN STRUCTURE !! Total housing units !! Mobile home MARGIN OF ERROR</variable>
+    <variable name="DP04_0015E" concept="SELECTED HOUSING CHARACTERISTICS">&quot;UNITS IN STRUCTURE !! Total housing units !! Boat, RV, van, etc.&quot;</variable>
+    <variable name="DP04_0015M" concept="SELECTED HOUSING CHARACTERISTICS">&quot;UNITS IN STRUCTURE !! Total housing units !! Boat, RV, van, etc.&quot; MARGIN OF ERROR</variable>
+    <variable name="DP04_0017E" concept="SELECTED HOUSING CHARACTERISTICS">YEAR STRUCTURE BUILT !! Total housing units !! Built 2005 or later</variable>
+    <variable name="DP04_0017M" concept="SELECTED HOUSING CHARACTERISTICS">YEAR STRUCTURE BUILT !! Total housing units !! Built 2005 or later MARGIN OF ERROR</variable>
+    <variable name="DP04_0018E" concept="SELECTED HOUSING CHARACTERISTICS">YEAR STRUCTURE BUILT !! Total housing units !! Built 2000 to 2004</variable>
+    <variable name="DP04_0018M" concept="SELECTED HOUSING CHARACTERISTICS">YEAR STRUCTURE BUILT !! Total housing units !! Built 2000 to 2004 MARGIN OF ERROR</variable>
+    <variable name="DP04_0019E" concept="SELECTED HOUSING CHARACTERISTICS">YEAR STRUCTURE BUILT !! Total housing units !! Built 1990 to 1999</variable>
+    <variable name="DP04_0019M" concept="SELECTED HOUSING CHARACTERISTICS">YEAR STRUCTURE BUILT !! Total housing units !! Built 1990 to 1999 MARGIN OF ERROR</variable>
+    <variable name="DP04_0020E" concept="SELECTED HOUSING CHARACTERISTICS">YEAR STRUCTURE BUILT !! Total housing units !! Built 1980 to 1989</variable>
+    <variable name="DP04_0020M" concept="SELECTED HOUSING CHARACTERISTICS">YEAR STRUCTURE BUILT !! Total housing units !! Built 1980 to 1989 MARGIN OF ERROR</variable>
+    <variable name="DP04_0021E" concept="SELECTED HOUSING CHARACTERISTICS">YEAR STRUCTURE BUILT !! Total housing units !! Built 1970 to 1979</variable>
+    <variable name="DP04_0021M" concept="SELECTED HOUSING CHARACTERISTICS">YEAR STRUCTURE BUILT !! Total housing units !! Built 1970 to 1979 MARGIN OF ERROR</variable>
+    <variable name="DP04_0022E" concept="SELECTED HOUSING CHARACTERISTICS">YEAR STRUCTURE BUILT !! Total housing units !! Built 1960 to 1969</variable>
+    <variable name="DP04_0022M" concept="SELECTED HOUSING CHARACTERISTICS">YEAR STRUCTURE BUILT !! Total housing units !! Built 1960 to 1969 MARGIN OF ERROR</variable>
+    <variable name="DP04_0023E" concept="SELECTED HOUSING CHARACTERISTICS">YEAR STRUCTURE BUILT !! Total housing units !! Built 1950 to 1959</variable>
+    <variable name="DP04_0023M" concept="SELECTED HOUSING CHARACTERISTICS">YEAR STRUCTURE BUILT !! Total housing units !! Built 1950 to 1959 MARGIN OF ERROR</variable>
+    <variable name="DP04_0024E" concept="SELECTED HOUSING CHARACTERISTICS">YEAR STRUCTURE BUILT !! Total housing units !! Built 1940 to 1949</variable>
+    <variable name="DP04_0024M" concept="SELECTED HOUSING CHARACTERISTICS">YEAR STRUCTURE BUILT !! Total housing units !! Built 1940 to 1949 MARGIN OF ERROR</variable>
+    <variable name="DP04_0025E" concept="SELECTED HOUSING CHARACTERISTICS">YEAR STRUCTURE BUILT !! Total housing units !! Built 1939 or earlier</variable>
+    <variable name="DP04_0025M" concept="SELECTED HOUSING CHARACTERISTICS">YEAR STRUCTURE BUILT !! Total housing units !! Built 1939 or earlier MARGIN OF ERROR</variable>
+    <variable name="DP04_0027E" concept="SELECTED HOUSING CHARACTERISTICS">ROOMS !! Total housing units !! 1 room</variable>
+    <variable name="DP04_0027M" concept="SELECTED HOUSING CHARACTERISTICS">ROOMS !! Total housing units !! 1 room MARGIN OF ERROR</variable>
+    <variable name="DP04_0028E" concept="SELECTED HOUSING CHARACTERISTICS">ROOMS !! Total housing units !! 2 rooms</variable>
+    <variable name="DP04_0028M" concept="SELECTED HOUSING CHARACTERISTICS">ROOMS !! Total housing units !! 2 rooms MARGIN OF ERROR</variable>
+    <variable name="DP04_0029E" concept="SELECTED HOUSING CHARACTERISTICS">ROOMS !! Total housing units !! 3 rooms</variable>
+    <variable name="DP04_0029M" concept="SELECTED HOUSING CHARACTERISTICS">ROOMS !! Total housing units !! 3 rooms MARGIN OF ERROR</variable>
+    <variable name="DP04_0030E" concept="SELECTED HOUSING CHARACTERISTICS">ROOMS !! Total housing units !! 4 rooms</variable>
+    <variable name="DP04_0030M" concept="SELECTED HOUSING CHARACTERISTICS">ROOMS !! Total housing units !! 4 rooms MARGIN OF ERROR</variable>
+    <variable name="DP04_0031E" concept="SELECTED HOUSING CHARACTERISTICS">ROOMS !! Total housing units !! 5 rooms</variable>
+    <variable name="DP04_0031M" concept="SELECTED HOUSING CHARACTERISTICS">ROOMS !! Total housing units !! 5 rooms MARGIN OF ERROR</variable>
+    <variable name="DP04_0032E" concept="SELECTED HOUSING CHARACTERISTICS">ROOMS !! Total housing units !! 6 rooms</variable>
+    <variable name="DP04_0032M" concept="SELECTED HOUSING CHARACTERISTICS">ROOMS !! Total housing units !! 6 rooms MARGIN OF ERROR</variable>
+    <variable name="DP04_0033E" concept="SELECTED HOUSING CHARACTERISTICS">ROOMS !! Total housing units !! 7 rooms</variable>
+    <variable name="DP04_0033M" concept="SELECTED HOUSING CHARACTERISTICS">ROOMS !! Total housing units !! 7 rooms MARGIN OF ERROR</variable>
+    <variable name="DP04_0034E" concept="SELECTED HOUSING CHARACTERISTICS">ROOMS !! Total housing units !! 8 rooms</variable>
+    <variable name="DP04_0034M" concept="SELECTED HOUSING CHARACTERISTICS">ROOMS !! Total housing units !! 8 rooms MARGIN OF ERROR</variable>
+    <variable name="DP04_0035E" concept="SELECTED HOUSING CHARACTERISTICS">ROOMS !! Total housing units !! 9 rooms or more</variable>
+    <variable name="DP04_0035M" concept="SELECTED HOUSING CHARACTERISTICS">ROOMS !! Total housing units !! 9 rooms or more MARGIN OF ERROR</variable>
+    <variable name="DP04_0036E" concept="SELECTED HOUSING CHARACTERISTICS">ROOMS !! Total housing units !! Median rooms</variable>
+    <variable name="DP04_0036M" concept="SELECTED HOUSING CHARACTERISTICS">ROOMS !! Total housing units !! Median rooms MARGIN OF ERROR</variable>
+    <variable name="DP04_0038E" concept="SELECTED HOUSING CHARACTERISTICS">BEDROOMS !! Total housing units !! No bedroom</variable>
+    <variable name="DP04_0038M" concept="SELECTED HOUSING CHARACTERISTICS">BEDROOMS !! Total housing units !! No bedroom MARGIN OF ERROR</variable>
+    <variable name="DP04_0039E" concept="SELECTED HOUSING CHARACTERISTICS">BEDROOMS !! Total housing units !! 1 bedroom</variable>
+    <variable name="DP04_0039M" concept="SELECTED HOUSING CHARACTERISTICS">BEDROOMS !! Total housing units !! 1 bedroom MARGIN OF ERROR</variable>
+    <variable name="DP04_0040E" concept="SELECTED HOUSING CHARACTERISTICS">BEDROOMS !! Total housing units !! 2 bedrooms</variable>
+    <variable name="DP04_0040M" concept="SELECTED HOUSING CHARACTERISTICS">BEDROOMS !! Total housing units !! 2 bedrooms MARGIN OF ERROR</variable>
+    <variable name="DP04_0041E" concept="SELECTED HOUSING CHARACTERISTICS">BEDROOMS !! Total housing units !! 3 bedrooms</variable>
+    <variable name="DP04_0041M" concept="SELECTED HOUSING CHARACTERISTICS">BEDROOMS !! Total housing units !! 3 bedrooms MARGIN OF ERROR</variable>
+    <variable name="DP04_0042E" concept="SELECTED HOUSING CHARACTERISTICS">BEDROOMS !! Total housing units !! 4 bedrooms</variable>
+    <variable name="DP04_0042M" concept="SELECTED HOUSING CHARACTERISTICS">BEDROOMS !! Total housing units !! 4 bedrooms MARGIN OF ERROR</variable>
+    <variable name="DP04_0043E" concept="SELECTED HOUSING CHARACTERISTICS">BEDROOMS !! Total housing units !! 5 or more bedrooms</variable>
+    <variable name="DP04_0043M" concept="SELECTED HOUSING CHARACTERISTICS">BEDROOMS !! Total housing units !! 5 or more bedrooms MARGIN OF ERROR</variable>
+    <variable name="DP04_0044E" concept="SELECTED HOUSING CHARACTERISTICS">HOUSING TENURE !! Occupied housing units</variable>
+    <variable name="DP04_0044M" concept="SELECTED HOUSING CHARACTERISTICS">HOUSING TENURE !! Occupied housing units MARGIN OF ERROR</variable>
+    <variable name="DP04_0045E" concept="SELECTED HOUSING CHARACTERISTICS">HOUSING TENURE !! Occupied housing units !! Owner-occupied</variable>
+    <variable name="DP04_0045M" concept="SELECTED HOUSING CHARACTERISTICS">HOUSING TENURE !! Occupied housing units !! Owner-occupied MARGIN OF ERROR</variable>
+    <variable name="DP04_0046E" concept="SELECTED HOUSING CHARACTERISTICS">HOUSING TENURE !! Occupied housing units !! Renter-occupied</variable>
+    <variable name="DP04_0046M" concept="SELECTED HOUSING CHARACTERISTICS">HOUSING TENURE !! Occupied housing units !! Renter-occupied MARGIN OF ERROR</variable>
+    <variable name="DP04_0047E" concept="SELECTED HOUSING CHARACTERISTICS">HOUSING TENURE !! Occupied housing units !! Average household size of owner-occupied unit</variable>
+    <variable name="DP04_0047M" concept="SELECTED HOUSING CHARACTERISTICS">HOUSING TENURE !! Occupied housing units !! Average household size of owner-occupied unit MARGIN OF ERROR</variable>
+    <variable name="DP04_0048E" concept="SELECTED HOUSING CHARACTERISTICS">HOUSING TENURE !! Occupied housing units !! Average household size of renter-occupied unit</variable>
+    <variable name="DP04_0048M" concept="SELECTED HOUSING CHARACTERISTICS">HOUSING TENURE !! Occupied housing units !! Average household size of renter-occupied unit MARGIN OF ERROR</variable>
+    <variable name="DP04_0050E" concept="SELECTED HOUSING CHARACTERISTICS">YEAR HOUSEHOLDER MOVED INTO UNIT !! Occupied housing units !! Moved in 2005 or later</variable>
+    <variable name="DP04_0050M" concept="SELECTED HOUSING CHARACTERISTICS">YEAR HOUSEHOLDER MOVED INTO UNIT !! Occupied housing units !! Moved in 2005 or later MARGIN OF ERROR</variable>
+    <variable name="DP04_0051E" concept="SELECTED HOUSING CHARACTERISTICS">YEAR HOUSEHOLDER MOVED INTO UNIT !! Occupied housing units !! Moved in 2000 to 2004</variable>
+    <variable name="DP04_0051M" concept="SELECTED HOUSING CHARACTERISTICS">YEAR HOUSEHOLDER MOVED INTO UNIT !! Occupied housing units !! Moved in 2000 to 2004 MARGIN OF ERROR</variable>
+    <variable name="DP04_0052E" concept="SELECTED HOUSING CHARACTERISTICS">YEAR HOUSEHOLDER MOVED INTO UNIT !! Occupied housing units !! Moved in 1990 to 1999</variable>
+    <variable name="DP04_0052M" concept="SELECTED HOUSING CHARACTERISTICS">YEAR HOUSEHOLDER MOVED INTO UNIT !! Occupied housing units !! Moved in 1990 to 1999 MARGIN OF ERROR</variable>
+    <variable name="DP04_0053E" concept="SELECTED HOUSING CHARACTERISTICS">YEAR HOUSEHOLDER MOVED INTO UNIT !! Occupied housing units !! Moved in 1980 to 1989</variable>
+    <variable name="DP04_0053M" concept="SELECTED HOUSING CHARACTERISTICS">YEAR HOUSEHOLDER MOVED INTO UNIT !! Occupied housing units !! Moved in 1980 to 1989 MARGIN OF ERROR</variable>
+    <variable name="DP04_0054E" concept="SELECTED HOUSING CHARACTERISTICS">YEAR HOUSEHOLDER MOVED INTO UNIT !! Occupied housing units !! Moved in 1970 to 1979</variable>
+    <variable name="DP04_0054M" concept="SELECTED HOUSING CHARACTERISTICS">YEAR HOUSEHOLDER MOVED INTO UNIT !! Occupied housing units !! Moved in 1970 to 1979 MARGIN OF ERROR</variable>
+    <variable name="DP04_0055E" concept="SELECTED HOUSING CHARACTERISTICS">YEAR HOUSEHOLDER MOVED INTO UNIT !! Occupied housing units !! Moved in 1969 or earlier</variable>
+    <variable name="DP04_0055M" concept="SELECTED HOUSING CHARACTERISTICS">YEAR HOUSEHOLDER MOVED INTO UNIT !! Occupied housing units !! Moved in 1969 or earlier MARGIN OF ERROR</variable>
+    <variable name="DP04_0057E" concept="SELECTED HOUSING CHARACTERISTICS">VEHICLES AVAILABLE !! Occupied housing units !! No vehicles available</variable>
+    <variable name="DP04_0057M" concept="SELECTED HOUSING CHARACTERISTICS">VEHICLES AVAILABLE !! Occupied housing units !! No vehicles available MARGIN OF ERROR</variable>
+    <variable name="DP04_0058E" concept="SELECTED HOUSING CHARACTERISTICS">VEHICLES AVAILABLE !! Occupied housing units !! 1 vehicle available</variable>
+    <variable name="DP04_0058M" concept="SELECTED HOUSING CHARACTERISTICS">VEHICLES AVAILABLE !! Occupied housing units !! 1 vehicle available MARGIN OF ERROR</variable>
+    <variable name="DP04_0059E" concept="SELECTED HOUSING CHARACTERISTICS">VEHICLES AVAILABLE !! Occupied housing units !! 2 vehicles available</variable>
+    <variable name="DP04_0059M" concept="SELECTED HOUSING CHARACTERISTICS">VEHICLES AVAILABLE !! Occupied housing units !! 2 vehicles available MARGIN OF ERROR</variable>
+    <variable name="DP04_0060E" concept="SELECTED HOUSING CHARACTERISTICS">VEHICLES AVAILABLE !! Occupied housing units !! 3 or more vehicles available</variable>
+    <variable name="DP04_0060M" concept="SELECTED HOUSING CHARACTERISTICS">VEHICLES AVAILABLE !! Occupied housing units !! 3 or more vehicles available MARGIN OF ERROR</variable>
+    <variable name="DP04_0062E" concept="SELECTED HOUSING CHARACTERISTICS">HOUSE HEATING FUEL !! Occupied housing units !! Utility gas</variable>
+    <variable name="DP04_0062M" concept="SELECTED HOUSING CHARACTERISTICS">HOUSE HEATING FUEL !! Occupied housing units !! Utility gas MARGIN OF ERROR</variable>
+    <variable name="DP04_0063E" concept="SELECTED HOUSING CHARACTERISTICS">&quot;HOUSE HEATING FUEL !! Occupied housing units !! Bottled, tank, or LP gas&quot;</variable>
+    <variable name="DP04_0063M" concept="SELECTED HOUSING CHARACTERISTICS">&quot;HOUSE HEATING FUEL !! Occupied housing units !! Bottled, tank, or LP gas&quot; MARGIN OF ERROR</variable>
+    <variable name="DP04_0064E" concept="SELECTED HOUSING CHARACTERISTICS">HOUSE HEATING FUEL !! Occupied housing units !! Electricity</variable>
+    <variable name="DP04_0064M" concept="SELECTED HOUSING CHARACTERISTICS">HOUSE HEATING FUEL !! Occupied housing units !! Electricity MARGIN OF ERROR</variable>
+    <variable name="DP04_0065E" concept="SELECTED HOUSING CHARACTERISTICS">&quot;HOUSE HEATING FUEL !! Occupied housing units !! Fuel oil, kerosene, etc.&quot;</variable>
+    <variable name="DP04_0065M" concept="SELECTED HOUSING CHARACTERISTICS">&quot;HOUSE HEATING FUEL !! Occupied housing units !! Fuel oil, kerosene, etc.&quot; MARGIN OF ERROR</variable>
+    <variable name="DP04_0066E" concept="SELECTED HOUSING CHARACTERISTICS">HOUSE HEATING FUEL !! Occupied housing units !! Coal or coke</variable>
+    <variable name="DP04_0066M" concept="SELECTED HOUSING CHARACTERISTICS">HOUSE HEATING FUEL !! Occupied housing units !! Coal or coke MARGIN OF ERROR</variable>
+    <variable name="DP04_0067E" concept="SELECTED HOUSING CHARACTERISTICS">HOUSE HEATING FUEL !! Occupied housing units !! Wood</variable>
+    <variable name="DP04_0067M" concept="SELECTED HOUSING CHARACTERISTICS">HOUSE HEATING FUEL !! Occupied housing units !! Wood MARGIN OF ERROR</variable>
+    <variable name="DP04_0068E" concept="SELECTED HOUSING CHARACTERISTICS">HOUSE HEATING FUEL !! Occupied housing units !! Solar energy</variable>
+    <variable name="DP04_0068M" concept="SELECTED HOUSING CHARACTERISTICS">HOUSE HEATING FUEL !! Occupied housing units !! Solar energy MARGIN OF ERROR</variable>
+    <variable name="DP04_0069E" concept="SELECTED HOUSING CHARACTERISTICS">HOUSE HEATING FUEL !! Occupied housing units !! Other fuel</variable>
+    <variable name="DP04_0069M" concept="SELECTED HOUSING CHARACTERISTICS">HOUSE HEATING FUEL !! Occupied housing units !! Other fuel MARGIN OF ERROR</variable>
+    <variable name="DP04_0070E" concept="SELECTED HOUSING CHARACTERISTICS">HOUSE HEATING FUEL !! Occupied housing units !! No fuel used</variable>
+    <variable name="DP04_0070M" concept="SELECTED HOUSING CHARACTERISTICS">HOUSE HEATING FUEL !! Occupied housing units !! No fuel used MARGIN OF ERROR</variable>
+    <variable name="DP04_0072E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED CHARACTERISTICS !! Occupied housing units !! Lacking complete plumbing facilities</variable>
+    <variable name="DP04_0072M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED CHARACTERISTICS !! Occupied housing units !! Lacking complete plumbing facilities MARGIN OF ERROR</variable>
+    <variable name="DP04_0073E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED CHARACTERISTICS !! Occupied housing units !! Lacking complete kitchen facilities</variable>
+    <variable name="DP04_0073M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED CHARACTERISTICS !! Occupied housing units !! Lacking complete kitchen facilities MARGIN OF ERROR</variable>
+    <variable name="DP04_0074E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED CHARACTERISTICS !! Occupied housing units !! No telephone service available</variable>
+    <variable name="DP04_0074M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED CHARACTERISTICS !! Occupied housing units !! No telephone service available MARGIN OF ERROR</variable>
+    <variable name="DP04_0076E" concept="SELECTED HOUSING CHARACTERISTICS">OCCUPANTS PER ROOM !! Occupied housing units !! 1.00 or less</variable>
+    <variable name="DP04_0076M" concept="SELECTED HOUSING CHARACTERISTICS">OCCUPANTS PER ROOM !! Occupied housing units !! 1.00 or less MARGIN OF ERROR</variable>
+    <variable name="DP04_0077E" concept="SELECTED HOUSING CHARACTERISTICS">OCCUPANTS PER ROOM !! Occupied housing units !! 1.01 to 1.50</variable>
+    <variable name="DP04_0077M" concept="SELECTED HOUSING CHARACTERISTICS">OCCUPANTS PER ROOM !! Occupied housing units !! 1.01 to 1.50 MARGIN OF ERROR</variable>
+    <variable name="DP04_0078E" concept="SELECTED HOUSING CHARACTERISTICS">OCCUPANTS PER ROOM !! Occupied housing units !! 1.51 or more</variable>
+    <variable name="DP04_0078M" concept="SELECTED HOUSING CHARACTERISTICS">OCCUPANTS PER ROOM !! Occupied housing units !! 1.51 or more MARGIN OF ERROR</variable>
+    <variable name="DP04_0079E" concept="SELECTED HOUSING CHARACTERISTICS">VALUE !! Owner-occupied units</variable>
+    <variable name="DP04_0079M" concept="SELECTED HOUSING CHARACTERISTICS">VALUE !! Owner-occupied units MARGIN OF ERROR</variable>
+    <variable name="DP04_0080E" concept="SELECTED HOUSING CHARACTERISTICS">&quot;VALUE !! Owner-occupied units !! Less than $50,000&quot;</variable>
+    <variable name="DP04_0080M" concept="SELECTED HOUSING CHARACTERISTICS">&quot;VALUE !! Owner-occupied units !! Less than $50,000&quot; MARGIN OF ERROR</variable>
+    <variable name="DP04_0081E" concept="SELECTED HOUSING CHARACTERISTICS">&quot;VALUE !! Owner-occupied units !! $50,000 to $99,999&quot;</variable>
+    <variable name="DP04_0081M" concept="SELECTED HOUSING CHARACTERISTICS">&quot;VALUE !! Owner-occupied units !! $50,000 to $99,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP04_0082E" concept="SELECTED HOUSING CHARACTERISTICS">&quot;VALUE !! Owner-occupied units !! $100,000 to $149,999&quot;</variable>
+    <variable name="DP04_0082M" concept="SELECTED HOUSING CHARACTERISTICS">&quot;VALUE !! Owner-occupied units !! $100,000 to $149,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP04_0083E" concept="SELECTED HOUSING CHARACTERISTICS">&quot;VALUE !! Owner-occupied units !! $150,000 to $199,999&quot;</variable>
+    <variable name="DP04_0083M" concept="SELECTED HOUSING CHARACTERISTICS">&quot;VALUE !! Owner-occupied units !! $150,000 to $199,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP04_0084E" concept="SELECTED HOUSING CHARACTERISTICS">&quot;VALUE !! Owner-occupied units !! $200,000 to $299,999&quot;</variable>
+    <variable name="DP04_0084M" concept="SELECTED HOUSING CHARACTERISTICS">&quot;VALUE !! Owner-occupied units !! $200,000 to $299,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP04_0085E" concept="SELECTED HOUSING CHARACTERISTICS">&quot;VALUE !! Owner-occupied units !! $300,000 to $499,999&quot;</variable>
+    <variable name="DP04_0085M" concept="SELECTED HOUSING CHARACTERISTICS">&quot;VALUE !! Owner-occupied units !! $300,000 to $499,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP04_0086E" concept="SELECTED HOUSING CHARACTERISTICS">&quot;VALUE !! Owner-occupied units !! $500,000 to $999,999&quot;</variable>
+    <variable name="DP04_0086M" concept="SELECTED HOUSING CHARACTERISTICS">&quot;VALUE !! Owner-occupied units !! $500,000 to $999,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP04_0087E" concept="SELECTED HOUSING CHARACTERISTICS">&quot;VALUE !! Owner-occupied units !! $1,000,000 or more&quot;</variable>
+    <variable name="DP04_0087M" concept="SELECTED HOUSING CHARACTERISTICS">&quot;VALUE !! Owner-occupied units !! $1,000,000 or more&quot; MARGIN OF ERROR</variable>
+    <variable name="DP04_0088E" concept="SELECTED HOUSING CHARACTERISTICS">VALUE !! Owner-occupied units !! Median (dollars)</variable>
+    <variable name="DP04_0088M" concept="SELECTED HOUSING CHARACTERISTICS">VALUE !! Owner-occupied units !! Median (dollars) MARGIN OF ERROR</variable>
+    <variable name="DP04_0089E" concept="SELECTED HOUSING CHARACTERISTICS">MORTGAGE STATUS !! Owner-occupied units</variable>
+    <variable name="DP04_0089M" concept="SELECTED HOUSING CHARACTERISTICS">MORTGAGE STATUS !! Owner-occupied units MARGIN OF ERROR</variable>
+    <variable name="DP04_0090E" concept="SELECTED HOUSING CHARACTERISTICS">MORTGAGE STATUS !! Owner-occupied units !! Housing units with a mortgage</variable>
+    <variable name="DP04_0090M" concept="SELECTED HOUSING CHARACTERISTICS">MORTGAGE STATUS !! Owner-occupied units !! Housing units with a mortgage MARGIN OF ERROR</variable>
+    <variable name="DP04_0091E" concept="SELECTED HOUSING CHARACTERISTICS">MORTGAGE STATUS !! Owner-occupied units !! Housing units without a mortgage</variable>
+    <variable name="DP04_0091M" concept="SELECTED HOUSING CHARACTERISTICS">MORTGAGE STATUS !! Owner-occupied units !! Housing units without a mortgage MARGIN OF ERROR</variable>
+    <variable name="DP04_0092E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units with a mortgage</variable>
+    <variable name="DP04_0092M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units with a mortgage MARGIN OF ERROR</variable>
+    <variable name="DP04_0093E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units with a mortgage !! Less than $300</variable>
+    <variable name="DP04_0093M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units with a mortgage !! Less than $300 MARGIN OF ERROR</variable>
+    <variable name="DP04_0094E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units with a mortgage !! $300 to $499</variable>
+    <variable name="DP04_0094M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units with a mortgage !! $300 to $499 MARGIN OF ERROR</variable>
+    <variable name="DP04_0095E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units with a mortgage !! $500 to $699</variable>
+    <variable name="DP04_0095M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units with a mortgage !! $500 to $699 MARGIN OF ERROR</variable>
+    <variable name="DP04_0096E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units with a mortgage !! $700 to $999</variable>
+    <variable name="DP04_0096M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units with a mortgage !! $700 to $999 MARGIN OF ERROR</variable>
+    <variable name="DP04_0097E" concept="SELECTED HOUSING CHARACTERISTICS">&quot;SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units with a mortgage !! $1,000 to $1,499&quot;</variable>
+    <variable name="DP04_0097M" concept="SELECTED HOUSING CHARACTERISTICS">&quot;SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units with a mortgage !! $1,000 to $1,499&quot; MARGIN OF ERROR</variable>
+    <variable name="DP04_0098E" concept="SELECTED HOUSING CHARACTERISTICS">&quot;SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units with a mortgage !! $1,500 to $1,999&quot;</variable>
+    <variable name="DP04_0098M" concept="SELECTED HOUSING CHARACTERISTICS">&quot;SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units with a mortgage !! $1,500 to $1,999&quot; MARGIN OF ERROR</variable>
+    <variable name="DP04_0099E" concept="SELECTED HOUSING CHARACTERISTICS">&quot;SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units with a mortgage !! $2,000 or more&quot;</variable>
+    <variable name="DP04_0099M" concept="SELECTED HOUSING CHARACTERISTICS">&quot;SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units with a mortgage !! $2,000 or more&quot; MARGIN OF ERROR</variable>
+    <variable name="DP04_0100E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units with a mortgage !! Median (dollars)</variable>
+    <variable name="DP04_0100M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units with a mortgage !! Median (dollars) MARGIN OF ERROR</variable>
+    <variable name="DP04_0101E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units without a mortgage</variable>
+    <variable name="DP04_0101M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units without a mortgage MARGIN OF ERROR</variable>
+    <variable name="DP04_0102E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units without a mortgage !! Less than $100</variable>
+    <variable name="DP04_0102M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units without a mortgage !! Less than $100 MARGIN OF ERROR</variable>
+    <variable name="DP04_0103E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units without a mortgage !! $100 to $199</variable>
+    <variable name="DP04_0103M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units without a mortgage !! $100 to $199 MARGIN OF ERROR</variable>
+    <variable name="DP04_0104E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units without a mortgage !! $200 to $299</variable>
+    <variable name="DP04_0104M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units without a mortgage !! $200 to $299 MARGIN OF ERROR</variable>
+    <variable name="DP04_0105E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units without a mortgage !! $300 to $399</variable>
+    <variable name="DP04_0105M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units without a mortgage !! $300 to $399 MARGIN OF ERROR</variable>
+    <variable name="DP04_0106E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units without a mortgage !! $400 or more</variable>
+    <variable name="DP04_0106M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units without a mortgage !! $400 or more MARGIN OF ERROR</variable>
+    <variable name="DP04_0107E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units without a mortgage !! Median (dollars)</variable>
+    <variable name="DP04_0107M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS (SMOC) !! Housing units without a mortgage !! Median (dollars) MARGIN OF ERROR</variable>
+    <variable name="DP04_0108E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing units with a mortgage (excluding units where SMOCAPI cannot be computed)</variable>
+    <variable name="DP04_0108M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing units with a mortgage (excluding units where SMOCAPI cannot be computed) MARGIN OF ERROR</variable>
+    <variable name="DP04_0109E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing units with a mortgage (excluding units where SMOCAPI cannot be computed) !! Less than 20.0 percent</variable>
+    <variable name="DP04_0109M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing units with a mortgage (excluding units where SMOCAPI cannot be computed) !! Less than 20.0 percent MARGIN OF ERROR</variable>
+    <variable name="DP04_0110E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing units with a mortgage (excluding units where SMOCAPI cannot be computed) !! 20.0 to 24.9 percent</variable>
+    <variable name="DP04_0110M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing units with a mortgage (excluding units where SMOCAPI cannot be computed) !! 20.0 to 24.9 percent MARGIN OF ERROR</variable>
+    <variable name="DP04_0111E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing units with a mortgage (excluding units where SMOCAPI cannot be computed) !! 25.0 to 29.9 percent</variable>
+    <variable name="DP04_0111M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing units with a mortgage (excluding units where SMOCAPI cannot be computed) !! 25.0 to 29.9 percent MARGIN OF ERROR</variable>
+    <variable name="DP04_0112E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing units with a mortgage (excluding units where SMOCAPI cannot be computed) !! 30.0 to 34.9 percent</variable>
+    <variable name="DP04_0112M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing units with a mortgage (excluding units where SMOCAPI cannot be computed) !! 30.0 to 34.9 percent MARGIN OF ERROR</variable>
+    <variable name="DP04_0113E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing units with a mortgage (excluding units where SMOCAPI cannot be computed) !! 35.0 percent or more</variable>
+    <variable name="DP04_0113M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing units with a mortgage (excluding units where SMOCAPI cannot be computed) !! 35.0 percent or more MARGIN OF ERROR</variable>
+    <variable name="DP04_0114E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing units with a mortgage (excluding units where SMOCAPI cannot be computed) !! Not computed</variable>
+    <variable name="DP04_0114M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing units with a mortgage (excluding units where SMOCAPI cannot be computed) !! Not computed MARGIN OF ERROR</variable>
+    <variable name="DP04_0115E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing unit without a mortgage (excluding units where SMOCAPI cannot be computed)</variable>
+    <variable name="DP04_0115M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing unit without a mortgage (excluding units where SMOCAPI cannot be computed) MARGIN OF ERROR</variable>
+    <variable name="DP04_0116E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing unit without a mortgage (excluding units where SMOCAPI cannot be computed) !! Less than 10.0 percent</variable>
+    <variable name="DP04_0116M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing unit without a mortgage (excluding units where SMOCAPI cannot be computed) !! Less than 10.0 percent MARGIN OF ERROR</variable>
+    <variable name="DP04_0117E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing unit without a mortgage (excluding units where SMOCAPI cannot be computed) !! 10.0 to 14.9 percent</variable>
+    <variable name="DP04_0117M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing unit without a mortgage (excluding units where SMOCAPI cannot be computed) !! 10.0 to 14.9 percent MARGIN OF ERROR</variable>
+    <variable name="DP04_0118E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing unit without a mortgage (excluding units where SMOCAPI cannot be computed) !! 15.0 to 19.9 percent</variable>
+    <variable name="DP04_0118M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing unit without a mortgage (excluding units where SMOCAPI cannot be computed) !! 15.0 to 19.9 percent MARGIN OF ERROR</variable>
+    <variable name="DP04_0119E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing unit without a mortgage (excluding units where SMOCAPI cannot be computed) !! 20.0 to 24.9 percent</variable>
+    <variable name="DP04_0119M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing unit without a mortgage (excluding units where SMOCAPI cannot be computed) !! 20.0 to 24.9 percent MARGIN OF ERROR</variable>
+    <variable name="DP04_0120E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing unit without a mortgage (excluding units where SMOCAPI cannot be computed) !! 25.0 to 29.9 percent</variable>
+    <variable name="DP04_0120M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing unit without a mortgage (excluding units where SMOCAPI cannot be computed) !! 25.0 to 29.9 percent MARGIN OF ERROR</variable>
+    <variable name="DP04_0121E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing unit without a mortgage (excluding units where SMOCAPI cannot be computed) !! 30.0 to 34.9 percent</variable>
+    <variable name="DP04_0121M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing unit without a mortgage (excluding units where SMOCAPI cannot be computed) !! 30.0 to 34.9 percent MARGIN OF ERROR</variable>
+    <variable name="DP04_0122E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing unit without a mortgage (excluding units where SMOCAPI cannot be computed) !! 35.0 percent or more</variable>
+    <variable name="DP04_0122M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing unit without a mortgage (excluding units where SMOCAPI cannot be computed) !! 35.0 percent or more MARGIN OF ERROR</variable>
+    <variable name="DP04_0123E" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing unit without a mortgage (excluding units where SMOCAPI cannot be computed) !! Not computed</variable>
+    <variable name="DP04_0123M" concept="SELECTED HOUSING CHARACTERISTICS">SELECTED MONTHLY OWNER COSTS AS A PERCENTAGE OF HOUSEHOLD INCOME (SMOCAPI) !! Housing unit without a mortgage (excluding units where SMOCAPI cannot be computed) !! Not computed MARGIN OF ERROR</variable>
+    <variable name="DP04_0124E" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT !! Occupied units paying rent</variable>
+    <variable name="DP04_0124M" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT !! Occupied units paying rent MARGIN OF ERROR</variable>
+    <variable name="DP04_0125E" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT !! Occupied units paying rent !! Less than $200</variable>
+    <variable name="DP04_0125M" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT !! Occupied units paying rent !! Less than $200 MARGIN OF ERROR</variable>
+    <variable name="DP04_0126E" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT !! Occupied units paying rent !! $200 to $299</variable>
+    <variable name="DP04_0126M" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT !! Occupied units paying rent !! $200 to $299 MARGIN OF ERROR</variable>
+    <variable name="DP04_0127E" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT !! Occupied units paying rent !! $300 to $499</variable>
+    <variable name="DP04_0127M" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT !! Occupied units paying rent !! $300 to $499 MARGIN OF ERROR</variable>
+    <variable name="DP04_0128E" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT !! Occupied units paying rent !! $500 to $749</variable>
+    <variable name="DP04_0128M" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT !! Occupied units paying rent !! $500 to $749 MARGIN OF ERROR</variable>
+    <variable name="DP04_0129E" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT !! Occupied units paying rent !! $750 to $999</variable>
+    <variable name="DP04_0129M" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT !! Occupied units paying rent !! $750 to $999 MARGIN OF ERROR</variable>
+    <variable name="DP04_0130E" concept="SELECTED HOUSING CHARACTERISTICS">&quot;GROSS RENT !! Occupied units paying rent !! $1,000 to $1,499&quot;</variable>
+    <variable name="DP04_0130M" concept="SELECTED HOUSING CHARACTERISTICS">&quot;GROSS RENT !! Occupied units paying rent !! $1,000 to $1,499&quot; MARGIN OF ERROR</variable>
+    <variable name="DP04_0131E" concept="SELECTED HOUSING CHARACTERISTICS">&quot;GROSS RENT !! Occupied units paying rent !! $1,500 or more&quot;</variable>
+    <variable name="DP04_0131M" concept="SELECTED HOUSING CHARACTERISTICS">&quot;GROSS RENT !! Occupied units paying rent !! $1,500 or more&quot; MARGIN OF ERROR</variable>
+    <variable name="DP04_0132E" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT !! Occupied units paying rent !! Median (dollars)</variable>
+    <variable name="DP04_0132M" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT !! Occupied units paying rent !! Median (dollars) MARGIN OF ERROR</variable>
+    <variable name="DP04_0133E" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT !! Occupied units paying rent !! No rent paid</variable>
+    <variable name="DP04_0133M" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT !! Occupied units paying rent !! No rent paid MARGIN OF ERROR</variable>
+    <variable name="DP04_0134E" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI) !!Occupied units paying rent (excluding units where GRAPI cannot be computed)</variable>
+    <variable name="DP04_0134M" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI) !!Occupied units paying rent (excluding units where GRAPI cannot be computed) MARGIN OF ERROR</variable>
+    <variable name="DP04_0135E" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI) !!Occupied units paying rent (excluding units where GRAPI cannot be computed) !! Less than 15.0 percent</variable>
+    <variable name="DP04_0135M" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI) !!Occupied units paying rent (excluding units where GRAPI cannot be computed) !! Less than 15.0 percent MARGIN OF ERROR</variable>
+    <variable name="DP04_0136E" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI) !!Occupied units paying rent (excluding units where GRAPI cannot be computed) !! 15.0 to 19.9 percent</variable>
+    <variable name="DP04_0136M" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI) !!Occupied units paying rent (excluding units where GRAPI cannot be computed) !! 15.0 to 19.9 percent MARGIN OF ERROR</variable>
+    <variable name="DP04_0137E" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI) !!Occupied units paying rent (excluding units where GRAPI cannot be computed) !! 20.0 to 24.9 percent</variable>
+    <variable name="DP04_0137M" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI) !!Occupied units paying rent (excluding units where GRAPI cannot be computed) !! 20.0 to 24.9 percent MARGIN OF ERROR</variable>
+    <variable name="DP04_0138E" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI) !!Occupied units paying rent (excluding units where GRAPI cannot be computed) !! 25.0 to 29.9 percent</variable>
+    <variable name="DP04_0138M" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI) !!Occupied units paying rent (excluding units where GRAPI cannot be computed) !! 25.0 to 29.9 percent MARGIN OF ERROR</variable>
+    <variable name="DP04_0139E" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI) !!Occupied units paying rent (excluding units where GRAPI cannot be computed) !! 30.0 to 34.9 percent</variable>
+    <variable name="DP04_0139M" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI) !!Occupied units paying rent (excluding units where GRAPI cannot be computed) !! 30.0 to 34.9 percent MARGIN OF ERROR</variable>
+    <variable name="DP04_0140E" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI) !!Occupied units paying rent (excluding units where GRAPI cannot be computed) !! 35.0 percent or more</variable>
+    <variable name="DP04_0140M" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI) !!Occupied units paying rent (excluding units where GRAPI cannot be computed) !! 35.0 percent or more MARGIN OF ERROR</variable>
+    <variable name="DP04_0141E" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI) !!Occupied units paying rent (excluding units where GRAPI cannot be computed) !! Not computed</variable>
+    <variable name="DP04_0141M" concept="SELECTED HOUSING CHARACTERISTICS">GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI) !!Occupied units paying rent (excluding units where GRAPI cannot be computed) !! Not computed MARGIN OF ERROR</variable>
+  </concept>
+  <concept name="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">
+    <variable name="DP05_0001E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population</variable>
+    <variable name="DP05_0001M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population MARGIN OF ERROR</variable>
+    <variable name="DP05_0002E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! Male</variable>
+    <variable name="DP05_0002M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! Male MARGIN OF ERROR</variable>
+    <variable name="DP05_0003E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! Female</variable>
+    <variable name="DP05_0003M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! Female MARGIN OF ERROR</variable>
+    <variable name="DP05_0004E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! Under 5 years</variable>
+    <variable name="DP05_0004M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! Under 5 years MARGIN OF ERROR</variable>
+    <variable name="DP05_0005E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 5 to 9 years</variable>
+    <variable name="DP05_0005M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 5 to 9 years MARGIN OF ERROR</variable>
+    <variable name="DP05_0006E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 10 to 14 years</variable>
+    <variable name="DP05_0006M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 10 to 14 years MARGIN OF ERROR</variable>
+    <variable name="DP05_0007E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 15 to 19 years</variable>
+    <variable name="DP05_0007M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 15 to 19 years MARGIN OF ERROR</variable>
+    <variable name="DP05_0008E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 20 to 24 years</variable>
+    <variable name="DP05_0008M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 20 to 24 years MARGIN OF ERROR</variable>
+    <variable name="DP05_0009E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 25 to 34 years</variable>
+    <variable name="DP05_0009M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 25 to 34 years MARGIN OF ERROR</variable>
+    <variable name="DP05_0010E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 35 to 44 years</variable>
+    <variable name="DP05_0010M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 35 to 44 years MARGIN OF ERROR</variable>
+    <variable name="DP05_0011E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 45 to 54 years</variable>
+    <variable name="DP05_0011M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 45 to 54 years MARGIN OF ERROR</variable>
+    <variable name="DP05_0012E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 55 to 59 years</variable>
+    <variable name="DP05_0012M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 55 to 59 years MARGIN OF ERROR</variable>
+    <variable name="DP05_0013E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 60 to 64 years</variable>
+    <variable name="DP05_0013M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 60 to 64 years MARGIN OF ERROR</variable>
+    <variable name="DP05_0014E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 65 to 74 years</variable>
+    <variable name="DP05_0014M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 65 to 74 years MARGIN OF ERROR</variable>
+    <variable name="DP05_0015E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 75 to 84 years</variable>
+    <variable name="DP05_0015M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 75 to 84 years MARGIN OF ERROR</variable>
+    <variable name="DP05_0016E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 85 years and over</variable>
+    <variable name="DP05_0016M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 85 years and over MARGIN OF ERROR</variable>
+    <variable name="DP05_0017E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! Median age (years)</variable>
+    <variable name="DP05_0017M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! Median age (years) MARGIN OF ERROR</variable>
+    <variable name="DP05_0018E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 18 years and over</variable>
+    <variable name="DP05_0018M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 18 years and over MARGIN OF ERROR</variable>
+    <variable name="DP05_0019E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 21 years and over</variable>
+    <variable name="DP05_0019M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 21 years and over MARGIN OF ERROR</variable>
+    <variable name="DP05_0020E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 62 years and over</variable>
+    <variable name="DP05_0020M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 62 years and over MARGIN OF ERROR</variable>
+    <variable name="DP05_0021E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 65 years and over</variable>
+    <variable name="DP05_0021M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 65 years and over MARGIN OF ERROR</variable>
+    <variable name="DP05_0023E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 18 years and over !! Male</variable>
+    <variable name="DP05_0023M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 18 years and over !! Male MARGIN OF ERROR</variable>
+    <variable name="DP05_0024E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 18 years and over !! Female</variable>
+    <variable name="DP05_0024M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 18 years and over !! Female MARGIN OF ERROR</variable>
+    <variable name="DP05_0025E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 65 years and over</variable>
+    <variable name="DP05_0025M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 65 years and over MARGIN OF ERROR</variable>
+    <variable name="DP05_0026E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 65 years and over !! Male</variable>
+    <variable name="DP05_0026M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 65 years and over !! Male MARGIN OF ERROR</variable>
+    <variable name="DP05_0027E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 65 years and over !! Female</variable>
+    <variable name="DP05_0027M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">SEX AND AGE !! Total population !! 65 years and over !! Female MARGIN OF ERROR</variable>
+    <variable name="DP05_0029E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race</variable>
+    <variable name="DP05_0029M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race MARGIN OF ERROR</variable>
+    <variable name="DP05_0030E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Two or more races</variable>
+    <variable name="DP05_0030M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Two or more races MARGIN OF ERROR</variable>
+    <variable name="DP05_0032E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! White</variable>
+    <variable name="DP05_0032M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! White MARGIN OF ERROR</variable>
+    <variable name="DP05_0033E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Black or African American</variable>
+    <variable name="DP05_0033M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Black or African American MARGIN OF ERROR</variable>
+    <variable name="DP05_0034E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! American Indian and Alaska Native</variable>
+    <variable name="DP05_0034M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! American Indian and Alaska Native MARGIN OF ERROR</variable>
+    <variable name="DP05_0035E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! American Indian and Alaska Native !! Cherokee tribal grouping</variable>
+    <variable name="DP05_0035M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! American Indian and Alaska Native !! Cherokee tribal grouping MARGIN OF ERROR</variable>
+    <variable name="DP05_0036E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! American Indian and Alaska Native !! Chippewa tribal grouping</variable>
+    <variable name="DP05_0036M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! American Indian and Alaska Native !! Chippewa tribal grouping MARGIN OF ERROR</variable>
+    <variable name="DP05_0037E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! American Indian and Alaska Native !! Navajo tribal grouping</variable>
+    <variable name="DP05_0037M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! American Indian and Alaska Native !! Navajo tribal grouping MARGIN OF ERROR</variable>
+    <variable name="DP05_0038E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! American Indian and Alaska Native !! Sioux tribal grouping</variable>
+    <variable name="DP05_0038M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! American Indian and Alaska Native !! Sioux tribal grouping MARGIN OF ERROR</variable>
+    <variable name="DP05_0039E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Asian</variable>
+    <variable name="DP05_0039M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Asian MARGIN OF ERROR</variable>
+    <variable name="DP05_0040E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Asian !! Asian Indian</variable>
+    <variable name="DP05_0040M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Asian !! Asian Indian MARGIN OF ERROR</variable>
+    <variable name="DP05_0041E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Asian !! Chinese</variable>
+    <variable name="DP05_0041M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Asian !! Chinese MARGIN OF ERROR</variable>
+    <variable name="DP05_0042E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Asian !! Filipino</variable>
+    <variable name="DP05_0042M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Asian !! Filipino MARGIN OF ERROR</variable>
+    <variable name="DP05_0043E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Asian !! Japanese</variable>
+    <variable name="DP05_0043M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Asian !! Japanese MARGIN OF ERROR</variable>
+    <variable name="DP05_0044E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Asian !! Korean</variable>
+    <variable name="DP05_0044M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Asian !! Korean MARGIN OF ERROR</variable>
+    <variable name="DP05_0045E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Asian !! Vietnamese</variable>
+    <variable name="DP05_0045M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Asian !! Vietnamese MARGIN OF ERROR</variable>
+    <variable name="DP05_0046E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Asian !! Other Asian</variable>
+    <variable name="DP05_0046M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Asian !! Other Asian MARGIN OF ERROR</variable>
+    <variable name="DP05_0047E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Native Hawaiian and Other Pacific Islander</variable>
+    <variable name="DP05_0047M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Native Hawaiian and Other Pacific Islander MARGIN OF ERROR</variable>
+    <variable name="DP05_0048E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Native Hawaiian and Other Pacific Islander !! Native Hawaiian</variable>
+    <variable name="DP05_0048M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Native Hawaiian and Other Pacific Islander !! Native Hawaiian MARGIN OF ERROR</variable>
+    <variable name="DP05_0049E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Native Hawaiian and Other Pacific Islander !! Guamanian or Chamorro</variable>
+    <variable name="DP05_0049M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Native Hawaiian and Other Pacific Islander !! Guamanian or Chamorro MARGIN OF ERROR</variable>
+    <variable name="DP05_0050E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Native Hawaiian and Other Pacific Islander !! Samoan</variable>
+    <variable name="DP05_0050M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Native Hawaiian and Other Pacific Islander !! Samoan MARGIN OF ERROR</variable>
+    <variable name="DP05_0051E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Native Hawaiian and Other Pacific Islander !! Other Pacific Islander</variable>
+    <variable name="DP05_0051M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Native Hawaiian and Other Pacific Islander !! Other Pacific Islander MARGIN OF ERROR</variable>
+    <variable name="DP05_0052E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Some other race</variable>
+    <variable name="DP05_0052M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! One race !! Some other race MARGIN OF ERROR</variable>
+    <variable name="DP05_0053E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Two or more races</variable>
+    <variable name="DP05_0053M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Two or more races MARGIN OF ERROR</variable>
+    <variable name="DP05_0054E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Two or more races !! White and Black or African American</variable>
+    <variable name="DP05_0054M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Two or more races !! White and Black or African American MARGIN OF ERROR</variable>
+    <variable name="DP05_0055E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Two or more races !! White and American Indian and Alaska Native</variable>
+    <variable name="DP05_0055M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Two or more races !! White and American Indian and Alaska Native MARGIN OF ERROR</variable>
+    <variable name="DP05_0056E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Two or more races !! White and Asian</variable>
+    <variable name="DP05_0056M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Two or more races !! White and Asian MARGIN OF ERROR</variable>
+    <variable name="DP05_0057E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Two or more races !! Black or African American and American Indian and Alaska Native</variable>
+    <variable name="DP05_0057M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Two or more races !! Black or African American and American Indian and Alaska Native MARGIN OF ERROR</variable>
+    <variable name="DP05_0059E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Race alone or in combination with one or more other races !! Total population !! White</variable>
+    <variable name="DP05_0059M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Race alone or in combination with one or more other races !! Total population !! White MARGIN OF ERROR</variable>
+    <variable name="DP05_0060E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Race alone or in combination with one or more other races !! Total population !! Black or African American</variable>
+    <variable name="DP05_0060M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Race alone or in combination with one or more other races !! Total population !! Black or African American MARGIN OF ERROR</variable>
+    <variable name="DP05_0061E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Race alone or in combination with one or more other races !! Total population !! American Indian and Alaska Native</variable>
+    <variable name="DP05_0061M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Race alone or in combination with one or more other races !! Total population !! American Indian and Alaska Native MARGIN OF ERROR</variable>
+    <variable name="DP05_0062E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Race alone or in combination with one or more other races !! Total population !! Asian</variable>
+    <variable name="DP05_0062M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Race alone or in combination with one or more other races !! Total population !! Asian MARGIN OF ERROR</variable>
+    <variable name="DP05_0063E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Race alone or in combination with one or more other races !! Total population !! Native Hawaiian and Other Pacific Islander</variable>
+    <variable name="DP05_0063M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Race alone or in combination with one or more other races !! Total population !! Native Hawaiian and Other Pacific Islander MARGIN OF ERROR</variable>
+    <variable name="DP05_0064E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Race alone or in combination with one or more other races !! Total population !! Some other race</variable>
+    <variable name="DP05_0064M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">RACE !! Total population !! Race alone or in combination with one or more other races !! Total population !! Some other race MARGIN OF ERROR</variable>
+    <variable name="DP05_0066E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Hispanic or Latino (of any race)</variable>
+    <variable name="DP05_0066M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Hispanic or Latino (of any race) MARGIN OF ERROR</variable>
+    <variable name="DP05_0067E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Hispanic or Latino (of any race) !! Mexican</variable>
+    <variable name="DP05_0067M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Hispanic or Latino (of any race) !! Mexican MARGIN OF ERROR</variable>
+    <variable name="DP05_0068E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Hispanic or Latino (of any race) !! Puerto Rican</variable>
+    <variable name="DP05_0068M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Hispanic or Latino (of any race) !! Puerto Rican MARGIN OF ERROR</variable>
+    <variable name="DP05_0069E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Hispanic or Latino (of any race) !! Cuban</variable>
+    <variable name="DP05_0069M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Hispanic or Latino (of any race) !! Cuban MARGIN OF ERROR</variable>
+    <variable name="DP05_0070E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Hispanic or Latino (of any race) !! Other Hispanic or Latino</variable>
+    <variable name="DP05_0070M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Hispanic or Latino (of any race) !! Other Hispanic or Latino MARGIN OF ERROR</variable>
+    <variable name="DP05_0071E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Not Hispanic or Latino</variable>
+    <variable name="DP05_0071M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Not Hispanic or Latino MARGIN OF ERROR</variable>
+    <variable name="DP05_0072E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Not Hispanic or Latino !! White alone</variable>
+    <variable name="DP05_0072M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Not Hispanic or Latino !! White alone MARGIN OF ERROR</variable>
+    <variable name="DP05_0073E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Not Hispanic or Latino !! Black or African American alone</variable>
+    <variable name="DP05_0073M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Not Hispanic or Latino !! Black or African American alone MARGIN OF ERROR</variable>
+    <variable name="DP05_0074E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Not Hispanic or Latino !! American Indian and Alaska Native alone</variable>
+    <variable name="DP05_0074M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Not Hispanic or Latino !! American Indian and Alaska Native alone MARGIN OF ERROR</variable>
+    <variable name="DP05_0075E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Not Hispanic or Latino !! Asian alone</variable>
+    <variable name="DP05_0075M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Not Hispanic or Latino !! Asian alone MARGIN OF ERROR</variable>
+    <variable name="DP05_0076E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Not Hispanic or Latino !! Native Hawaiian and Other Pacific Islander alone</variable>
+    <variable name="DP05_0076M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Not Hispanic or Latino !! Native Hawaiian and Other Pacific Islander alone MARGIN OF ERROR</variable>
+    <variable name="DP05_0077E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Not Hispanic or Latino !! Some other race alone</variable>
+    <variable name="DP05_0077M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Not Hispanic or Latino !! Some other race alone MARGIN OF ERROR</variable>
+    <variable name="DP05_0078E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Not Hispanic or Latino !! Two or more races</variable>
+    <variable name="DP05_0078M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Not Hispanic or Latino !! Two or more races MARGIN OF ERROR</variable>
+    <variable name="DP05_0079E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Not Hispanic or Latino !! Two or more races !! Two races including Some other race</variable>
+    <variable name="DP05_0079M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total population !! Not Hispanic or Latino !! Two or more races !! Two races including Some other race MARGIN OF ERROR</variable>
+    <variable name="DP05_0080E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">&quot;HISPANIC OR LATINO AND RACE !! Total population !! Not Hispanic or Latino !! Two or more races !! Two races excluding Some other race, and Three or more races&quot;</variable>
+    <variable name="DP05_0080M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">&quot;HISPANIC OR LATINO AND RACE !! Total population !! Not Hispanic or Latino !! Two or more races !! Two races excluding Some other race, and Three or more races&quot; MARGIN OF ERROR</variable>
+    <variable name="DP05_0081E" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total housing units</variable>
+    <variable name="DP05_0081M" concept="ACS DEMOGRAPHIC AND HOUSING ESTIMATES">HISPANIC OR LATINO AND RACE !! Total housing units MARGIN OF ERROR</variable>
+  </concept>
+</apivariables>
