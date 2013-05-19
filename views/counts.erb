@@ -1,6 +1,7 @@
 <div>
   <h3>
-    Census data set <span class='alt'><%= name %></span> for <span class='alt'>Ohio</span>
+    Census data <span class='alt'><%= name.titleize %></span> for
+    <span class='alt'><%= state %></span>
   </h3>
 
   <p>
@@ -11,6 +12,7 @@
   </ul>
   </p>
 
+  <% if variables.length > 1 %>
   <script type="text/javascript">
    function graph() {
      var container = document.getElementById('graph');
@@ -45,5 +47,7 @@
       });
     };
     window.onload = graph;
-</script>
+  </script>
+  <% end %>
+
 </div>

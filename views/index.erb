@@ -1,17 +1,18 @@
 <div>
 
-  <h3>
-    Census Data for <span class='alt'>Ohio</span>
-  </h3>
+  <h3>Demographic totals by state <span class='alt'>(with pie charts)</span></h3>
+  <form action="totals-for-state" method="post" class="inline">
+    <fieldset>
 
-  <p>
-  <ul>
-    <% concepts.each do |concept| %>
-      <% name = concept['name'] %>
-      <% if name =~ /^([A-Z]+\d+)\./ %>
-        <li><a href='<%= url("/counts/#{$1}") %>'><%= name %></a></li>
-      <% end %>
-    <% end %>
-  </ul>
-  </p>
+      <%= partial(:select_concept, locals: {concepts: concepts}) %>
+      <br />
+      <%= partial(:select_state, locals: {states: Geography::STATE}) %>
+
+      <p>
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+      </p>
+    </fieldset>
+  </form>
+
 </div>
