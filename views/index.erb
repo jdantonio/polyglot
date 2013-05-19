@@ -1,17 +1,15 @@
-<div class="featurette">
+<div>
 
-  <h2 class="featurette-heading">
-    <span class="muted">Census Data for</span> Ohio
-  </h2>
+  <h3>
+    Census Data for <span class='alt'>Ohio</span>
+  </h3>
 
-  <p class="lead">
-  <ul class="lead">
-
-
+  <p>
+  <ul>
     <% concepts.each do |concept| %>
       <% name = concept['name'] %>
       <% if name =~ /^([A-Z]+\d+)\./ %>
-        <li><a href="<%= url("/counts/#{$1}") %>"><%= name %></a></li>
+        <li><a href='<%= url("/counts/#{$1}") %>'><%= name %></a></li>
       <% end %>
     <% end %>
   </ul>

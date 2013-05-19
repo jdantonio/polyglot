@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
     <title>Census Data Sample App</title>
-    <link rel="shortcut icon" href="/images/favicon.ico" />
-    <link href="http://codeforsummitcounty.org/style.css" rel="stylesheet">
-    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel='shortcut icon' href='/images/favicon.ico' />
+    <link rel='stylesheet' href='/css/blueprint/screen.css' type='text/css' media='screen, projection'>
+    <link rel='stylesheet' href='/css/blueprint/print.css' type='text/css' media='print'>
+    <!--[if lt IE 8]><link rel='stylesheet' href='/css/blueprint/ie.css' type='text/css' media='screen, projection'><![endif]-->
+    <link rel='stylesheet' href='/css/blueprint/plugins/fancy-type/screen.css' type='text/css' media='screen, projection'>
   </head>
-  <p><a href="/">[Home]</a></p>
-  <body id='home'>
-    <%= yield %>
+  <body>
+    <div class='container'>
+      <h1>Code for Summit County</h1>
+      <hr>
+      <h2 class='alt'>Census Data Sample App</h2>
+      <p>
+        <a href='/'>Home</a> |
+        <a href='https://github.com/jdantonio/census-data-sample/'>Source on GitHub</a> |
+        <a href='http://codeforsummitcounty.org/'>Code for Summit County</a>
+      </p>
+      <hr>
+      <div class='span-17 colborder'>
+        <%= yield %>
+      </div>
+      <div class='span-6 last'>
+        <a href='http://codeforsummitcounty.org/'><img src='/images/logo-300x300.png' height='200' width='200' alt='Code for Summit County'></a>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,14 +1,9 @@
-<div class="featurette">
-
-  <h2 class="featurette-heading">
-    <span class="muted">Census Data Set '</span>
-    <%= name %>
-    <span class="muted">' for</span> 
-    Ohio
-  </h2>
-
-  <p class="lead">
-  <ul class="lead">
+<div>
+  <h3>
+    Census data set <span class='alt'><%= name %></span> for <span class='alt'>Ohio</span>
+  </h3>
+  <p>
+  <ul>
     <% variables.each do |var| %>
       <li><%= var['content'] %> is <strong><%= format_number(data[var['name']]) %></strong></li>
     <% end %>
