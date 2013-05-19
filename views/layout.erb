@@ -8,11 +8,23 @@
     <link rel='stylesheet' href='/css/blueprint/print.css' type='text/css' media='print'>
     <!--[if lt IE 8]><link rel='stylesheet' href='/css/blueprint/ie.css' type='text/css' media='screen, projection'><![endif]-->
     <link rel='stylesheet' href='/css/blueprint/plugins/fancy-type/screen.css' type='text/css' media='screen, projection'>
+    <script type="text/javascript" src="/js/flotr2.min.js"></script>
+    <style type="text/css">
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      #graph {
+        width : 600px;
+        height: 700px;
+        margin: 8px auto;
+      }
+    </style>
   </head>
   <body>
     <div class='container'>
       <h1>Code for Summit County</h1>
-      <hr>
+      <hr />
       <h2 class='alt'>Census Data Sample App</h2>
       <p>
         <a href='/'>Home</a> |
@@ -22,6 +34,8 @@
       <hr>
       <div class='span-17 colborder'>
         <%= yield %>
+        <hr />
+        <div id='graph'></div>
       </div>
       <div class='span-6 last'>
         <a href='http://codeforsummitcounty.org/'><img src='/images/logo-300x300.png' height='200' width='200' alt='Code for Summit County'></a>
