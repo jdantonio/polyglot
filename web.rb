@@ -11,8 +11,10 @@ end['concept'].freeze
 
 API_KEY = ENV['API_KEY']
 
-def format_number(number)
-  number.to_s.reverse.gsub(/([0-9]{3}(?=([0-9])))/, "\\1#{','}").reverse
+helpers do
+  def format_number(number)
+    number.to_s.reverse.gsub(/([0-9]{3}(?=([0-9])))/, "\\1#{','}").reverse
+  end
 end
 
 get '/counts/:concept_id' do
@@ -20,7 +22,7 @@ get '/counts/:concept_id' do
   concept_id = URI.decode(params[:concept_id])
   index = $SF1.index{|concept| concept['name'] =~ /^#{concept_id}\./}
 
-  status(404);break if index.nil?
+  halt(404) if index.nil?
 
   client = CensusApi::Client.new(API_KEY)
 
@@ -39,9 +41,9 @@ get '/' do
 
   #sample_size = 10
   #R.eval <<-REVAL
-    #x <- rnorm(#{sample_size})
-    #avg <- mean(x)
-    #stddev <- sd(x)
+  #x <- rnorm(#{sample_size})
+  #avg <- mean(x)
+  #stddev <- sd(x)
   #REVAL
 
   erb(:index, layout: true, locals: {concepts: $SF1})
