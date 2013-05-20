@@ -8,9 +8,9 @@ gem 'xml-simple'
 gem 'rinruby'
 gem 'activesupport'
 
-group :development do
-  gem 'irbtools'
-  gem 'terminal-notifier'
-  gem 'foreman'
-  gem 'rerun'
-end
+#group :development do
+  #gem 'irbtools'
+  #gem 'terminal-notifier'
+  #gem 'foreman'
+  #gem 'rerun'
+#end
