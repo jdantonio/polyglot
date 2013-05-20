@@ -2,8 +2,11 @@ require 'rubygems'
 require 'xmlsimple'
 require 'open-uri'
 require 'census_api'
-require 'rinruby'
 require 'pp'
+
+
+require 'rinruby'
+R.quit # get in the habit of creating per-use instances of R
 
 #uri = 'http://www.census.gov/developers/data/sf1.xml'
 #sf1 = open(uri) do |f|
@@ -34,25 +37,70 @@ end;nil
 counties = client.sf1('P0010001', 'COUNTY', 'STATE:39');nil
 populations = counties.collect{|county| county['P0010001'].to_i}
 
-R.assign('pop', populations)
-R.eval <<-REVAL
+r = RinRuby.new(false, false)
+r.assign('pop', populations)
+r.eval <<-REVAL
   library(pastecs)
-  descriptive <- c(
-    summary(pop),
-    fivenum(pop),
-    mean(pop),
-    sd(pop),
-    var(pop),
-    min(pop),
-    max(pop),
-    median(pop),
-    range(pop),
-    quantile(pop),
-    stat.desc(pop)
-  )
+  pop_summary <- as.numeric(summary(pop))
+  pop_fivenum <- as.numeric(fivenum(pop))
+  pop_mean <- as.numeric(mean(pop))
+  pop_sd <- as.numeric(sd(pop))
+  pop_var <- as.numeric(var(pop))
+  pop_min <- as.numeric(min(pop))
+  pop_max <- as.numeric(max(pop))
+  pop_median <- as.numeric(median(pop))
+  pop_range <- as.numeric(range(pop))
+  pop_quantile <- as.numeric(quantile(pop))
 REVAL
 
-pp R.descriptive;nil
+stats = {
+  summary: r.pop_summary,
+  fivenum: r.pop_fivenum,
+  mean: r.pop_mean,
+  sd: r.pop_sd,
+  var: r.pop_var,
+  min: r.pop_min,
+  max: r.pop_max,
+  median: r.pop_median,
+  range: r.pop_range,
+  quantile: r.pop_quantile
+}
+r.quit
+r = nil
+
+#> summary(pop)
+   #Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  #13440   37460   58190  131100  124700 1280000 
+#> fivenum(pop)
+#[1]   13435.0   37271.5   58185.5  124981.5 1280122.0
+#> mean(pop)
+#[1] 131096.6
+#> sd(pop)
+#[1] 212297.8
+#> var(pop)
+#[1] 45070347042
+#> min(pop)
+#[1] 13435
+#> max(pop)
+#[1] 1280122
+#> median(pop)
+#[1] 58185.5
+#> range(pop)
+#[1]   13435 1280122
+#> quantile(pop)
+        #0%        25%        50%        75%       100% 
+  #13435.00   37456.75   58185.50  124728.25 1280122.00 
+
+{:summary=>[13440.0, 37460.0, 58190.0, 131100.0, 124700.0, 1280000.0],
+ :fivenum=>[13435.0, 37271.5, 58185.5, 124981.5, 1280122.0],
+ :mean=>131096.63636363635,
+ :sd=>212297.77917432156,
+ :var=>45070347042.34901,
+ :min=>13435.0,
+ :max=>1280122.0,
+ :median=>58185.5,
+ :range=>[13435.0, 1280122.0],
+ :quantile=>[13435.0, 37456.75, 58185.5, 124728.25, 1280122.0]}
 
 [{"name"=>"Geographies",
   "variable"=>
