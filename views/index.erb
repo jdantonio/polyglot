@@ -1,12 +1,26 @@
 <div>
 
   <h3>Demographic totals by state <span class='alt'>(with pie charts)</span></h3>
-  <form action="totals-for-state" method="post" class="inline">
+  <form action="/totals-for-state" method="post" class="inline">
     <fieldset>
 
       <%= partial(:select_concept, locals: {concepts: concepts}) %>
       <br />
       <%= partial(:select_state, locals: {states: Geography::STATE}) %>
+
+      <p>
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+      </p>
+    </fieldset>
+  </form>
+
+  <h3>County population and descriptive statistics by state</span></h3>
+  <form action="/stats-by-county" method="post" class="inline">
+    <fieldset>
+
+      <%= partial(:select_state, locals: {states: Geography::STATE}) %>
+      <input type='hidden' name='concept' id='concept' value='P1' />
 
       <p>
       <input type="submit" value="Submit">

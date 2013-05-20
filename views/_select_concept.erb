@@ -3,7 +3,7 @@
   <% concepts.each do |concept| %>
     <% name = concept['name'] %>
     <% if name =~ /^([A-Z]+\d+[A-Z]?)\.\s+(.*)(\s+\[\d+\])$/ %>
-      <option value='<%= $1 %>' title='<%= $2.titleize %>'><%= $2.titleize.slice(0, 100) %></option>
+      <option value='<%= $1 %>' title='<%= $2.titleize %>'><%= $1 + ' - ' + $2.titleize.slice(0, 90) %></option>
     <% end %>
   <% end %>
 </select>

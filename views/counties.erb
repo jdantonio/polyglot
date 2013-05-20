@@ -1,0 +1,114 @@
+<div>
+
+  <h3>
+    County population descriptive statistics for
+    <span class='alt'><%= name.titleize %></span>
+    in
+    <span class='alt'><%= state %></span>
+  </h3>
+
+  <table>
+    <caption>Summary Statistics</caption>
+    <tr>
+      <th>Minimum</th>
+      <th>1st Quartile</th>
+      <th>Median</th>
+      <th>Mean</th>
+      <th>3rd Quartile</th>
+      <th>Maximum</th>
+    </tr>
+    <tr>
+      <td><%= format_number(stats[:summary][0]) %></td>
+      <td><%= format_number(stats[:summary][1]) %></td>
+      <td><%= format_number(stats[:summary][2]) %></td>
+      <td><%= format_number(stats[:summary][3]) %></td>
+      <td><%= format_number(stats[:summary][4]) %></td>
+      <td><%= format_number(stats[:summary][5]) %></td>
+    </tr>
+  </table>
+
+  <hr />
+
+  <table>
+    <caption>Tukey Five-Number Summary</caption>
+    <tr>
+      <th>Minimum</th>
+      <th>Lower Hinge</th>
+      <th>Median</th>
+      <th>Upper Hinge</th>
+      <th>Maximum</th>
+    </tr>
+    <tr>
+      <td><%= format_number(stats[:fivenum][0]) %></td>
+      <td><%= format_number(stats[:fivenum][1]) %></td>
+      <td><%= format_number(stats[:fivenum][2]) %></td>
+      <td><%= format_number(stats[:fivenum][3]) %></td>
+      <td><%= format_number(stats[:fivenum][4]) %></td>
+    </tr>
+  </table>
+
+  <hr />
+
+  <table>
+    <caption>Descriptive Statistics</caption>
+    <tr>
+      <th>Mean</th>
+      <th>Standard Deviation</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Median</th>
+    </tr>
+    <tr>
+      <td><%= format_number(stats[:mean]) %></td>
+      <td><%= format_number(stats[:sd]) %></td>
+      <td><%= format_number(stats[:min]) %></td>
+      <td><%= format_number(stats[:max]) %></td>
+      <td><%= format_number(stats[:median]) %></td>
+    </tr>
+  </table>
+
+  <hr />
+
+  <table>
+    <caption>Quantiles</caption>
+    <tr>
+      <th>0%</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>100%</th>
+    </tr>
+    <tr>
+      <td><%= format_number(stats[:quantile][0]) %></td>
+      <td><%= format_number(stats[:quantile][1]) %></td>
+      <td><%= format_number(stats[:quantile][2]) %></td>
+      <td><%= format_number(stats[:quantile][3]) %></td>
+      <td><%= format_number(stats[:quantile][4]) %></td>
+    </tr>
+  </table>
+
+  <hr />
+
+  <h3>
+    County population for
+    <span class='alt'><%= name.titleize %></span>
+    in
+    <span class='alt'><%= state %></span>
+  </h3>
+
+  <table>
+    <tr>
+      <th>County Name</th>
+      <th>Census Code</th>
+      <th>Population</th>
+    </tr>
+    <% data.each do |county| %>
+      <tr>
+        <td><%= county['name'] %></td>
+        <td><%= county['county'] %></td>
+        <td><%= format_number(county[variable]) %></td>
+      </tr>
+    <% end %>
+  </table>
+
+</div>
