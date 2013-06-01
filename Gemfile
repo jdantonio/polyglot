@@ -4,7 +4,10 @@ gem 'sinatra'
 gem 'sinatra-partial'
 
 gem 'census_api'
+gem 'rosemary'
+
 gem 'xml-simple'
+gem 'rest-client'
 gem 'rinruby'
 gem 'activesupport'
 
