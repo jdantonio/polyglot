@@ -22,14 +22,12 @@ end
 
 get '/counts/:concept_id' do
 
-  concept_id = URI.decode(params[:concept_id])
-  index = Globals::SF1.index{|concept| concept['name'] =~ /^#{concept_id}\./}
+  concept = get_concept(params[:concept_id])
 
-  halt(404) if index.nil?
+  halt(404) if concept.nil?
 
   client = CensusApi::Client.new(Globals::API_KEY)
 
-  concept = Globals::SF1[index]
   fields = concept['variable'].collect{|var| var['name']}.join(',')
   data = client.sf1(fields, 'STATE:39')
 
@@ -42,15 +40,13 @@ end
 
 post '/totals-for-state' do
 
-  concept_id = params[:concept]
   state = params[:state]
-  index = Globals::SF1.index{|concept| concept['name'] =~ /^#{concept_id}\./}
+  concept = get_concept(params[:concept])
 
-  halt(404) if index.nil?
+  halt(404) if concept.nil?
 
   client = CensusApi::Client.new(Globals::API_KEY)
 
-  concept = Globals::SF1[index]
   fields = concept['variable'].collect{|var| var['name']}.join(',')
   data = client.sf1(fields, "STATE:#{state}")
 
@@ -63,15 +59,13 @@ end
 
 post '/stats-by-county' do
 
-  concept_id = params[:concept]
+  concept = get_concept(params[:concept])
   state = params[:state]
-  index = Globals::SF1.index{|concept| concept['name'] =~ /^#{concept_id}\./}
 
-  halt(404) if index.nil?
+  halt(404) if concept.nil?
 
   client = CensusApi::Client.new(Globals::API_KEY)
 
-  concept = Globals::SF1[index]
   variable = concept['variable'].first['name']
   data = client.sf1(variable, 'COUNTY', "STATE:#{state}")
 
@@ -120,4 +114,5 @@ post '/stats-by-county' do
     }
     erb(:counties, layout: true, locals: locals)
   end
+
 end

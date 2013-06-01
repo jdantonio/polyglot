@@ -1,3 +1,5 @@
+require_relative 'globals'
+
 module Helpers
 
   def format_number(number)
@@ -8,6 +10,10 @@ module Helpers
     else
       return whole + '.' + decimal
     end
+  end
+
+  def get_concept(id)
+    Globals::SF1.detect{|concept| concept['name'] =~ /^#{id}\./}
   end
 
 end
