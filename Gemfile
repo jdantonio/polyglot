@@ -7,6 +7,7 @@ gem 'census_api'
 gem 'rosemary'
 
 gem 'xml-simple'
+gem 'json_pure'
 gem 'rest-client'
 gem 'rinruby'
 gem 'activesupport'

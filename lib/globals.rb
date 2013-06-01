@@ -9,4 +9,7 @@ module Globals
   end['concept'].freeze
 
   API_KEY = ENV['API_KEY']
+
+  # http://www.fcc.gov/developers/census-block-conversions-api
+  FCC_API = "http://data.fcc.gov/api/block/find?format=json&latitude=!!!LAT!!!&longitude=!!!LONG!!!&showall=true"
 end

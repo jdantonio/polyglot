@@ -55,6 +55,7 @@ GEM
       paint (>= 0.8.5)
       wirb (>= 0.4.3)
       zucker (>= 12.1)
+    json_pure (1.7.7)
     libxml-ruby (2.6.0)
     libxml-ruby (2.6.0-x86-mingw32)
     listen (1.1.2)
@@ -116,6 +117,7 @@ DEPENDENCIES
   census_api
   foreman
   irbtools
+  json_pure
   rerun
   rest-client
   rinruby
