@@ -1,0 +1,4 @@
+rvm use ruby-2.0.0-p0@census-data-sample --create
+
+export API_KEY=6ac47fc682d0dddaadc8566172e8261c9ae8e434
+export PATH=./bin:$PATH
