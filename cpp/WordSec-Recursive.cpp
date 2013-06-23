@@ -13,7 +13,7 @@
 //                    most unique words.
 //                  * Outputs resulst to standard out.
 //
-//  DATE:           1/22/1012
+//  DATE:           1/22/2012
 //  DESIGNER:       Jerry D'Antonio
 //
 //  FUNCTIONS:      int main(int, char*[])
