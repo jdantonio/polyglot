@@ -10,7 +10,7 @@ namespace :cpp do
     FileUtils.rm_rf Dir.glob("#{CPP_DIR}/{*.o,*.exe,*.dSYM}")
   end
 
-  namespace :make do
+  namespace :build do
 
     CXX = 'g++'
     CXXFLAGS = '-g -Wall -W -Winline -ansi'
@@ -62,5 +62,10 @@ namespace :cpp do
   desc "Run the main C++ program against a test file"
   task :run, [:file] do |t, args|
     Rake::Task['cpp:run:main'].invoke(*args)
+  end
+  
+  desc 'Run the RSpec tests against the C++ implementation'
+  task :spec => ['cpp:build:main'] do
+    sh 'bundle exec rspec -fd --color cpp/word_sec_cpp_spec.rb'
   end
 end

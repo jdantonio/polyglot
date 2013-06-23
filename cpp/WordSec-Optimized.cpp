@@ -113,14 +113,14 @@ int main(int argc, char *argv[]) {
     
     // file name not given
     PrintUsage(argv[0]);
-    PauseProgram();
+    //PauseProgram();
     return(1);
 
   } else if (false == OpenInputFile(filename, inputFile)) {
 
     // error opening file
     PrintFileError();
-    PauseProgram();
+    //PauseProgram();
     return(2);
   } // end else
   
