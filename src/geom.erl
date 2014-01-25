@@ -42,3 +42,16 @@ area(triangle, Base, Height) when Base >= 0, Height >= 0 ->
 area(ellipse, MajorRadius, MinorRadius) when MajorRadius >= 0, MinorRadius >= 0 ->
   math:pi() * MajorRadius * MinorRadius;
 area(_, _, _) -> 0.
+
+% alternate implementation of area/3 using a case statement
+
+%area(Shape, A, B) ->
+  %case Shape of
+    %rectangle when A >= 0, B >= 0 ->
+      %area(A, B);
+    %triangle when A >= 0, B >= 0 ->
+      %A * B / 2.0;
+    %ellipse when A >= 0, B >= 0 ->
+      %math:pi() * A * B;
+    %_Else -> 0
+  %end.
