@@ -2,9 +2,11 @@
 
 Various code katas I've worked on in Erlang.
 
+* http://chimera.labs.oreilly.com/books/1234000000726/index.html
+
 ## Copyright
 
-Copyright &copy; 2013 [Jerry D'Antonio](https://twitter.com/jerrydantonio).
+Copyright &copy; 2014 [Jerry D'Antonio](https://twitter.com/jerrydantonio).
 It is free software and may be redistributed under the terms specified in
 the LICENSE file.
 

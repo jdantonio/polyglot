@@ -1,3 +1,7 @@
+%% @author Jerry D'Antonio
+%% @doc Erlang Katas.
+%% @version 0.1
+
 -module(katas).
 
 -include("katas.hrl").

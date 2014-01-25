@@ -53,4 +53,7 @@ task :docs do
 	sh "#{ERL} -noshell -run edoc_run application '#{APP}' '\".\"' '[]'"
 end
 
+#task :test => [:ct, :eunit]
+task :test => [:eunit]
+
 task :default => [:all]

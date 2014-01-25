@@ -1,7 +1,7 @@
 *.beam
 *.swp
 *.swo
-#doc/
+doc/
 ebin/
 .eunit/
 logs/
