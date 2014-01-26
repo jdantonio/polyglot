@@ -4,8 +4,6 @@
 
 -module(geom).
 
--include("katas.hrl").
-
 -export([
   area/1,
   area/2,

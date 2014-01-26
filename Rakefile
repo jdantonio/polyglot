@@ -16,7 +16,7 @@ desc 'Get dependencies, compile, and run tests'
 task :init => [:get_deps, :compile, :eunit]
 
 desc 'Clean, get dependencies, compile, and run tests'
-task :all => [:clean, :get_deps, :compile, :eunit, :ct]
+task :all => [:clean, :get_deps, :compile, :test]
 
 desc 'Compile sources'
 task :compile => [:update_deps] do
