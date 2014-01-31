@@ -1,3 +1,0 @@
-# Logfile created on 2014-01-25 14:11:25 -0500 by logger.rb/44203
-I, [2014-01-25T14:11:25.532066 #1090]  INFO -- : 0:  rake (10.1.1) from /Users/Jerry/.rvm/gems/ruby-2.1.0@erlang-katas/specifications/rake-10.1.1.gemspec
-I, [2014-01-25T14:11:25.532469 #1090]  INFO -- : 0:  bundler (1.5.1) from /Users/Jerry/.rvm/gems/ruby-2.1.0@global/specifications/bundler-1.5.1.gemspec

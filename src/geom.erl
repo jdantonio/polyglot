@@ -23,9 +23,7 @@ area({Shape, A, B}) ->
 
 -spec(area(number(),number()) -> number()).
 
-area(Length, Width) when is_integer(Length), is_integer(Width) ->
-  Length * Width;
-area(Length, Width) when is_float(Length), is_float(Width) ->
+area(Length, Width) when is_number(Length), is_number(Width) ->
   Length * Width.
 
 %% @doc Calculates the area of a shape from the two relevant dimensions.
@@ -33,12 +31,12 @@ area(Length, Width) when is_float(Length), is_float(Width) ->
 
 -spec(area(atom(), number(),number()) -> number()).
 
-area(rectangle, Length, Width) when Length >= 0, Width >= 0 ->
-  area(Length, Width);
-area(triangle, Base, Height) when Base >= 0, Height >= 0 ->
-  Base * Height / 2.0;
-area(ellipse, MajorRadius, MinorRadius) when MajorRadius >= 0, MinorRadius >= 0 ->
-  math:pi() * MajorRadius * MinorRadius;
+area(rectangle, L, W) when is_number(L), is_number(W), L >= 0, W >= 0 ->
+  area(L, W);
+area(triangle, B, H) when is_number(B), is_number(H), B >= 0, H >= 0 ->
+  B * H / 2.0;
+area(ellipse, Major, Minor) when is_number(Major), is_number(Minor), Major >= 0, Minor >= 0 ->
+  math:pi() * Major * Minor;
 area(_, _, _) -> 0.
 
 % alternate implementation of area/3 using a case statement

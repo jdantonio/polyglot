@@ -5,3 +5,4 @@ doc/
 ebin/
 .eunit/
 logs/
+.bundle
