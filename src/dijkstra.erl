@@ -4,8 +4,6 @@
 
 -module(dijkstra).
 
--include("katas.hrl").
-
 -export([
   gcd/2
   ]).

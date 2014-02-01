@@ -4,8 +4,6 @@
 
 -module(powers).
 
--include("katas.hrl").
-
 -export([
   raise/2,
   nth_root/2

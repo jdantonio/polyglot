@@ -5,7 +5,7 @@
 -include_lib("include/katas.hrl").
 
 gcd_2_function_test() ->
-  {"gcd/2 function tests", [
+  {"gcd/2 returns the greatest common denominator of the two given numbers", [
       ?assert(dijkstra:gcd(12, 8) == 4),
       ?assert(dijkstra:gcd(14, 21) == 7),
       ?assert(dijkstra:gcd(125, 46) == 1),
