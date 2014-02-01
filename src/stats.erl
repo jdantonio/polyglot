@@ -5,11 +5,13 @@
 -module(stats).
 
 -export([
-  minimum/1
+  minimum/1,
+  maximum/1,
+  range/1
   ]).
 
-%-define(switch(Condition, True, False),
-        %case Condition of true -> True; false -> False end).
+-define(min(X, Y), case X < Y of true -> X; false -> Y end).
+-define(max(X, Y), case X > Y of true -> X; false -> Y end).
 
 -spec(minimum(list()) -> number()).
 
@@ -23,7 +25,32 @@ minimum(Minimum, []) when is_number(Minimum) ->
   Minimum;
 minimum(Minimum, List) when is_number(Minimum), is_list(List) ->
   [Head | Tail] = List,
-  %minimum(erlang:min(Head, Minimum), Tail).
-  %NewMinimum = ?switch(Head < Minimum, Head, Minimum),
-  NewMinimum = case Head < Minimum of true -> Head; false -> Minimum end,
-  minimum(NewMinimum, Tail).
+  minimum(?min(Head, Minimum), Tail).
+
+-spec(maximum(list()) -> number()).
+
+maximum(List) when is_list(List) ->
+  [Head | Tail] = List,
+  maximum(Head, Tail).
+
+-spec(maximum(number(), list()) -> number()).
+
+maximum(Maximum, []) when is_number(Maximum) ->
+  Maximum;
+maximum(Maximum, List) when is_number(Maximum), is_list(List) ->
+  [Head | Tail] = List,
+  maximum(?max(Head, Maximum), Tail).
+
+-spec(range(list()) -> list()).
+
+range(List) when is_list(List) ->
+  [Head | Tail] = List,
+  range(Head, Head, Tail).
+
+-spec(range(number(), number(), list()) -> list()).
+
+range(Minimum, Maximum, []) when is_number(Minimum), is_number(Maximum) ->
+  [Minimum, Maximum];
+range(Minimum, Maximum, List) when is_number(Minimum), is_number(Maximum), is_list(List) ->
+  [Head | Tail] = List,
+  range(?min(Head, Minimum), ?max(Head, Maximum), Tail).

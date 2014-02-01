@@ -14,4 +14,25 @@ minimum_1_function_test() ->
       ?assert(stats:minimum([10.0, 2, 9.0, 3, 8.0, 4, 7.0, 5]) == 2)
       ]}.
 
+maximum_1_function_test() ->
+  {"maximum/1 returns the largest numeric element in a list", [
+      ?assert(stats:maximum([4, 1, 7, -17, 8, 2, 5]) == 8),
+      ?assert(?delta(stats:maximum([52.46]), 52.46) =< 000.1),
+      ?assert(stats:maximum([1, 2, 3, 4, 5, 6, 7]) == 7),
+      ?assert(?delta(stats:maximum([10.0, 9.0, 8.0, 7.0, 6.0, 5.0]), 10.0) =< 000.1),
+      ?assert(?delta(stats:maximum([10.0, 2, 9.0, 3, 8.0, 4, 7.0, 5]), 10.0) =< 0.001),
+      ?assert(stats:maximum([10, 2.0, 9, 3.0, 8, 4.0, 7, 5.0]) == 10)
+      ]}.
+
+range_1_function_test() ->
+  {"range/1 returns a list with the minimum and maximum values", [
+      ?assert(stats:range([4, 1, 7, -17, 8, 2, 5]) == [-17, 8]),
+      ?assert(stats:range([52.46]) == [52.46, 52.46]),
+      ?assert(stats:range([52]) == [52, 52]),
+      ?assert(stats:range([1, 2, 3, 4, 5, 6, 7]) == [1, 7]),
+      ?assert(stats:range([10.0, 9.0, 8.0, 7.0, 6.0, 5.0]) == [5.0, 10.0]),
+      ?assert(stats:range([10, 2.0, 9, 3.0, 8, 4.0, 7, 5.0]) == [2.0, 10]),
+      ?assert(stats:range([10.0, 2, 9.0, 3, 8.0, 4, 7.0, 5]) == [2, 10.0])
+      ]}.
+
 -endif.
