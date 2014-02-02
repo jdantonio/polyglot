@@ -18,11 +18,11 @@ switch_macro_false_test() ->
 
 delta_function_test() ->
   {"?delta/2 returns the absolute value of the difference between two numbers", [
-      ?assert(katas:delta(unknown, unknown) == 0),
-      ?assert(katas:delta(1, unknown) == 1),
-      ?assert(katas:delta(-1, unknown) == 1),
-      ?assert(katas:delta(unknown, 1) == 1),
-      ?assert(katas:delta(unknown, -1) == 1),
+      ?assert(katas:delta(undefined, undefined) == 0),
+      ?assert(katas:delta(1, undefined) == 1),
+      ?assert(katas:delta(-1, undefined) == 1),
+      ?assert(katas:delta(undefined, 1) == 1),
+      ?assert(katas:delta(undefined, -1) == 1),
       ?assert(katas:delta(5, 5) == 0),
       ?assert(katas:delta(5, 10) == 5),
       ?assert(katas:delta(-5, 5) == 10),
@@ -41,20 +41,20 @@ type_of_test() ->
       ?assert(katas:type_of({}) == tuple),
       ?assert(katas:type_of(<<1>>) == binary),
       ?assert(katas:type_of(<<1:1>>) == bitstring),
-      ?assert(katas:type_of(spawn(fun() -> unknown end)) == pid),
+      ?assert(katas:type_of(spawn(fun() -> undefined end)) == pid),
       ?assert(katas:type_of(make_ref()) == reference),
       %?assert(katas:type_of(1) == port),
-      %?assert(katas:type_of(1) == unknown),
-      ?assert(katas:type_of(fun() -> unknown end) == function)
+      %?assert(katas:type_of(1) == undefined),
+      ?assert(katas:type_of(fun() -> undefined end) == function)
       ]}.
 
 delta_macro_test() ->
   {"?delta/2 returns the absolute value of the difference between two numbers", [
-      ?assert(?delta(unknown, unknown) == 0),
-      ?assert(?delta(1, unknown) == 1),
-      ?assert(?delta(-1, unknown) == 1),
-      ?assert(?delta(unknown, 1) == 1),
-      ?assert(?delta(unknown, -1) == 1),
+      ?assert(?delta(undefined, undefined) == 0),
+      ?assert(?delta(1, undefined) == 1),
+      ?assert(?delta(-1, undefined) == 1),
+      ?assert(?delta(undefined, 1) == 1),
+      ?assert(?delta(undefined, -1) == 1),
       ?assert(?delta(5, 5) == 0),
       ?assert(?delta(5, 10) == 5),
       ?assert(?delta(-5, 5) == 10),

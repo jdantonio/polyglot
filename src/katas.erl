@@ -13,9 +13,9 @@
 
 -spec(delta(number(), number()) -> number()).
 
-delta(unknown, unknown) -> 0;
-delta(A, unknown) -> abs(A);
-delta(unknown, B) -> abs(B);
+delta(undefined, undefined) -> 0;
+delta(A, undefined) -> abs(A);
+delta(undefined, B) -> abs(B);
 delta(A, B) -> abs(A - B).
 
 -spec(type_of(any()) -> atom()).
@@ -34,4 +34,4 @@ type_of(X) when is_pid(X)       -> pid;
 type_of(X) when is_port(X)      -> port;
 type_of(X) when is_reference(X) -> reference;
 type_of(X) when is_atom(X)      -> atom;
-type_of(_)                      -> unknown.
+type_of(_)                      -> undefined.
