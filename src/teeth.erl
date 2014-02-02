@@ -45,6 +45,9 @@ generate(Present, Bad) when is_float(Present), is_float(Bad) ->
         end
     end, lists:seq(1, 32)).
 
+-spec(good_tooth() -> list()).
+-spec(bad_tooth() -> list()).
+
 good_tooth() -> lists:map(fun(_) -> random:uniform(3) end, lists:seq(1, 6)).
 bad_tooth() ->
   Bad = random:uniform(6),
