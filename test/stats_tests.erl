@@ -35,4 +35,19 @@ range_1_function_test() ->
       ?assert(stats:range([10.0, 2, 9.0, 3, 8.0, 4, 7.0, 5]) == [2, 10.0])
       ]}.
 
+mean_1_function_test() ->
+  {"mean/1 returns the statistical mean of a set of numbers", [
+      ?assert(?delta(stats:mean([7, 2, 9]), 6.0) =< 0.001),
+      ?assert(?delta(stats:mean([7.0, 2.0, 9.0]), 6.0) =< 0.001),
+      ?assert(?delta(stats:mean([7.0]), 7.0) =< 0.001),
+      ?assert(?delta(stats:mean([]), 0.0) =< 0.001)
+      ]}.
+
+stdev_1_function_test() ->
+  {"stdev/1 returns the statistical stdev of a set of numbers", [
+      ?assert(?delta(stats:stdev([7, 2, 9]), 3.605551275463989) =< 0.001),
+      ?assert(?delta(stats:stdev([7.0, 2.0, 9.0]), 3.605551275463989) =< 0.001),
+      ?assert(?delta(stats:stdev([]), 0.0) =< 0.001)
+      ]}.
+
 -endif.
