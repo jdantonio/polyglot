@@ -5,7 +5,8 @@
 -module(teeth).
 
 -export([
-  alert/1
+  alert/1,
+  generate/2
   ]).
 
 -spec(alert(list()) -> list()).
@@ -30,3 +31,27 @@ bad_tooth([0]) ->
   false;
 bad_tooth(Depths) when is_list(Depths), length(Depths) =:= 6 ->
   lists:any(fun(X) -> if X >= 4 -> true; true -> false end end, Depths).
+
+-spec(generate(float(), float()) -> list()).
+
+generate(Present, Bad) when is_float(Present), is_float(Bad) ->
+  random:seed(now()),
+  lists:map(fun(_) ->
+        [P, B] = [random:uniform(), random:uniform()],
+        if
+          P =< Present -> [0];
+          B =< Bad -> bad_tooth();
+          true -> good_tooth()
+        end
+    end, lists:seq(1, 32)).
+
+good_tooth() -> lists:map(fun(_) -> random:uniform(3) end, lists:seq(1, 6)).
+bad_tooth() ->
+  Bad = random:uniform(6),
+  lists:map(fun(Index) ->
+        erlang:display([Bad, Index]),
+        if
+          Index =:= Bad -> 4;
+          true -> random:uniform(3)
+        end
+    end, lists:seq(1, 6)).
