@@ -34,13 +34,18 @@ julian(Date) when is_list(Date) ->
 -spec(julian(integer(), integer(), integer()) -> integer()).
 
 julian(Year, Month, Day) when is_integer(Year), is_integer(Month), is_integer(Day) ->
-  Accum = case is_leap_year(Year) andalso Month > 2 of true -> 1; false -> 0 end,
-  julian(Year, Month, Day, ?DAYS_IN_MONTH, Accum).
+  Accum = Day + case is_leap_year(Year) andalso Month > 2 of true -> 1; false -> 0 end,
+  Months = element(1, lists:split(Month - 1, ?DAYS_IN_MONTH)),
+  lists:foldl(fun(X, Sum) -> X + Sum end, Accum, Months).
 
--spec(julian(integer(), integer(), integer(), list(), integer()) -> integer()).
+%julian(Year, Month, Day) when is_integer(Year), is_integer(Month), is_integer(Day) ->
+  %Accum = case is_leap_year(Year) andalso Month > 2 of true -> 1; false -> 0 end,
+  %julian(Year, Month, Day, ?DAYS_IN_MONTH, Accum).
 
-julian(Year, 1, Day, DaysInMonth, Accum) when is_integer(Year), is_integer(Day), is_list(DaysInMonth), is_integer(Accum) ->
-  Day + Accum;
-julian(Year, Month, Day, DaysInMonth, Accum) when is_integer(Year), is_integer(Month), is_integer(Day), is_list(DaysInMonth), is_integer(Accum) ->
-  [Current | Remaining] = DaysInMonth,
-  julian(Year, Month - 1, Day, Remaining, Accum + Current).
+%-spec(julian(integer(), integer(), integer(), list(), integer()) -> integer()).
+
+%julian(Year, 1, Day, DaysInMonth, Accum) when is_integer(Year), is_integer(Day), is_list(DaysInMonth), is_integer(Accum) ->
+  %Day + Accum;
+%julian(Year, Month, Day, DaysInMonth, Accum) when is_integer(Year), is_integer(Month), is_integer(Day), is_list(DaysInMonth), is_integer(Accum) ->
+  %[Current | Remaining] = DaysInMonth,
+  %julian(Year, Month - 1, Day, Remaining, Accum + Current).
