@@ -39,15 +39,21 @@ mean_1_function_test() ->
   {"mean/1 returns the statistical mean of a set of numbers", [
       ?assert(?delta(stats:mean([7, 2, 9]), 6.0) =< 0.001),
       ?assert(?delta(stats:mean([7.0, 2.0, 9.0]), 6.0) =< 0.001),
-      ?assert(?delta(stats:mean([7.0]), 7.0) =< 0.001),
-      ?assert(?delta(stats:mean([]), 0.0) =< 0.001)
+      ?assert(?delta(stats:mean([7.0]), 7.0) =< 0.001)
       ]}.
 
-stdev_1_function_test() ->
-  {"stdev/1 returns the statistical stdev of a set of numbers", [
-      ?assert(?delta(stats:stdev([7, 2, 9]), 3.605551275463989) =< 0.001),
-      ?assert(?delta(stats:stdev([7.0, 2.0, 9.0]), 3.605551275463989) =< 0.001),
-      ?assert(?delta(stats:stdev([]), 0.0) =< 0.001)
+stddev_1_function_test() ->
+  {"stddev/1 returns the statistical stddev of a set of numbers", [
+      ?assert(?delta(stats:stddev([7, 2, 9]), 3.605551275463989) =< 0.001),
+      ?assert(?delta(stats:stddev([7.0, 2.0, 9.0]), 3.605551275463989) =< 0.001)
+      ]}.
+
+error_handling_test() ->
+  {"stats functions properly handle bad arguments", [
+      ?assertEqual(stats:minimum([]), {error, badarg}),
+      ?assertEqual(stats:mean([]), {error, badarith}),
+      %?assertEqual(stats:mean(["123", 456]), {error, badarith}),
+      ?assertEqual(stats:stddev([]), {error, badarith})
       ]}.
 
 -endif.
