@@ -52,7 +52,7 @@ error_handling_test() ->
   {"stats functions properly handle bad arguments", [
       ?assertEqual(stats:minimum([]), {error, badarg}),
       ?assertEqual(stats:mean([]), {error, badarith}),
-      %?assertEqual(stats:mean(["123", 456]), {error, badarith}),
+      ?assertEqual(stats:mean(["123", 456]), {error, badarith}),
       ?assertEqual(stats:stddev([]), {error, badarith})
       ]}.
 
