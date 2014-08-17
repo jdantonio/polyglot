@@ -1,0 +1,10 @@
+.psci
+bower_components
+node_modules
+.npm-debug.log
+dist
+tmp/*
+*.tmproj
+*.orig
+.DS_Store
+*.sw?
