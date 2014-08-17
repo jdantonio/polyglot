@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         dest: '<%=mainFile%>'
       }
     },
-    dotPsci: ['<%=mainFile%>'],
+    dotPsci: ['<%=srcFiles%>'],
     execute: {
         main: {
             src: ['dist/Main.js']

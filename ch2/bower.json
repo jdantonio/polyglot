@@ -4,7 +4,7 @@
   "authors": [
     "Jerry D'Antonio <stumpjumper@gmail.com>"
   ],
-  "description": "Exercises from the book 'PureScript by Example'",
+  "description": "Exercises from from chapter 2 of the book 'PureScript by Example'",
   "license": "MIT",
   "private": true,
   "ignore": [
