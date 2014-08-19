@@ -1,12 +1,12 @@
 module Data.PhoneBook where
 
-import Data.Array
 import Data.Maybe
+import Data.List
 
 import Control.Plus (empty)
 
 type Entry = { firstName :: String, lastName :: String, phone :: String }
-type PhoneBook = Array Entry
+type PhoneBook = List Entry
 
 showEntry :: Entry -> String
 showEntry entry = entry.lastName ++ ", " ++
@@ -15,3 +15,12 @@ showEntry entry = entry.lastName ++ ", " ++
 
 emptyBook :: PhoneBook
 emptyBook = empty
+
+insertEntry :: Entry -> PhoneBook -> PhoneBook
+insertEntry entry book = Cons entry book
+
+findEntry :: String -> String -> PhoneBook -> Maybe Entry
+findEntry firstName lastName book = head $ filter filterEntry book
+  where
+    filterEntry :: Entry -> Boolean
+    filterEntry entry = entry.firstName == firstName && entry.lastName == lastName
