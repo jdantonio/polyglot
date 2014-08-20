@@ -5,7 +5,6 @@ module.exports = function(grunt) {
     mainFile: 'dist/Main.js',
     psc: {
       options: {
-        //main: 'Data',
         modules: ['Data']
       },
       all: {
