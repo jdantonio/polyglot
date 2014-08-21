@@ -9,7 +9,8 @@ module Data.PhoneBook (
   findByPhone,
   findByName,
   containsPhone,
-  containsName
+  containsName,
+  removeDuplicates
   ) where
 
 import Data.Maybe
@@ -55,11 +56,22 @@ containsPhone phone book = containsEntry (filterByPhone phone) book
 containsName :: String -> String -> PhoneBook -> Boolean
 containsName firstName lastName book = containsEntry (filterByName firstName lastName) book
 
+duplicateEntry :: Entry -> Entry -> Boolean
+duplicateEntry entry1 entry2 = entry1.firstName == entry2.firstName && entry1.lastName == entry2.lastName
+
+removeDuplicates :: PhoneBook -> PhoneBook
+removeDuplicates book = nubBy duplicateEntry book
+
 -- > :i Data.PhoneBook
--- > let example = { firstName: "John", lastName: "Smith", phone: "555-555-5555" }
+-- > :i Data.List
 -- > let john = { firstName: "John", lastName: "Smith", phone: "555-555-5555" }
 -- > let book1 = insertEntry john emptyBook
+-- > let book2 = insertEntry john book1
 -- > let printEntry firstName lastName book = showEntry <$> findByName firstName lastName book
+-- > length book1
+-- 1
+-- > length book2
+-- 2
 -- > printEntry "John" "Smith" book1
 -- Just ("Smith, John: 555-555-5555")
 -- > showEntry <$> findEntry (\entry -> entry.phone == "555-555-5555") book1
@@ -84,3 +96,7 @@ containsName firstName lastName book = containsEntry (filterByName firstName las
 -- true
 -- > containsPhone "Bogus" book1
 -- false
+-- > length $ removeDuplicates book1
+-- 1
+-- > length $ removeDuplicates book2
+-- 1
