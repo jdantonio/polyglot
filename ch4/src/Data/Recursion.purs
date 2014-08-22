@@ -23,18 +23,23 @@ fib n = fib (n - 1) + fib (n - 2)
 (..) = Data.Array.range
 
 isEven :: Number -> Boolean
-isEven n =
-  if n % 2 == 0
-     then true
-     else false
+-- -- with conditionals
+--isEven n =
+--  if n % 2 == 0
+--     then true
+--     else false
+-- with pattern matching and recursion
+isEven 0 = true
+isEven 1 = false
+isEven n = isEven (n % 2)
 
-countEven :: forall a. [a] -> Number
-countEven [] = 0
-countEven arr =
-  --if 1 == head arr
-  if 1 == head [100]
-     then 1
-     else 2
+--countEven :: forall a. [a] -> Number
+--countEven [] = 0
+--countEven arr =
+--  if isEven $ head [100]
+--     then 1
+--     else 2
 
-main = print (countEven [1,2,3,4,5,6,7,8,9,10])
+--main = print (countEven [1,2,3,4,5,6,7,8,9,10])
 --main = print (countEven [])
+main = print "Hello World"
