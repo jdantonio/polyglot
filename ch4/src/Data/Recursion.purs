@@ -33,12 +33,12 @@ isEven 0 = true
 isEven 1 = false
 isEven n = isEven (n % 2)
 
---countEven :: forall a. [a] -> Number
---countEven [] = 0
---countEven arr =
---  if isEven $ head [100]
---     then 1
---     else 2
+countEven :: forall a. [Number] -> Number
+countEven [] = 0
+countEven arr =
+  if isEven $ head arr
+     then 1 + (countEven $ tail arr)
+     else 0 + (countEven $ tail arr)
 
 square :: forall a. [Number] -> [Number]
 square arr = map (\n -> n * n) arr
@@ -59,4 +59,4 @@ pairs n = concatMap (\i -> map (\j -> [i, j]) (i..n)) (1..n)
 factors :: Number -> [[Number]]
 factors n = filter (\pair -> product pair == n) (pairs n)
 
-main = print $ factors 10
+main = print $ countEven [1,2,3,4,5,6,7,8,9,10]
