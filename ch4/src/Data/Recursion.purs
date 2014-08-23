@@ -4,11 +4,12 @@ import Data.Array (concatMap, filter, map, null)
 import Data.Array.Unsafe (head, last, tail)
 import Debug.Trace
 
---length :: forall a. [a] -> Number
---length arr =
---  if null arr
---     then 0
---     else 1 + length (tail arr)
+-- re-implement the `length` function as `size`
+size :: forall a. [a] -> Number
+size arr =
+  if null arr
+     then 0
+     else 1 + size (tail arr)
 
 fact :: Number -> Number
 fact 0 = 1
@@ -23,12 +24,6 @@ fib n = fib (n - 1) + fib (n - 2)
 (..) = Data.Array.range
 
 isEven :: Number -> Boolean
--- -- with conditionals
---isEven n =
---  if n % 2 == 0
---     then true
---     else false
--- with pattern matching and recursion
 isEven 0 = true
 isEven 1 = false
 isEven n = isEven (n % 2)
@@ -47,8 +42,8 @@ infix 1 <$?>
 
 (<$?>) fn arr = filter fn arr
 
-isPositive :: forall a. [Number] -> [Number]
-isPositive arr = (\n -> n >= 0) <$?> arr
+positives :: forall a. [Number] -> [Number]
+positives arr = (\n -> n >= 0) <$?> arr
 
 product :: forall a. [Number] -> Number
 product pair = (head pair) * (last pair) 
@@ -56,7 +51,22 @@ product pair = (head pair) * (last pair)
 pairs :: Number -> [[Number]]
 pairs n = concatMap (\i -> map (\j -> [i, j]) (i..n)) (1..n)
 
-factors :: Number -> [[Number]]
-factors n = filter (\pair -> product pair == n) (pairs n)
+--factors :: Number -> [[Number]]
+--factors n = filter (\pair -> product pair == n) (pairs n)
 
-main = print $ countEven [1,2,3,4,5,6,7,8,9,10]
+factors :: Number -> [[Number]]
+factors n = filter (\xs -> product xs == n) $ do
+  i <- 1 .. n
+  j <- i .. n
+  --return [i, j]
+  [[i, j]]
+
+main = do
+  let array = (1..10)
+  print $ size array
+  print $ fact 10
+  print $ fib 10
+  print $ square array
+  print $ positives (-5..5)
+  print $ pairs 3
+  print $ factors 10
