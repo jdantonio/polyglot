@@ -1,6 +1,6 @@
 module Data.Recursion where
 import Data.Maybe
-import Data.Array (null)
+import Data.Array (filter, map, null)
 import Data.Array.Unsafe (head, tail)
 import Debug.Trace
 
@@ -40,6 +40,14 @@ isEven n = isEven (n % 2)
 --     then 1
 --     else 2
 
---main = print (countEven [1,2,3,4,5,6,7,8,9,10])
---main = print (countEven [])
-main = print "Hello World"
+sq :: forall a. [Number] -> [Number]
+sq arr = map (\n -> n * n) arr
+
+(<$?>) fn arr = filter fn arr
+
+infix 1 <$?>
+
+pos :: forall a. [Number] -> [Number]
+pos arr = (\n -> n >= 0) <$?> arr
+
+main = print $ pos (-5..5)
