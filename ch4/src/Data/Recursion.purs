@@ -4,6 +4,7 @@ import Data.Array (concatMap, filter, length, map, null, range)
 import Data.Array.Unsafe (head, last, tail)
 import Prelude.Unsafe (unsafeIndex)
 import Control.MonadPlus (guard)
+import Data.Foldable (any)
 import Debug.Trace
 
 -- re-implement the `length` function as `size`
@@ -63,6 +64,12 @@ factors n = do
   guard $ i * j == n
   return [i, j]
 
+containsNumber :: [Number] -> Number -> Boolean
+containsNumber arr match = any (\item -> item == match) arr
+
+hasFactors :: Number -> Boolean
+hasFactors n = any (\pair -> (not (pair `containsNumber` 1)) && (not (pair `containsNumber` n))) (factors n) 
+
 isPrime :: Number -> Boolean
 isPrime n = length (factors n) == 1
 
@@ -87,8 +94,14 @@ main = do
   --print $ square array
   --print $ positives (-5..5)
   --print $ pairs 3
+  --print $ pairs 10
+  --print $ factors 3
   --print $ factors 10
   --print $ isPrime 13
   --print $ isPrime 14
   --print $ unsafeAt [1,2,3] 1
-  print $ cartesian [1,2,3] [4,5,6]
+  --print $ cartesian [1,2,3] [4,5,6]
+  --print $ containsNumber [1,5] 5
+  --print $ containsNumber [1,5] 3
+  print $ hasFactors 3
+  print $ hasFactors 10
