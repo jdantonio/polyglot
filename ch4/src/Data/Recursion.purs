@@ -1,7 +1,8 @@
 module Data.Recursion where
 import Data.Maybe
-import Data.Array (concatMap, filter, map, null)
+import Data.Array (concatMap, filter, length, map, null, range)
 import Data.Array.Unsafe (head, last, tail)
+import Control.MonadPlus (guard)
 import Debug.Trace
 
 -- re-implement the `length` function as `size`
@@ -55,18 +56,23 @@ pairs n = concatMap (\i -> map (\j -> [i, j]) (i..n)) (1..n)
 --factors n = filter (\pair -> product pair == n) (pairs n)
 
 factors :: Number -> [[Number]]
-factors n = filter (\xs -> product xs == n) $ do
-  i <- 1 .. n
-  j <- i .. n
-  --return [i, j]
-  [[i, j]]
+factors n = do
+  i <- (1..n)
+  j <- (i..n)
+  guard $ i * j == n
+  return [i, j]
+
+isPrime :: Number -> Boolean
+isPrime n = length (factors n) == 1
 
 main = do
   let array = (1..10)
-  print $ size array
-  print $ fact 10
-  print $ fib 10
-  print $ square array
-  print $ positives (-5..5)
-  print $ pairs 3
-  print $ factors 10
+  --print $ size array
+  --print $ fact 10
+  --print $ fib 10
+  --print $ square array
+  --print $ positives (-5..5)
+  --print $ pairs 3
+  --print $ factors 10
+  print $ isPrime 13
+  print $ isPrime 14
