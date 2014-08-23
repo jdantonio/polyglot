@@ -2,6 +2,7 @@ module Data.Recursion where
 import Data.Maybe
 import Data.Array (concatMap, filter, length, map, null, range)
 import Data.Array.Unsafe (head, last, tail)
+import Prelude.Unsafe (unsafeIndex)
 import Control.MonadPlus (guard)
 import Debug.Trace
 
@@ -65,6 +66,19 @@ factors n = do
 isPrime :: Number -> Boolean
 isPrime n = length (factors n) == 1
 
+--foreign import unsafeAt
+--  "function unsafeAt (arr) {\
+--  \  return function (i) {\
+--  \    return arr[i];\
+--  \  };\
+--  \}" :: forall a. [a] -> Number -> a
+
+cartesian :: forall a. [Number] -> [Number] -> [[Number]]
+cartesian a b = do
+  i <- (0..(length a)-1)
+  j <- (0..(length b)-1)
+  return [(unsafeIndex a i), (unsafeIndex b j)]
+
 main = do
   let array = (1..10)
   --print $ size array
@@ -74,5 +88,7 @@ main = do
   --print $ positives (-5..5)
   --print $ pairs 3
   --print $ factors 10
-  print $ isPrime 13
-  print $ isPrime 14
+  --print $ isPrime 13
+  --print $ isPrime 14
+  --print $ unsafeAt [1,2,3] 1
+  print $ cartesian [1,2,3] [4,5,6]
