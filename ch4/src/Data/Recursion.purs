@@ -4,10 +4,9 @@ import Data.Array (concatMap, filter, length, map, null, range)
 import Data.Array.Unsafe (head, last, tail)
 import Prelude.Unsafe (unsafeIndex)
 import Control.MonadPlus (guard)
-import Data.Foldable (any)
+import Data.Foldable (any, foldl, foldr)
 import Debug.Trace
 
--- re-implement the `length` function as `size`
 size :: forall a. [a] -> Number
 size arr =
   if null arr
@@ -86,6 +85,29 @@ cartesian a b = do
   j <- (0..(length b)-1)
   return [(unsafeIndex a i), (unsafeIndex b j)]
 
+--reverse :: forall a. [a] -> [a]
+--reverse [] = []
+--reverse (x : xs) = reverse xs ++ [x]
+
+--reverse :: forall a. [a] -> [a]
+--reverse arr = reverse' [] arr
+--  where
+--    reverse' acc [] = acc
+--    reverse' acc (x : xs) = reverse' (x : acc) xs
+
+reverse :: forall a. [a] -> [a]
+--reverse arr = foldr (\item acc -> acc ++ [item]) [] arr
+--reverse = foldr (\item acc -> acc ++ [item]) []
+reverse = foldl (\acc item -> [item] ++ acc) []
+
+allTrue :: forall a. [Boolean] -> Boolean
+allTrue = foldl (\item acc -> item && acc) true
+--allTrue arr = foldl (\item acc -> item && acc) true arr
+
+count :: forall a. (a -> Boolean) -> [a] -> Number
+count _ [] = 0
+count p (x : xs) = if p x then 1 + count p xs else count p xs
+
 main = do
   let array = (1..10)
   --print $ size array
@@ -103,5 +125,9 @@ main = do
   --print $ cartesian [1,2,3] [4,5,6]
   --print $ containsNumber [1,5] 5
   --print $ containsNumber [1,5] 3
-  print $ hasFactors 3
-  print $ hasFactors 10
+  --print $ hasFactors 3
+  --print $ hasFactors 10
+  --print $ reverse array
+  --print $ allTrue [true, true, true]
+  --print $ allTrue [true, false, true]
+  print $ count (\item -> item) [true, false, true]
