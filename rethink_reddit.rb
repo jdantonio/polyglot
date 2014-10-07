@@ -1,8 +1,8 @@
 require 'sinatra'
 require 'rest_client'
+require 'active_support/core_ext/string'
 require 'json'
 require 'ostruct'
-require 'pp'
 
 BASE_URL = 'http://www.reddit.com'
 
