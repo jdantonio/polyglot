@@ -6,8 +6,9 @@ require 'pp'
 
 BASE_URL = 'http://www.reddit.com'
 
-def popular_subreddits
-  response = RestClient.get(BASE_URL + '/subreddits/popular.json', {:accept => :json})
+def popular_subreddits(limit = nil)
+  count = limit.nil? ? '' : "?limit=#{limit.to_i}"
+  response = RestClient.get(BASE_URL + "/subreddits/popular.json#{count}", {:accept => :json})
   JSON.parse(response)['data']['children'].collect do |sub|
     display_name = sub['data']['display_name']
     OpenStruct.new(display_name: display_name,
@@ -27,5 +28,5 @@ def hot_topics(subreddit, limit = nil)
 end
 
 get '/' do
-  erb :index, locals: { subreddits: popular_subreddits }
+  erb :index, locals: { subreddits: popular_subreddits(12) }
 end
