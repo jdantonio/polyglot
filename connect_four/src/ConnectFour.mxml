@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   minWidth="780" minHeight="700"
+			   maxWidth="780" maxHeight="700"
+			   width="780" height="700"
+			   currentState="NewGame"
+			   xmlns:views="views.*">
+
+	<s:states>
+		<s:State name="NewGame"/>
+		<s:State name="GameBoard"/>
+		<s:State name="GameOver"/>
+	</s:states>
+	
+	<fx:Script>
+		<![CDATA[
+			
+			/**
+			 * This is the main UI logic for a Flash Connect Four game. It uses the
+			 * Connect Four engine in the "engine" package to do the heavy lifting.
+			 * This class just builds the UI and interacts with the user.
+			 * 
+			 * This class has three states. All three states must be traversed sequentially.
+			 * The first state is NewGame where the user is given the option of chosing
+			 * a Player vs. Player or Player vs. Computer game. Selecting the appropriate
+			 * button will cause a new game board to be created and will then shift to the
+			 * second state. The second state is the GameBoard state and it is where the
+			 * actual game is played. The viewable board is a collection of big buttons,
+			 * each of which represents one space on the board. When the game is over
+			 * (either by winning or a tie) the third state is initiated. This final
+			 * state is the GameOver state where the players are told who won (or if the
+			 * game was a tie). This final state also gives the player(s) an opportunity
+			 * to reset the game and start again. In this case the program loops back to
+			 * the NewGame state.
+			 * 
+			 * The missing state:
+			 * 
+			 * This game needs another state. When the game ends the application immediately
+			 * shifts to the GameOver state. The players do not have a chace to see the
+			 * winning board layout.
+			 * 
+			 * Computer vs. Computer:
+			 * 
+			 * The game engine is capable of running a game between two AIs. I originally
+			 * intended to include that option from the GUI but the lifecycle of the app
+			 * was very different. There was no easy wat to handle it under the current
+			 * set of states so I decided to abandon it. This is just a demo project.
+			 * 
+			 * AI skill level:
+			 * 
+			 * The game engine algorithm allows for a variable AI skill level. That code
+			 * works but at higher levels it causes the Flash application to exceed the
+			 * Flash Player timeout (15 seconds). To keep things simple in the GUI I
+			 * fixed the AI skill level at 5.
+			 * 
+			 * Rendering the board:
+			 * 
+			 * I really hate the way the board is rendered. Explicitly dropping 42 buttons
+			 * on the canvas offends me. This is clearly a case where two nested loops would
+			 * work fine (that is how the engine does it internally). I played with this and
+			 * almost had it working but I ran into trouble with states. Apparently states
+			 * aren't initialized until they are used so I could not dyamically put the
+			 * buttons on the cancas until after it appeared. I believe that states have an
+			 * initialization method but I was running out of time so I gave up on that, too.
+			 * I'm disappointed in that because the game engine supports arbitrary size boards.
+			 * Letting the player choose the board size and win condition would have been a
+			 * nice feature.
+			 * 
+			 * Too much code?:
+			 * 
+			 * Finally, this class feels like it has too much code. Mixing MXML with this much
+			 * AS feels wrong to me. I can't really say because I do not know what the best
+			 * practices for Flex are. I experimented with trying to put some of this code
+			 * into a Game class but this didn't really change things much.
+			 */
+			
+			import engine.*;
+
+			/** The board being used for th game. */
+			private var board:Board = null;
+			
+			/** The AI player for when the user is playing against the computer. */
+			private var ai:AIPlayer = null;
+			
+			/** The color of the currently active player. */
+			private var current_color:int = Player.NONE;
+			
+			/**
+			 * Start a new game.
+			 * 
+			 * @param pvp Set to true for player vs. player or set to false for player vs. AI.
+			 */
+			private function start_game(pvp:Boolean):void
+			{
+				current_color = Player.BLACK;
+				board = new Board(7, 6, 4);
+				if (! pvp) ai = new AIPlayer(board, Player.RED);
+				
+				display_turn_info();
+				currentState = "GameBoard";
+			}
+			
+			/**
+			 * Update the panel title bar to show the currently active player.
+			 */
+			private function display_turn_info():void
+			{
+				if (current_color == Player.RED) {
+					main_panel.title = "Connect Four - RED PLAYER'S TURN"
+				} else {
+					main_panel.title = "Connect Four - BLACK PLAYER'S TURN"
+				}
+			}
+
+			/**
+			 * Set the button representing the latest move to the appropriate color
+			 * and disable it.
+			 */
+			private function set_button_color(column:int, row:int):void
+			{
+				var col_grp:Group = game_board.getChildAt(column) as Group;				
+				if (col_grp != null)
+				{
+					var btn:Button = col_grp.getChildAt(5 - row) as Button;
+					if (btn != null)
+					{
+						btn.enabled = false;
+						if (current_color == Player.RED) {
+							btn.setStyle("chromeColor", "red");
+						} else {
+							btn.setStyle("chromeColor", "black");
+						}
+					}
+				}					
+			}
+			
+			/**
+			 * Update state in preparation for the next turn.
+			 */
+			private function next_turn():void
+			{
+				current_color = Player.other_color(current_color);
+				display_turn_info();
+				ai_turn();
+			}
+			
+			/**
+			 * If the AI is playing have it take its turn.
+			 */
+			private function ai_turn():void
+			{
+				if (ai != null && current_color == ai.color) {
+					make_move(ai.make_move());
+				}
+			}
+			
+			/**
+			 * End the game.
+			 * 
+			 * @param tie True of the game is a tie else false.
+			 */
+			private function end_game(tie:Boolean):void
+			{
+				currentState = "GameOver";
+				if (tie) {
+					winner_message.text = "The game has ended in a tie.";
+				} else {
+					winner_message.text = (current_color == Player.BLACK ? "Black" : "Red") + " has won the game!";
+				}
+			}
+			
+			/**
+			 * Process the move selected by the active player.
+			 */
+			private function make_move(column:int):void
+			{
+				var row:int = board.drop_piece(current_color, column);
+				
+				if (row != Board.INVALID_MOVE)
+				{
+					set_button_color(column, row);
+					if (board.winner == Player.NONE && ! board.is_tie()) {
+						next_turn();
+					} else {
+						end_game(board.is_tie());
+					}
+				}
+			}
+			
+			/**
+			 * Reset the game so another can be played.
+			 */
+			private function reset_game():void
+			{
+				board = null;
+				ai = null;
+				current_color = Player.NONE;
+				reset_board();
+				currentState = "NewGame";
+			}
+			
+			/**
+			 * Reset all buttons on the UI board in preparation for a new game.
+			 */
+			private function reset_board():void
+			{
+				for (var x:int = 0; x < 7; x++)
+				{
+					var col_grp:Group = game_board.getChildAt(x) as Group;				
+					for (var y:int = 0; y < 6; y++)
+					{
+						var btn:Button = col_grp.getChildAt(y) as Button;
+						btn.setStyle("chromeColor", "#cccccc");
+						btn.enabled = true;
+					}
+				}
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+
+	<s:Panel id="main_panel" x="0" y="0" width="780" height="700" title="Connect Four">
+
+		<s:Group includeIn="NewGame">
+			<s:Label x="10" y="150" text="Would you like to play a game?" width="760" height="64" fontSize="48" fontWeight="bold" verticalAlign="middle" textAlign="center"/>
+			<s:Button x="205" y="300" label="Player vs. Player" height="60" width="370" fontSize="32" click="start_game(true)"/>
+			<s:Button x="205" y="450" label="Player vs. Computer" height="60" width="370" fontSize="32" click="start_game(false)"/>
+		</s:Group>
+		
+		<s:Group id="game_board" includeIn="GameBoard">
+			<!-- Column 0 -->
+			<s:Group id="column_0">
+				<s:Button id="space_0_5" x="10" y="10"  label="" width="100" height="100" click="make_move(0)"/>
+				<s:Button id="space_0_4" x="10" y="120" label="" width="100" height="100" click="make_move(0)"/>
+				<s:Button id="space_0_3" x="10" y="230" label="" width="100" height="100" click="make_move(0)"/>
+				<s:Button id="space_0_2" x="10" y="340" label="" width="100" height="100" click="make_move(0)"/>
+				<s:Button id="space_0_1" x="10" y="450" label="" width="100" height="100" click="make_move(0)"/>
+				<s:Button id="space_0_0" x="10" y="560" label="" width="100" height="100" click="make_move(0)"/>
+			</s:Group>
+			
+			<!-- Column 1 -->
+			<s:Group id="column_1">
+				<s:Button id="space_1_5" x="120" y="10"  label="" width="100" height="100" click="make_move(1)"/>
+				<s:Button id="space_1_4" x="120" y="120" label="" width="100" height="100" click="make_move(1)"/>
+				<s:Button id="space_1_3" x="120" y="230" label="" width="100" height="100" click="make_move(1)"/>
+				<s:Button id="space_1_2" x="120" y="340" label="" width="100" height="100" click="make_move(1)"/>
+				<s:Button id="space_1_1" x="120" y="450" label="" width="100" height="100" click="make_move(1)"/>
+				<s:Button id="space_1_0" x="120" y="560" label="" width="100" height="100" click="make_move(1)"/>
+			</s:Group>
+			
+			<!-- Column 2 -->
+			<s:Group id="column_2">
+				<s:Button id="space_2_5" x="230" y="10"  label="" width="100" height="100" click="make_move(2)"/>
+				<s:Button id="space_2_4" x="230" y="120" label="" width="100" height="100" click="make_move(2)"/>
+				<s:Button id="space_2_3" x="230" y="230" label="" width="100" height="100" click="make_move(2)"/>
+				<s:Button id="space_2_2" x="230" y="340" label="" width="100" height="100" click="make_move(2)"/>
+				<s:Button id="space_2_1" x="230" y="450" label="" width="100" height="100" click="make_move(2)"/>
+				<s:Button id="space_2_0" x="230" y="560" label="" width="100" height="100" click="make_move(2)"/>
+			</s:Group>
+		
+			<!-- Column 3 -->
+			<s:Group id="column_3">
+				<s:Button id="space_3_5" x="340" y="10"  label="" width="100" height="100" click="make_move(3)"/>
+				<s:Button id="space_3_4" x="340" y="120" label="" width="100" height="100" click="make_move(3)"/>
+				<s:Button id="space_3_3" x="340" y="230" label="" width="100" height="100" click="make_move(3)"/>
+				<s:Button id="space_3_2" x="340" y="340" label="" width="100" height="100" click="make_move(3)"/>
+				<s:Button id="space_3_1" x="340" y="450" label="" width="100" height="100" click="make_move(3)"/>
+				<s:Button id="space_3_0" x="340" y="560" label="" width="100" height="100" click="make_move(3)"/>
+			</s:Group>
+			
+			<!-- Column 4 -->
+			<s:Group id="column_4">
+				<s:Button id="space_4_5" x="450" y="10"  label="" width="100" height="100" click="make_move(4)"/>
+				<s:Button id="space_4_4" x="450" y="120" label="" width="100" height="100" click="make_move(4)"/>
+				<s:Button id="space_4_3" x="450" y="230" label="" width="100" height="100" click="make_move(4)"/>
+				<s:Button id="space_4_2" x="450" y="340" label="" width="100" height="100" click="make_move(4)"/>
+				<s:Button id="space_4_1" x="450" y="450" label="" width="100" height="100" click="make_move(4)"/>
+				<s:Button id="space_4_0" x="450" y="560" label="" width="100" height="100" click="make_move(4)"/>
+			</s:Group>
+			
+			<!-- Column 5 -->
+			<s:Group id="column_5">
+				<s:Button id="space_5_5" x="560" y="10"  label="" width="100" height="100" click="make_move(5)"/>
+				<s:Button id="space_5_4" x="560" y="120" label="" width="100" height="100" click="make_move(5)"/>
+				<s:Button id="space_5_3" x="560" y="230" label="" width="100" height="100" click="make_move(5)"/>
+				<s:Button id="space_5_2" x="560" y="340" label="" width="100" height="100" click="make_move(5)"/>
+				<s:Button id="space_5_1" x="560" y="450" label="" width="100" height="100" click="make_move(5)"/>
+				<s:Button id="space_5_0" x="560" y="560" label="" width="100" height="100" click="make_move(5)"/>
+			</s:Group>
+			
+			<!-- Column 6 -->
+			<s:Group id="column_6">
+				<s:Button id="space_6_5" x="670" y="10"  label="" width="100" height="100" click="make_move(6)"/>
+				<s:Button id="space_6_4" x="670" y="120" label="" width="100" height="100" click="make_move(6)"/>
+				<s:Button id="space_6_3" x="670" y="230" label="" width="100" height="100" click="make_move(6)"/>
+				<s:Button id="space_6_2" x="670" y="340" label="" width="100" height="100" click="make_move(6)"/>
+				<s:Button id="space_6_1" x="670" y="450" label="" width="100" height="100" click="make_move(6)"/>
+				<s:Button id="space_6_0" x="670" y="560" label="" width="100" height="100" click="make_move(6)"/>
+			</s:Group>
+
+		</s:Group>
+		
+		<s:Group includeIn="GameOver">
+			<s:Label x="10" y="150" text="Game Over!" width="760" height="64" fontSize="48" fontWeight="bold" verticalAlign="middle" textAlign="center"/>
+			<s:Label x="10" y="300" id="winner_message" width="760" height="64" fontSize="48" fontWeight="bold" verticalAlign="middle" textAlign="center"/>
+			<s:Button x="205" y="450" label="Play Again?" height="60" width="370" fontSize="32" click="reset_game()"/>
+		</s:Group>
+
+	</s:Panel>
+
+</s:Application>
+<!--
+////////////////////////////////////////////////////////////////////////////////
+// 
+// Copyright (c) 2010 Jerry D'Antonio <stumpjumper@gmail.com>.
+// 
+// Licensed under MIT License http://www.opensource.org/licenses/mit-license.php
+// 
+////////////////////////////////////////////////////////////////////////////////
+// 
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+// 
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+// 
+////////////////////////////////////////////////////////////////////////////////
+-->
