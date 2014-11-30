@@ -1,0 +1,6 @@
+<label for="state">State</label><br>
+<select id="state" name="state">
+  <% states.each do |code, state| %>
+    <option value='<%= code %>'><%= state %></option>
+  <% end %>
+</select>

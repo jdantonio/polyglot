@@ -1,0 +1,53 @@
+<div>
+  <h3>
+    Census data <span class='alt'><%= name.titleize %></span> for
+    <span class='alt'><%= state %></span>
+  </h3>
+
+  <p>
+  <ul>
+    <% variables.each do |var| %>
+      <li><%= var['content'] %> is <strong><%= format_number(data[var['name']]) %></strong></li>
+    <% end %>
+  </ul>
+  </p>
+
+  <% if variables.length > 1 %>
+  <script type="text/javascript">
+   function graph() {
+     var container = document.getElementById('graph');
+
+      var
+        <% variables.slice(1..-1).each_with_index do |variable, index| %>
+          <%= variable['name'] %> = [[0, <%= data[variable['name']] %>]]
+        <% end %>
+        graph;
+  
+      graph = Flotr.draw(container, [
+        <% variables.slice(1..-1).each_with_index do |variable, index| %>
+          { data : <%= variable['name'] %>, label : '<%= variable['content'] %>' }
+          <% if index < variables.size-2 %>,<% end %>
+        <% end %>
+      ], {
+        HtmlText : false,
+        grid : {
+          verticalLines : false,
+          horizontalLines : false
+        },
+        xaxis : { showLabels : false },
+        yaxis : { showLabels : false },
+        pie : {
+          show : true 
+        },
+        mouse : { track : true },
+        legend : {
+          position : 'se',
+          backgroundColor : '#D2E8FF'
+        }
+      });
+    };
+    window.onload = graph;
+  </script>
+  <% end %>
+
+</div>

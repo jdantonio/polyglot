@@ -1,0 +1,22 @@
+.ruby-version
+.ruby-gemset
+*.gem
+*.rbc
+.bundle
+.config
+coverage
+InstalledFiles
+lib/bundler/man
+pkg
+rdoc
+spec/reports
+test/tmp
+test/version_tmp
+tmp
+*.swp
+*.swo
+
+# YARD artifacts
+.yardoc
+_yardoc
+doc/
