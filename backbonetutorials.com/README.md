@@ -25,10 +25,10 @@ bundle install
 Now in the `workspace` folder where you changed the code, run the command:
 
 ```shell
-rackup
+ruby app.rb
 ```
 
-Now bring up a browser and navigate to `http://localhost:9292`. You should see the application appear in the browser window. Going forward this mechanism can be used in each of the project step folders to bring up the application.
+Now bring up a browser and navigate to `http://localhost:8080`. You should see the application appear in the browser window. Going forward this mechanism can be used in each of the project step folders to bring up the application.
 
 ## Copyright
 
