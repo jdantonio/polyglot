@@ -2,6 +2,18 @@
 
 Backbone.js tutorials from the [backbonetutorials.com](http://backbonetutorials.com/) web site and [Leanpub book](https://leanpub.com/backbonetutorials).
 
+## Resources
+
+* [Backbone Tutorials (web)](http://backbonetutorials.com/)
+* [Backbone Tutorials (Leanpub)](https://leanpub.com/backbonetutorials)
+
+* [What is a view? (jsFiddle)](http://jsfiddle.net/tBS4X/1/)
+* [Chapter 1 complete (jsFiddle)](http://jsfiddle.net/thomas/C9wew/4/)
+* [Chapter 1 semi-complete (jsFiddle](http://jsfiddle.net/thomas/dKK9Y/6/)
+
+* [User Management tutorial (eheyne)](https://github.com/eheyne/user-management)
+* [Fresco Bakery tutorial (skingdev)](https://github.com/skingdev/fresco-bakery)
+
 ## Usage
 
 To test our application we will use a Node.js module called [http-server](https://www.npmjs.org/package/http-server) to bring up a local webserver and host our page.  To install this locally use this command:
