@@ -14,6 +14,8 @@ Backbone.js tutorials from the [backbonetutorials.com](http://backbonetutorials.
 * [User Management tutorial (eheyne)](https://github.com/eheyne/user-management)
 * [Fresco Bakery tutorial (skingdev)](https://github.com/skingdev/fresco-bakery)
 
+* [Todo list using RethinkDB, Flask, and Backbone.js](http://www.rethinkdb.com/docs/examples/flask-backbone-todo/)
+
 ## Usage
 
 To test our application we will use a Node.js module called [http-server](https://www.npmjs.org/package/http-server) to bring up a local webserver and host our page.  To install this locally use this command:
