@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ -z $1 ]; then
+  echo "usage: setup-deps [directory]"
+else
+  echo "Configuring $1 for PureScript development..."
+  cd $1
+  npm install grunt grunt-purescript
+  #npm init
+  #bower init
+fi

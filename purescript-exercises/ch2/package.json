@@ -1,0 +1,17 @@
+{
+  "name": "jdantonio-purescript-exercises-ch2",
+  "version": "0.0.1",
+  "description": "Exercises from from chapter 2 of the book 'PureScript by Example'",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt":            "^0.4.5",
+    "grunt-purescript": "^0.5.1",
+    "grunt-execute":    "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jerry D'Antonio <stumpjumper@gmail.com>",
+  "license": "MIT"
+}

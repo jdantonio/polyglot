@@ -1,0 +1,22 @@
+{
+  "name": "jdantonio-purescript-exercises-ch3",
+  "version": "0.0.1",
+  "authors": [
+    "Jerry D'Antonio <stumpjumper@gmail.com>"
+  ],
+  "description": "Exercises from chapter 3 of the book 'PureScript by Example'",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "purescript-lists"                : "*",
+    "purescript-maybe"                : "*",
+    "purescript-foldable-traversable" : "*"
+  }
+}
