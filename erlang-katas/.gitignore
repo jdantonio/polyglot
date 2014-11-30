@@ -1,0 +1,8 @@
+*.beam
+*.swp
+*.swo
+doc/
+ebin/
+.eunit/
+logs/
+.bundle
