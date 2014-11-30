@@ -15,6 +15,10 @@ test-reports/
 \#vm.args\#
 tags
 
+# Ruby
+.ruby-*
+Gemfile.lock
+
 # Patterns for Vim temporary files
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
