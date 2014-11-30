@@ -26,6 +26,23 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
     
     <script>
+
+      Person = Backbone.Model.extend({
+        defaults: {
+          name: 'Baby',
+          age: 0,
+          child: ''
+        },
+        initialize: function(){
+          //alert(this.get("name"));
+          alert("Welcome to this world");
+            this.on("change:name", function(model){
+            var name = model.get("name");
+            alert("Changed my name to " + name );
+          });
+        }
+      });
+
       SearchView = Backbone.View.extend({
         initialize: function(){
           this.render();
@@ -48,6 +65,13 @@
       });
 
       var search_view = new SearchView({ el: $("#search_container") });
+      var person = new Person({ name: "Thomas", age: 67, child: 'Ryan'});
+
+      //var age = person.get("age"); // 67
+      //var name = person.get("name"); // "Thomas"
+      //var child = person.get("child"); // 'Ryan'
+
+      //person.set({name: 'Stewie Griffin'}); // This triggers a change and will alert()
     </script>
 
   </body>
