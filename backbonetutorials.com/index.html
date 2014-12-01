@@ -24,29 +24,43 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
-    
-    <script>
 
-      var Song = Backbone.Model.extend({
-        defaults: {
-          name: "Not specified",
-          artist: "Not specified"
-        },
-        initialize: function(){
-          console.log("Music is the answer");
+    <script>
+      var AppRouter = Backbone.Router.extend({
+        routes: {
+          "posts/:id": "getPost",
+          "download/*path": "downloadFile",
+          ":route/:action": "loadView",
+          "*actions": "defaultRoute"
         }
       });
+      
+      // Initiate the router
+      var app_router = new AppRouter;
 
-      var Album = Backbone.Collection.extend({
-        model: Song
+      app_router.on('route:getPost', function (id) {
+        alert("Get post number " + id);
       });
 
-      var song1 = new Song({ name: "How Bizarre", artist: "OMC" });
-      var song2 = new Song({ name: "Sexual Healing", artist: "Marvin Gaye" });
-      var song3 = new Song({ name: "Talk It Over In Bed", artist: "OMC" });
+      app_router.on('route:downloadFile', function (path) {
+        alert(path);
+      });
 
-      var myAlbum = new Album([ song1, song2, song3 ]);
-      console.log( myAlbum.models ); // [song1, song2, song3]
+      app_router.on('route:loadView', function( route, action ){
+        alert(route + "_" + action);
+      });
+
+      app_router.on('route:defaultRoute', function(actions) {
+        console.log("---------------------------------------")
+        console.log(actions);
+        console.log("---------------------------------------")
+      });
+
+      // Start Backbone history a necessary step for bookmarkable URL's
+      Backbone.history.start();
+    </script>
+
+    <script>
 
       SearchView = Backbone.View.extend({
         initialize: function(){
