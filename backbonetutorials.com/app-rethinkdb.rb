@@ -1,19 +1,43 @@
 #!/usr/bin/env ruby
 
 require 'sinatra'
+require 'rethinkdb'
 require 'json'
 require 'pp'
 
-set :port, 8080
+include RethinkDB::Shortcuts
+
+set :port, 4567
 set :environment, :production
 
-USERS_TABLE = []
+RDB_HOST = ENV.fetch('RDB_HOST', 'localhost')
+RDB_PORT = ENV.fetch('RDB_PORT', 28015)
+DB_NAME  = ENV.fetch('DB_NAME', 'backbonetutorials')
+DB_TABLE = 'users'
+
+def safedb(verbose = false)
+  yield if block_given?
+rescue RethinkDB::RqlRuntimeError => ex
+  puts ex.message if verbose
+  false
+end
 
 def request_payload
   JSON.parse(@request_payload)
 end
 
+configure do
+  begin
+    r.connect(host: RDB_HOST, port: RDB_PORT).repl
+    safedb { r.db_create(DB_NAME).run }
+    safedb { r.db(DB_NAME).table_create(DB_TABLE).run }
+  rescue Errno::ECONNREFUSED
+    puts "Connection refused. Is RethinkDB running?"
+  end
+end
+
 before do
+  r.connect(host: RDB_HOST, port: RDB_PORT, db: DB_NAME).repl
   request.body.rewind
   @request_payload = request.body.read
 end
@@ -32,48 +56,37 @@ end
 # PATCH/PUT	/users/:id	users#update	update a specific user
 # DELETE	/users/:id	users#destroy	delete a specific user
 
-#get '/users', provides: :json do
-  #content_type :json
-#end
+get '/users', provides: :json do
+  content_type :json
+end
 
-#get '/users/new', provides: :json do
-  #content_type :json
-#end
+get '/users/new', provides: :json do
+  content_type :json
+end
 
 post '/users', provides: :json do
   content_type :json
-  user_id = USERS_TABLE.length
-  user = request_payload.merge('id' => user_id)
-  USERS_TABLE << request_payload
+  inserted = r.table(DB_TABLE).insert(request_payload).run
+  user = request_payload.merge('id' => inserted['generated_keys'][0])
   p user
   user.to_json
 end
 
 get '/users/:id', provides: :json do
   content_type :json
-  user_id = params[:id].to_i
-  user = USERS_TABLE[user_id]
+  user = r.table(DB_TABLE).get(params[:id]).run
   p user
   user.to_json
 end
 
-#get '/users/:id/edit', provides: :json do
-  #content_type :json
-#end
+get '/users/:id/edit', provides: :json do
+  content_type :json
+end
 
 put '/users/:id', provides: :json do
   content_type :json
-  user_id = params[:id].to_i
-  user = request_payload.merge('id' => user_id)
-  USERS_TABLE[user_id] = request_payload
-  p user
-  user.to_json
 end
 
 delete '/users/:id', provides: :json do
   content_type :json
-  user_id = params[:id].to_i
-  USERS_TABLE[user_id] = nil
-  p "Deleted user #{user_id}"
-  {'id' => user_id, 'error' => nil}.to_json
 end

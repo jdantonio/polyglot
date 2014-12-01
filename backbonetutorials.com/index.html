@@ -27,51 +27,83 @@
     
     <script>
 
-//      UserModel = Backbone.Model.extend({
-//        urlRoot: '/users',
-//        defaults: {
-//          name: '',
-//          email: ''
-//        }
-//      });
+      UserModel = Backbone.Model.extend({
+        urlRoot: '/users',
+        defaults: {
+          name: '',
+          email: ''
+        }
+      });
 
-//      var user = new UserModel();
-//      // Notice that we haven't set an `id`
-//      var userDetails = {
-//        name: 'Thomas',
-//        email: 'thomasalwyndavis@gmail.com'
-//      };
-//
-//      // Because we have not set a `id` the server will call
-//      // POST /user with a payload of {name:'Thomas', email: 'thomasalwyndavis@gmail.com'}
-//      // The server should save the data and return a response containing the new `id`
-//      user.save(userDetails, {
-//        success: function (user) {
-//          alert(user.toJSON());
-//        }
-//      });
+      var user = new UserModel();
+      // Notice that we haven't set an `id`
+      var userDetails = {
+        name: 'Thomas',
+        email: 'thomasalwyndavis@gmail.com'
+      };
 
-//      // Here we have set the `id` of the model
-//      //var user = new UserModel({id: 1});
-//      var user = new UserModel({id: "5c45c953-27af-47b9-8db2-0fb8c7b7adb5"});
-//
-//      // The fetch below will perform GET /user/1
-//      // The server should return the id, name and email from the database
-//      user.fetch({
-//        success: function (user) {
-//          alert(user.toJSON());
-//        }
-//      });
-//
-//      Person = Backbone.Model.extend({
-//        defaults: {
-//          name: 'Baby',
-//          age: 0,
-//          child: ''
-//        },
-//        initialize: function(){
-//        }
-//      });
+      // Because we have not set a `id` the server will call
+      // POST /user with a payload of {name:'Thomas', email: 'thomasalwyndavis@gmail.com'}
+      // The server should save the data and return a response containing the new `id`
+      user.save(userDetails, {
+        success: function (user) {
+          console.log("----------------------------------");
+          console.log(user.toJSON());
+          console.log("----------------------------------");
+          //alert(user.toJSON());
+        }
+      });
+
+      // Here we have set the `id` of the model
+      var user = new UserModel({id: 0});
+
+      // The fetch below will perform GET /user/1
+      // The server should return the id, name and email from the database
+      user.fetch({
+        success: function (user) {
+          console.log("==================================");
+          console.log(user.toJSON());
+          console.log("==================================");
+          //alert(user.toJSON());
+        }
+      });
+
+      // Here we have set the `id` of the model
+      var user = new UserModel({
+        id: 0,
+        name: 'Thomas',
+        email: 'thomasalwyndavis@gmail.com'
+      });
+
+      // Let's change the name and update the server
+      // Because there is `id` present, Backbone.js will fire
+      // PUT /user/1 with a payload of `{name: 'Davis', email: 'thomasalwyndavis@gmail.com'}`
+      user.save({name: 'Davis'}, {
+        success: function (model) {
+          console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+          console.log(user.toJSON());
+          console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+          //alert(user.toJSON());
+        }
+      });
+
+      // Here we have set the `id` of the model
+      var user = new UserModel({
+        id: 0,
+        //name: 'Thomas',
+        //email: 'thomasalwyndavis@gmail.com'
+      });
+
+      // Because there is `id` present, Backbone.js will fire
+      // DELETE /user/1
+      user.destroy({
+        success: function () {
+          console.log("++++++++++++++++++++++++++++++++++");
+          console.log('Destroyed');
+          console.log("++++++++++++++++++++++++++++++++++");
+          //alert('Destroyed');
+        }
+      });
 
       SearchView = Backbone.View.extend({
         initialize: function(){
@@ -96,13 +128,6 @@
       });
 
       var search_view = new SearchView({ el: $("#search_container") });
-      var person = new Person({ name: "Thomas", age: 67, child: 'Ryan'});
-
-      //var age = person.get("age"); // 67
-      //var name = person.get("name"); // "Thomas"
-      //var child = person.get("child"); // 'Ryan'
-
-      //person.set({name: 'Stewie Griffin'}); // This triggers a change and will alert()
     </script>
 
   </body>

@@ -37,9 +37,7 @@ http-server
 
 Now bring up a browser and navigate to `localhost:8080`.  You should see the application appear in the browser window.  Going forward this mechanism can be used in each of the project step folders to bring up the application.
 
-### Ruby with RethinkDB
-
-*Make sure RethinkDB is running locally and the administration utility is avaialable on port 8080.*
+### Ruby with a mock in-memory database
 
 To test our application we will use a Ruby module called [Sinatra](http://www.sinatrarb.com) to bring up a local webserver and host our page. To install this locally use this commands:
 
@@ -54,7 +52,7 @@ Now in the `workspace` folder where you changed the code, run the command:
 ruby app.rb
 ```
 
-Now bring up a browser and navigate to `http://localhost:4567`. You should see the application appear in the browser window. Going forward this mechanism can be used in each of the project step folders to bring up the application.
+Now bring up a browser and navigate to `http://localhost:8080`. You should see the application appear in the browser window. Going forward this mechanism can be used in each of the project step folders to bring up the application.
 
 ## Copyright
 
