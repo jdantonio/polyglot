@@ -27,83 +27,26 @@
     
     <script>
 
-      UserModel = Backbone.Model.extend({
-        urlRoot: '/users',
+      var Song = Backbone.Model.extend({
         defaults: {
-          name: '',
-          email: ''
+          name: "Not specified",
+          artist: "Not specified"
+        },
+        initialize: function(){
+          console.log("Music is the answer");
         }
       });
 
-      var user = new UserModel();
-      // Notice that we haven't set an `id`
-      var userDetails = {
-        name: 'Thomas',
-        email: 'thomasalwyndavis@gmail.com'
-      };
-
-      // Because we have not set a `id` the server will call
-      // POST /user with a payload of {name:'Thomas', email: 'thomasalwyndavis@gmail.com'}
-      // The server should save the data and return a response containing the new `id`
-      user.save(userDetails, {
-        success: function (user) {
-          console.log("----------------------------------");
-          console.log(user.toJSON());
-          console.log("----------------------------------");
-          //alert(user.toJSON());
-        }
+      var Album = Backbone.Collection.extend({
+        model: Song
       });
 
-      // Here we have set the `id` of the model
-      var user = new UserModel({id: 0});
+      var song1 = new Song({ name: "How Bizarre", artist: "OMC" });
+      var song2 = new Song({ name: "Sexual Healing", artist: "Marvin Gaye" });
+      var song3 = new Song({ name: "Talk It Over In Bed", artist: "OMC" });
 
-      // The fetch below will perform GET /user/1
-      // The server should return the id, name and email from the database
-      user.fetch({
-        success: function (user) {
-          console.log("==================================");
-          console.log(user.toJSON());
-          console.log("==================================");
-          //alert(user.toJSON());
-        }
-      });
-
-      // Here we have set the `id` of the model
-      var user = new UserModel({
-        id: 0,
-        name: 'Thomas',
-        email: 'thomasalwyndavis@gmail.com'
-      });
-
-      // Let's change the name and update the server
-      // Because there is `id` present, Backbone.js will fire
-      // PUT /user/1 with a payload of `{name: 'Davis', email: 'thomasalwyndavis@gmail.com'}`
-      user.save({name: 'Davis'}, {
-        success: function (model) {
-          console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-          console.log(user.toJSON());
-          console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-          //alert(user.toJSON());
-        }
-      });
-
-      // Here we have set the `id` of the model
-      var user = new UserModel({
-        id: 0,
-        //name: 'Thomas',
-        //email: 'thomasalwyndavis@gmail.com'
-      });
-
-      // Because there is `id` present, Backbone.js will fire
-      // DELETE /user/1
-      user.destroy({
-        success: function () {
-          console.log("++++++++++++++++++++++++++++++++++");
-          console.log('Destroyed');
-          console.log("++++++++++++++++++++++++++++++++++");
-          //alert('Destroyed');
-        }
-      });
+      var myAlbum = new Album([ song1, song2, song3 ]);
+      console.log( myAlbum.models ); // [song1, song2, song3]
 
       SearchView = Backbone.View.extend({
         initialize: function(){
@@ -111,18 +54,14 @@
           this.render();
         },
         render: function(){
-          //Pass variables in using Underscore.js Template
           var variables = { search_label: "My Search" };
-          // Compile the template using underscore
           var template = _.template( $("#search_template").html(), variables);
-          // Load the compiled HTML into the Backbone "el"
           this.$el.html( template );
         },
         events: {
           "click input[type=button]": "doSearch"
         },
         doSearch: function( event ){
-          // Button clicked, you can access the element that was clicked with event.currentTarget
           alert( "Search for " + $("#search_input").val() );
         }
       });
