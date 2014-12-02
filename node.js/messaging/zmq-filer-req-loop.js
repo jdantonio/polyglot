@@ -2,8 +2,12 @@
 
 'use strict';
 
+// npm install minimist
+const argv = require('minimist')(process.argv.slice(2));
+
 const zmq = require('zmq');
-const filename = process.argv[2] || 'target.txt';
+const message_count = parseInt(argv.n || argv.num || '3');
+const filename = argv.f || argv.file || 'target.txt';
 
 // create request endpoint
 const requester = zmq.socket('req');
@@ -17,7 +21,9 @@ requester.on('message', function(data) {
 requester.connect('tcp://localhost:5433');
 
 // send request for content
-console.log('Sending request for ' + filename);
-requester.send(JSON.stringify({
-  path: filename
-}));
+for (let i = 1; i <= message_count; i++) {
+  console.log('Sending request ' + i + ' for ' + filename);
+  requester.send(JSON.stringify({
+    path: filename
+  }));
+}
