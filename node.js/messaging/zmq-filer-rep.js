@@ -46,7 +46,21 @@ responder.bind('tcp://127.0.0.1:5433', function(err) {
 });
 
 // close the responder when the Node process ends
-process.on('SIGINT', function() {
+
+let shutdownHook = function() {
   console.log('Shutting down...');
   responder.close();
+}
+
+process.on('SIGINT', shutdownHook);
+process.on('SIGTERM', shutdownHook);
+
+process.on('uncaughtException', function(err) {
+  console.log('Caught exception: ' + err);
+  try {
+    shutdownHook();
+  } catch(err) {
+    // do nothing -- we're shutting down
+  }
+  process.exit(1);
 });
