@@ -2,11 +2,14 @@
 
 'use strict';
 
+// npm install minimist
+const argv = require('minimist')(process.argv.slice(2));
+
 const
   fs = require('fs'),
   zmq = require('zmq');
 
-const filename = process.argv[2] || 'target.txt';
+const filename = argv.f || argv.file || 'target.txt';
 
 // publisher endpoint
 const publisher = zmq.socket('pub');

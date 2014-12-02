@@ -18,13 +18,25 @@ responder.on('message', function(data) {
 
   // read file and reply
   fs.readFile(request.path, function(err, content) {
-    console.log('Sending response content.');
+    let msg = '';
 
-    responder.send(JSON.stringify({
-      content: content.toString(),
-      timestamp: Date.now(),
-      pid: process.pid
-    }));
+    if (err) {
+      msg = JSON.stringify({
+        error: err.code,
+        filename: request.path,
+        timestamp: Date.now(),
+        pid: process.pid
+      });
+      console.log('Error processing request: ' + msg);
+    } else {
+      msg = JSON.stringify({
+        content: content.toString(),
+        timestamp: Date.now(),
+        pid: process.pid
+      });
+      console.log('Sending response content: ' + msg);
+    }
+    responder.send(msg);
   });
 });
 

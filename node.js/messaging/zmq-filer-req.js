@@ -2,8 +2,11 @@
 
 'use strict';
 
+// npm install minimist
+const argv = require('minimist')(process.argv.slice(2));
+
 const zmq = require('zmq');
-const filename = process.argv[2] || 'target.txt';
+const filename = argv.f || argv.file || 'target.txt';
 
 // create request endpoint
 const requester = zmq.socket('req');
